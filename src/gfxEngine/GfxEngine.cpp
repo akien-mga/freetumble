@@ -194,9 +194,9 @@ void GfxEngine::loadPictures()
     creditsBg.loadFromFile("data/media/creditsBg.png");
     creditsBgSprite.setTexture(creditsBg);
 
-    sfmlLogoImage.loadFromFile("data/media/logoSfml.jpg");
+    sfmlLogoImage.loadFromFile("data/media/logoSFML.png");
     sfmlLogoSprite.setTexture(sfmlLogoImage);
-    sfmlLogoSprite.setPosition(550, 180);
+    sfmlLogoSprite.setPosition(510, 210);
 
     blackScreen.create(800, 600);
     blackScreenSprite.setTexture(blackScreen);
