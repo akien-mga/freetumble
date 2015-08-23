@@ -777,7 +777,7 @@ void GfxEngine::renderTile(int x, int y, int mTile, float xTrans, float yTrans)
 
     if (getUpTime() <= upDelay)
     {
-        float fade=getUpTime() / upDelay;
+        float fade=(upDelay - getUpTime()) / upDelay;
 
         yTrans+=OFFSET_Y * fade;
         yPos=y * TILE_H + OFFSET_Y + yTrans;
