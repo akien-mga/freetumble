@@ -80,9 +80,6 @@ void GfxEngine::initialize()
     oldYMouse=0;
     initWindow();
     upAnimation=false;
-    delay=-10.0f;
-    bestScoresDelay=-10.0f;
-    consoleDelay=0.0f;
     consoleIndex=0;
     loadPictures();
     loadSounds();
@@ -516,12 +513,9 @@ void GfxEngine::renderIntro(int choice, Menu* myMenu)
 
 void GfxEngine::renderConsole()
 {
-    // FIXME: Find equivalent API
-    // consoleDelay += app->getFrameTime();
-    consoleDelay += 0.1f;
-    if (consoleDelay > CONSOLE_NEXT_LINE_DELAY)
+    if (getConsoleTime() > CONSOLE_NEXT_LINE_DELAY)
     {
-        consoleDelay=0.0f;
+        consoleClock.restart();
         consoleIndex++;
         if (consoleIndex >= CONSOLE_MAX_LINES) consoleIndex=0;
     }
@@ -535,10 +529,10 @@ void GfxEngine::renderConsole()
     for (int i=first; i <= consoleIndex; i++)
     {
 
-        if (i == consoleIndex && consoleDelay < CONSOLE_LINE_DELAY)
+        if (i == consoleIndex && getConsoleTime() < CONSOLE_LINE_DELAY)
         {
             int strSize=CONSOLE[i][language].length();
-            int n=strSize * consoleDelay/CONSOLE_LINE_DELAY;
+            int n=strSize * getConsoleTime()/CONSOLE_LINE_DELAY;
             menuString->setString(CONSOLE[i][language].substr(0, n));
         }
         else
@@ -794,9 +788,9 @@ void GfxEngine::renderTile(int x, int y, int mTile, float xTrans, float yTrans)
     int xPos=x * TILE_W + OFFSET_X + xTrans;
     int yPos=y * TILE_H + OFFSET_Y + yTrans;
 
-    if (delay > 0.0f)
+    if (getUpTime() <= upDelay)
     {
-        float fade=delay / upDelay;
+        float fade=getUpTime() / upDelay;
 
         yTrans+=OFFSET_Y * fade;
         yPos=y * TILE_H + OFFSET_Y + yTrans;
@@ -819,7 +813,7 @@ void GfxEngine::renderTile(int x, int y, int mTile, float xTrans, float yTrans)
     {
         effectsSprite.setPosition(xPos, yPos);
         effectsSprite.setTextureRect(sf::IntRect(0, 0, TILE_W, scaleY));
-        int alpha=128 + 127 * cosf(clock.getElapsedTime().asSeconds() * 8);
+        int alpha=128 + 127 * cosf(getGameTime() * 8);
         effectsSprite.setColor(sf::Color(255, 255, 255, alpha));
         app->draw(effectsSprite);
     }
@@ -827,7 +821,7 @@ void GfxEngine::renderTile(int x, int y, int mTile, float xTrans, float yTrans)
     {
         effectsSprite.setPosition(xPos, yPos);
         effectsSprite.setTextureRect(sf::IntRect(TILE_W, 0, TILE_W * 2, scaleY));
-        int alpha=128 + 127 * cosf(clock.getElapsedTime().asSeconds() * 9);
+        int alpha=128 + 127 * cosf(getGameTime() * 9);
         effectsSprite.setColor(sf::Color(255, 255, 255, alpha));
         app->draw(effectsSprite);
     }
@@ -835,7 +829,7 @@ void GfxEngine::renderTile(int x, int y, int mTile, float xTrans, float yTrans)
     {
         effectsSprite.setPosition(xPos, yPos);
         effectsSprite.setTextureRect(sf::IntRect(TILE_W * 2, 0, TILE_W * 3, scaleY));
-        int alpha=128 + 127 * cosf(clock.getElapsedTime().asSeconds() * 7);
+        int alpha=128 + 127 * cosf(getGameTime() * 7);
         effectsSprite.setColor(sf::Color(255, 255, 255, alpha));
         app->draw(effectsSprite);
     }
@@ -880,7 +874,7 @@ void GfxEngine::renderScores(GameModel* gameModel)
 void GfxEngine::renderDanger(GameModel* gameModel)
 {
     bool isInDanger=false;
-    if ((int)(clock.getElapsedTime().asSeconds() * 3) % 2 == 0) return;
+    if ((int)(getGameTime() * 3) % 2 == 0) return;
     for (int i=0; i < GRID_W; i++)
     {
         if (gameModel->getDanger(i))
@@ -942,9 +936,9 @@ void GfxEngine::renderGameOverBestScores(GameScores* gameScores, int gameType)
     int middle=MENU_POSX + MENU_W / 2;
 
     int yTrans=0;
-    if (bestScoresDelay > 0.0f)
+    if (getBestScoresTime() < bestScoresDelay)
     {
-        yTrans -= bestScoresDelay / bestScoresDelayMax * (MENU_TOP_H + MENU_SCORE_H * 10 + MENU_BUTTONL_H + MENU_BOTTOM_H + MENU_SPACE_H);
+        yTrans -= (bestScoresDelay - getBestScoresTime()) / bestScoresDelay * (MENU_TOP_H + MENU_SCORE_H * 10 + MENU_BUTTONL_H + MENU_BOTTOM_H + MENU_SPACE_H);
     }
 
     yTop += yTrans;
@@ -978,9 +972,9 @@ void GfxEngine::renderGameOverBestScores(GameScores* gameScores, int gameType)
 
         if (gameScores->getCurrentScore() % 10 == i)
         {
-            menuString->setColor(sf::Color(100 + sinf(clock.getElapsedTime().asSeconds() * 3) * 100,
-                                        100 + sinf(clock.getElapsedTime().asSeconds() * 4) * 100,
-                                        100 + cosf(clock.getElapsedTime().asSeconds() * 5) * 100));
+            menuString->setColor(sf::Color(100 + sinf(getGameTime() * 3) * 100,
+                                        100 + sinf(getGameTime() * 4) * 100,
+                                        100 + cosf(getGameTime() * 5) * 100));
         }
         else
         {
@@ -1113,7 +1107,7 @@ void GfxEngine::renderEnterName(GameModel* gameModel, string name)
 
     textScoreName->setString(string2wstring(name) + L"_");
     textScoreName->setPosition(middle - textScoreName->getLocalBounds().width / 2, yTop + MENU_TOP_H + 11);
-    if ((int)(clock.getElapsedTime().asSeconds() * 3) % 2 > 0) textScoreName->setString(string2wstring(name));
+    if ((int)(getGameTime() * 3) % 2 > 0) textScoreName->setString(string2wstring(name));
     app->draw(*textScoreName);
 
     //app->draw(blackFootSprite);
@@ -1228,7 +1222,7 @@ void GfxEngine::renderCredits()
     app->draw(*menuString);
 
     menuString->setCharacterSize(HELP_SUBTITLE_SIZE);
-    menuString->setColor(sf::Color(255, 255, 255, 128 + 127 * cos(5 * clock.getElapsedTime().asSeconds())));
+    menuString->setColor(sf::Color(255, 255, 255, 128 + 127 * cos(5 * getGameTime())));
     menuString->setString(CLICK_TO_CONTINUE[language]);
     menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 510);
     app->draw(*menuString);
@@ -1320,7 +1314,7 @@ void GfxEngine::renderHelp()
     app->draw(*menuString);
 
     menuString->setCharacterSize(HELP_SUBTITLE_SIZE);
-    menuString->setColor(sf::Color(255, 255, 255, 128 + 127 * cos(5 * clock.getElapsedTime().asSeconds())));
+    menuString->setColor(sf::Color(255, 255, 255, 128 + 127 * cos(5 * getGameTime())));
     menuString->setString(CLICK_TO_CONTINUE[language]);
     menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 525);
     app->draw(*menuString);
@@ -1401,34 +1395,15 @@ void GfxEngine::getKeys(GameInput* gameInput)
     }
 }
 
-void GfxEngine::updateTime()
-{
-    if (delay > 0.0f)
-    {
-        // FIXME: Find equivalent API
-        // delay -= app->getFrameTime();
-        delay -= 0.1f;
-    }
-    if (bestScoresDelay > 0.0f)
-    {
-        // FIXME: Find equivalent API
-        // bestScoresDelay -= app->getFrameTime();
-        bestScoresDelay -= 0.1f;
-    }
-    updateEffects();
-}
-
 void GfxEngine::updateEffects()
 {
-    // FIXME: Find equivalent API
-    // EM->Animate(app->getFrameTime());
-    EM->Animate(0.1f);
+    EM->Animate(getGameTime());
 }
 
 void GfxEngine::animateUp()
 {
     upAnimation=true;
-    delay=upDelay;
+    upClock.restart();
 }
 
 

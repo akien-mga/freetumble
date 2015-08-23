@@ -40,12 +40,13 @@ public:
     ~GfxEngine();
 
     bool getStatusOK() { return statusOK; }
-    float getGameTime() { return clock.getElapsedTime().asSeconds(); }
-    float getFrameTime() {
-         // FIXME: Find a way to achieve that with a clock
-         // return app->getFrameTime();
-         return 0.1f;
-         }
+    float getGameTime() { return gameClock.getElapsedTime().asSeconds(); }
+    float getUpTime() { return upClock.getElapsedTime().asSeconds(); }
+    float getBestScoresTime() { return bestScoresClock.getElapsedTime().asSeconds(); }
+    float getGameOverTime() { return gameOverClock.getElapsedTime().asSeconds(); }
+    float getConsoleTime() { return consoleClock.getElapsedTime().asSeconds(); }
+    void restartBestScoresClock() { this->bestScoresClock.restart(); }
+    void restartGameOverClock() { this->gameOverClock.restart(); }
     bool getSoundEnabled() { return soundEnabled; }
     bool getMusicEnabled() { return musicEnabled; }
     bool getEffectsEnabled() { return effectsEnabled; }
@@ -70,7 +71,6 @@ public:
     void setMouseOnLeftButton(bool mouseOnLeftButton) { this->mouseOnLeftButton=mouseOnLeftButton; }
     void setMouseOnRightButton(bool mouseOnRightButton) { this->mouseOnRightButton=mouseOnRightButton; }
     void setMouseOnCancelButton(bool mouseOnCancelButton) { this->mouseOnCancelButton=mouseOnCancelButton; }
-    void setBestScoresDelay(float bestScoresDelay) { this->bestScoresDelay=bestScoresDelay; }
     void setIntroMouseOver(int introMouseOver) { this->introMouseOver=introMouseOver; }
 
     // rendering methodes
@@ -95,7 +95,6 @@ public:
     void renderHelp();
 
     void getKeys(GameInput* gameInput);
-    void updateTime();
     void updateEffects();
     void animateUp();
 
@@ -290,11 +289,12 @@ private:
     float xRand;
     float yRand;
 
-    sf::Clock clock;
+    sf::Clock gameClock;
+    sf::Clock upClock;
+    sf::Clock bestScoresClock;
+    sf::Clock consoleClock;
+    sf::Clock gameOverClock;
 
-    float delay;
-    float bestScoresDelay;
-    float consoleDelay;
     int consoleIndex;
     bool upAnimation;
 

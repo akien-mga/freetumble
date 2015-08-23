@@ -21,6 +21,7 @@ EntityManager::EntityManager()
 {
     InitIterator();
     mItems = 0;
+    oldTime = 0.0f;
 }
 
 void EntityManager::Add(GameEntity* g)
@@ -45,8 +46,10 @@ GameEntity* EntityManager::NextItem()
     return e;
 }
 
-void EntityManager::Animate (float delay)
+void EntityManager::Animate (float newTime)
 {
+    float delay = newTime - oldTime;
+    oldTime = newTime;
     if (!IsEmpty())
     {
         EntityList::iterator it;

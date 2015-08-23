@@ -37,7 +37,6 @@ GameMain::GameMain()
     loadConfig();
     buildMenus();
 
-    delay=0.0f;
     xSave=0;
     ySave=0;
 }
@@ -66,11 +65,11 @@ void GameMain::startGame()
         // time (menu = freeze time)
         if (activeMenu == menuNothing)
         {
-            gfxEngine->updateTime();
+            gfxEngine->updateEffects();
 
             if (!gameModel->getGameOver() && gameModel->getGameType() == GameModel::gameTypeMotion)
             {
-                gameModel->updateTime(gfxEngine->getFrameTime());
+                gameModel->updateTime(gfxEngine->getGameTime());
                 if (gameModel->getGameOver())
                 {
                     gameOver();
@@ -83,11 +82,10 @@ void GameMain::startGame()
         }
         if (state == stateGameOverAnim)
         {
-            delay-=gfxEngine->getFrameTime();
-            if (delay <= 0.0f)
+            if (gfxEngine->getGameOverTime() > gameOverAnimDelay)
             {
                 state=stateGameOver;
-                gfxEngine->setBestScoresDelay(bestScoresDelayMax);
+                gfxEngine->restartBestScoresClock();
                 if (gameModel->getGameType() != GameModel::gameTypeClassic)
                 {
                     gfxEngine->createGameOverEffect(gameModel);
@@ -415,7 +413,7 @@ void GameMain::click(int x, int y)
 void GameMain::gameOver()
 {
     state=stateGameOverAnim;
-    delay=gameOverAnimDelay;
+    gfxEngine->restartGameOverClock();
 
     gfxEngine->playMusic(GfxEngine::musicGameOver);
 
@@ -607,7 +605,7 @@ void GameMain::proceedInputGame()
                     gameScores->addScore(scoreGameType, gameModel->getScore(), scoreName);
                     gfxEngine->updateScores(gameScores, scoreGameType);
                     state=stateGameOver;
-                    gfxEngine->setBestScoresDelay(bestScoresDelayMax);
+                    gfxEngine->restartBestScoresClock();
                 }
                 break;
             }

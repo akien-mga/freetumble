@@ -66,7 +66,7 @@ const int stonesLevel = 120;
 
 const float upDelay = 0.25f;
 const float gameOverAnimDelay = 2.0f;
-const float bestScoresDelayMax = 1.0f;
+const float bestScoresDelay = 1.0f;
 //const float gameClickAnimDelay = 0.35f;
 
 const int SCORE_NAME_MAX = 12;

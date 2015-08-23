@@ -83,6 +83,7 @@ void GameModel::newGame(int gameType)
     overZone=false;
     gameOver=false;
     emptyZoneGrid();
+    oldTime=0.0f;
     delay=0.0f;
     rowDelay=delayForLevel[0];
     rowUp=false;
@@ -589,9 +590,10 @@ bool GameModel::canAddRow()
     return true;
 }
 
-void GameModel::updateTime(float dt)
+void GameModel::updateTime(float newTime)
 {
-    delay+=dt;
+    delay+=newTime - oldTime;
+    oldTime=newTime;
     if (delay > rowDelay)
     {
         delay-=rowDelay;

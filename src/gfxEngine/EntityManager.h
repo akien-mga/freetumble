@@ -45,7 +45,7 @@ private:
     EntityList EL;
     EntityList::iterator mIterator, mSavedIterator;
     int mItems;
-
+    float oldTime;
 };
 
 #endif
