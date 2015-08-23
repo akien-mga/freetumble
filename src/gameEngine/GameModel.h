@@ -130,7 +130,6 @@ private:
 
     bool gameOver;
 
-    float oldTime;
     float delay;
     float rowDelay;
 

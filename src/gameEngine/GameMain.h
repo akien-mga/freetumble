@@ -94,6 +94,7 @@ private:
     int activeMenu;
 
     float delay;
+    float oldTime;
 
     void newGame();
     void moveInMenu(int x, int y);

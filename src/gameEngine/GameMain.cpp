@@ -69,7 +69,9 @@ void GameMain::startGame()
 
             if (!gameModel->getGameOver() && gameModel->getGameType() == GameModel::gameTypeMotion)
             {
-                gameModel->updateTime(gfxEngine->getGameTime());
+                float newTime=gfxEngine->getGameTime();
+                gameModel->updateTime(newTime - oldTime);
+                oldTime=newTime;
                 if (gameModel->getGameOver())
                 {
                     gameOver();
@@ -172,6 +174,7 @@ void  GameMain::newGame() {
             gameModel->newGame(GameModel::gameTypeMotion);
             gameModel->setHighScore(gameScores->getMotionScore(0).score);
             gfxEngine->playMusic(GfxEngine::musicGame);
+            oldTime=gfxEngine->getGameTime();
             break;
         }
         case choiceClassic:
