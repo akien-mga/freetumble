@@ -1679,9 +1679,9 @@ void GfxEngine::updateScores(GameScores* gameScores, int gameType)
 {
     switch (gameType)
     {
-        case GameModel::gameTypeNormal: modeScoreSprite.setTexture(modeNormalHiscores); break;
-        case GameModel::gameTypeMotion: modeScoreSprite.setTexture(modeMotionHiscores); break;
-        case GameModel::gameTypeClassic: modeScoreSprite.setTexture(modeClassicHiscores); break;
+        case GameModel::gameTypeNormal: modeScoreSprite.setTexture(modeNormalHiscores, true); break;
+        case GameModel::gameTypeMotion: modeScoreSprite.setTexture(modeMotionHiscores, true); break;
+        case GameModel::gameTypeClassic: modeScoreSprite.setTexture(modeClassicHiscores, true); break;
     }
     modeScoreSprite.setPosition(597 - modeScoreSprite.getTextureRect().width / 2, 58);
 
