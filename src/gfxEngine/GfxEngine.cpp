@@ -267,7 +267,7 @@ void GfxEngine::loadPictures()
     lightningHImage.loadFromFile("data/media/LightningH.png");
     lightningVImage.loadFromFile("data/media/LightningV.png");
 
-    font.loadFromFile("data/media/AlteHaasGroteskBold.ttf");
+    font.loadFromFile("data/media/FreeSansBold.ttf");
 
 
     textHighScore=new sf::Text("0", font, STRING_SIZE_SCORE);

@@ -46,6 +46,9 @@ Try to clear the entire grid to get the best score.
 FreeTumble's source code is licensed under the GNU General Public License,
 version 3 or (at your option) any later version (GPLv3+).
 
+The FreeSansBold.ttf font from the GNU FreeFont project is distributed
+under the GPLv3+.
+
 Most assets (graphics, sound effects) have no specified license. Assuming
 that they were all designed by Suiland with the intent to make a GPLv3+ game,
 we assume that those assets are also under the GPLv3+ license. This would
@@ -57,13 +60,10 @@ assets in other projects.
 The following assets have their own nonfree license. Suggestions for libre
 replacements are very welcome.
 
-*CC-BY-NC-SA 2.5*  
-data/media/music/solcarlus - another synthetic tribute to a muted-trumpet player.ogg  
-data/media/music/solcarlus - background noise.ogg  
+*CC-BY-NC-SA 2.5*
+data/media/music/solcarlus - another synthetic tribute to a muted-trumpet player.ogg
+data/media/music/solcarlus - background noise.ogg
 data/media/music/solcarlus - emergency landing.ogg
 
-*CC BY-NC-SA 3.0*  
+*CC BY-NC-SA 3.0*
 data/media/music/nienvox - inside_part_2.ogg
-
-*Freeware*  
-data/media/AlteHaasGroteskBold.ttf
