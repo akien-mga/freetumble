@@ -208,27 +208,27 @@ void GfxEngine::loadPictures()
 
     menuImage.loadFromFile("data/media/menu.png");
     menuSpriteTop.setTexture(menuImage);
-    menuSpriteTop.setTextureRect(sf::IntRect(MENU_TOP_X0, MENU_TOP_Y0, MENU_TOP_XF, MENU_TOP_YF));
+    menuSpriteTop.setTextureRect(sf::IntRect(MENU_TOP_X0, MENU_TOP_Y0, MENU_TOP_W, MENU_TOP_H));
     menuSpriteButton.setTexture(menuImage);
-    menuSpriteButton.setTextureRect(sf::IntRect(MENU_BUTTON_X0, MENU_BUTTON_Y0, MENU_BUTTON_XF, MENU_BUTTON_YF));
+    menuSpriteButton.setTextureRect(sf::IntRect(MENU_BUTTON_X0, MENU_BUTTON_Y0, MENU_BUTTON_W, MENU_BUTTON_H));
     menuSpriteButtonOver.setTexture(menuImage);
-    menuSpriteButtonOver.setTextureRect(sf::IntRect(MENU_BUTTON_OVER_X0, MENU_BUTTON_OVER_Y0, MENU_BUTTON_OVER_XF, MENU_BUTTON_OVER_YF));
+    menuSpriteButtonOver.setTextureRect(sf::IntRect(MENU_BUTTON_OVER_X0, MENU_BUTTON_OVER_Y0, MENU_BUTTON_OVER_W, MENU_BUTTON_OVER_H));
     menuSpriteButtonL.setTexture(menuImage);
-    menuSpriteButtonL.setTextureRect(sf::IntRect(MENU_BUTTONL_X0, MENU_BUTTONL_Y0, MENU_BUTTONL_XF, MENU_BUTTONL_YF));
+    menuSpriteButtonL.setTextureRect(sf::IntRect(MENU_BUTTONL_X0, MENU_BUTTONL_Y0, MENU_BUTTONL_W, MENU_BUTTONL_H));
     menuSpriteButtonR.setTexture(menuImage);
-    menuSpriteButtonR.setTextureRect(sf::IntRect(MENU_BUTTONR_X0, MENU_BUTTONR_Y0, MENU_BUTTONR_XF, MENU_BUTTONR_YF));
+    menuSpriteButtonR.setTextureRect(sf::IntRect(MENU_BUTTONR_X0, MENU_BUTTONR_Y0, MENU_BUTTONR_W, MENU_BUTTONR_H));
 
     menuSpriteButtonLOver.setTexture(menuImage);
-    menuSpriteButtonLOver.setTextureRect(sf::IntRect(MENU_BUTTONL_OVER_X0, MENU_BUTTONL_OVER_Y0, MENU_BUTTONL_OVER_XF, MENU_BUTTONL_OVER_YF));
+    menuSpriteButtonLOver.setTextureRect(sf::IntRect(MENU_BUTTONL_OVER_X0, MENU_BUTTONL_OVER_Y0, MENU_BUTTONL_OVER_W, MENU_BUTTONL_OVER_H));
     menuSpriteButtonROver.setTexture(menuImage);
-    menuSpriteButtonROver.setTextureRect(sf::IntRect(MENU_BUTTONR_OVER_X0, MENU_BUTTONR_OVER_Y0, MENU_BUTTONR_OVER_XF, MENU_BUTTONR_OVER_YF));
+    menuSpriteButtonROver.setTextureRect(sf::IntRect(MENU_BUTTONR_OVER_X0, MENU_BUTTONR_OVER_Y0, MENU_BUTTONR_OVER_W, MENU_BUTTONR_OVER_H));
 
     menuSpriteBottom.setTexture(menuImage);
-    menuSpriteBottom.setTextureRect(sf::IntRect(MENU_BOTTOM_X0, MENU_BOTTOM_Y0, MENU_BOTTOM_XF, MENU_BOTTOM_YF));
+    menuSpriteBottom.setTextureRect(sf::IntRect(MENU_BOTTOM_X0, MENU_BOTTOM_Y0, MENU_BOTTOM_W, MENU_BOTTOM_H));
     menuSpriteHiScore1.setTexture(menuImage);
-    menuSpriteHiScore1.setTextureRect(sf::IntRect(MENU_SCORE1_X0, MENU_SCORE1_Y0, MENU_SCORE1_XF, MENU_SCORE1_YF));
+    menuSpriteHiScore1.setTextureRect(sf::IntRect(MENU_SCORE1_X0, MENU_SCORE1_Y0, MENU_SCORE1_W, MENU_SCORE1_H));
     menuSpriteHiScore2.setTexture(menuImage);
-    menuSpriteHiScore2.setTextureRect(sf::IntRect(MENU_SCORE2_X0, MENU_SCORE2_Y0, MENU_SCORE2_XF, MENU_SCORE2_YF));
+    menuSpriteHiScore2.setTextureRect(sf::IntRect(MENU_SCORE2_X0, MENU_SCORE2_Y0, MENU_SCORE2_W, MENU_SCORE2_H));
 
     menuSpriteSpace.setTexture(menuImage);
     menuSpriteSpace.setTextureRect(sf::IntRect(0, 40, MENU_W, 40 + MENU_SPACE_H));
@@ -460,7 +460,7 @@ void GfxEngine::renderIntro(int choice, Menu* myMenu)
 
     if (introMouseOver == mouseOverHelp)
     {
-        buttonHelpSprite.setTextureRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W * 2, MENU_ICON_H));
+        buttonHelpSprite.setTextureRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W, MENU_ICON_H));
     }
     else
     {
@@ -469,7 +469,7 @@ void GfxEngine::renderIntro(int choice, Menu* myMenu)
 
     if (introMouseOver == mouseOverOptions)
     {
-        buttonOptionsSprite.setTextureRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W * 2, MENU_ICON_H));
+        buttonOptionsSprite.setTextureRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W, MENU_ICON_H));
     }
     else
     {
@@ -478,7 +478,7 @@ void GfxEngine::renderIntro(int choice, Menu* myMenu)
 
     if (introMouseOver == mouseOverCredits)
     {
-        buttonCreditsSprite.setTextureRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W * 2, MENU_ICON_H));
+        buttonCreditsSprite.setTextureRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W, MENU_ICON_H));
     }
     else
     {
@@ -487,7 +487,7 @@ void GfxEngine::renderIntro(int choice, Menu* myMenu)
 
     if (introMouseOver == mouseOverQuit)
     {
-        buttonQuitSprite.setTextureRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W * 2, MENU_ICON_H));
+        buttonQuitSprite.setTextureRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W, MENU_ICON_H));
     }
     else
     {
@@ -640,7 +640,7 @@ void GfxEngine::renderGame(GameModel* gameModel, Menu* myMenu)
     renderScores(gameModel);
 
     menuButtonSprite.setTextureRect(sf::IntRect(0, mouseOnMenuButton ? GAMEMENU_BUTTON_H : 0,
-                                    GAMEMENU_BUTTON_W, mouseOnMenuButton ? GAMEMENU_BUTTON_H * 2 : GAMEMENU_BUTTON_H));
+                                    GAMEMENU_BUTTON_W, GAMEMENU_BUTTON_H));
     app->draw(menuButtonSprite);
 
     if (gameModel->getGameType() == GameModel::gameTypeClassic)
@@ -648,7 +648,7 @@ void GfxEngine::renderGame(GameModel* gameModel, Menu* myMenu)
         if (gameModel->getCanCancel())
         {
             if (mouseOnCancelButton)
-                cancelButtonSprite.setTextureRect(sf::IntRect(CANCEL_BUTTON_W, 0, 2 * CANCEL_BUTTON_W, CANCEL_BUTTON_H));
+                cancelButtonSprite.setTextureRect(sf::IntRect(CANCEL_BUTTON_W, 0, CANCEL_BUTTON_W, CANCEL_BUTTON_H));
             else
                 cancelButtonSprite.setTextureRect(sf::IntRect(0, 0, CANCEL_BUTTON_W, CANCEL_BUTTON_H));
             cancelButtonSprite.setColor(sf::Color(255, 255, 255, 255));
@@ -749,7 +749,7 @@ void GfxEngine::renderModeIcone(int mode)
 
 
     /*
-    modeSprite.setTextureRect(sf::IntRect(mode * 77, 0, mode * 77 + 77, 73));
+    modeSprite.setTextureRect(sf::IntRect(mode * 77, 0, 77, 73));
 
 
     app->draw(modeSprite);
@@ -776,7 +776,7 @@ void GfxEngine::renderNextRow(GameModel* gameModel)
         if (i < x)
         {
             int mTile=gameModel->getNextRow(i) - 1.;
-            nextRowTile[i].setTextureRect(sf::IntRect(mTile * 28, 0, mTile * 28 + 28, 27));
+            nextRowTile[i].setTextureRect(sf::IntRect(mTile * 28, 0, 28, 27));
             app->draw(nextRowTile[i]);
         }
     }
@@ -803,7 +803,7 @@ void GfxEngine::renderTile(int x, int y, int mTile, float xTrans, float yTrans)
     }
     tile[x][y].setPosition(xPos, yPos);
 
-    tile[x][y].setTextureRect(sf::IntRect(mTile * TILE_W, 0, mTile * TILE_W + TILE_W, scaleY));
+    tile[x][y].setTextureRect(sf::IntRect(mTile * TILE_W, 0, TILE_W, scaleY));
     app->draw(tile[x][y]);
 
     if (!effectsEnabled) return;
@@ -820,7 +820,7 @@ void GfxEngine::renderTile(int x, int y, int mTile, float xTrans, float yTrans)
     else if (mTile == GameModel::tileBomb)
     {
         effectsSprite.setPosition(xPos, yPos);
-        effectsSprite.setTextureRect(sf::IntRect(TILE_W, 0, TILE_W * 2, scaleY));
+        effectsSprite.setTextureRect(sf::IntRect(TILE_W, 0, TILE_W, scaleY));
         int alpha=128 + 127 * cosf(getGameTime() * 9);
         effectsSprite.setColor(sf::Color(255, 255, 255, alpha));
         app->draw(effectsSprite);
@@ -828,7 +828,7 @@ void GfxEngine::renderTile(int x, int y, int mTile, float xTrans, float yTrans)
     else if (mTile == GameModel::tileArrows)
     {
         effectsSprite.setPosition(xPos, yPos);
-        effectsSprite.setTextureRect(sf::IntRect(TILE_W * 2, 0, TILE_W * 3, scaleY));
+        effectsSprite.setTextureRect(sf::IntRect(TILE_W * 2, 0, TILE_W, scaleY));
         int alpha=128 + 127 * cosf(getGameTime() * 7);
         effectsSprite.setColor(sf::Color(255, 255, 255, alpha));
         app->draw(effectsSprite);
@@ -1278,22 +1278,23 @@ void GfxEngine::renderHelp()
     menuString->setPosition(HELP_LEFT_TEXT, 305 + yTrans);
     app->draw(*menuString);
 
-    singleTile.setTextureRect(sf::IntRect(5 * TILE_W, 0, 6 * TILE_W, TILE_H));
+    singleTile.setTextureRect(sf::IntRect(5 * TILE_W, 0, TILE_W, TILE_H));
     singleTile.setPosition(48,350 + yTrans);
     app->draw(singleTile);
-    singleTile.setTextureRect(sf::IntRect(6 * TILE_W, 0, 7 * TILE_W, TILE_H));
+
+    singleTile.setTextureRect(sf::IntRect(6 * TILE_W, 0, TILE_W, TILE_H));
     singleTile.setPosition(HELP_LEFT_ICON,360 + yTrans);
     app->draw(singleTile);
 
-    singleTile.setTextureRect(sf::IntRect(8 * TILE_W, 0, 9 * TILE_W, TILE_H));
+    singleTile.setTextureRect(sf::IntRect(8 * TILE_W, 0, TILE_W, TILE_H));
     singleTile.setPosition(HELP_LEFT_ICON,400 + yTrans);
     app->draw(singleTile);
 
-    singleTile.setTextureRect(sf::IntRect(9 * TILE_W, 0, 10 * TILE_W, TILE_H));
+    singleTile.setTextureRect(sf::IntRect(9 * TILE_W, 0, TILE_W, TILE_H));
     singleTile.setPosition(HELP_LEFT_ICON,440 + yTrans);
     app->draw(singleTile);
 
-    singleTile.setTextureRect(sf::IntRect(10 * TILE_W, 0, 11 * TILE_W, TILE_H));
+    singleTile.setTextureRect(sf::IntRect(10 * TILE_W, 0, TILE_W, TILE_H));
     singleTile.setPosition(HELP_LEFT_ICON,480 + yTrans);
     app->draw(singleTile);
 
@@ -1429,7 +1430,7 @@ void GfxEngine::createGameOverEffect(GameModel* gameModel)
                 sprite.setTexture(tiles);
                 sprite.setOrigin(TILE_W / 2, TILE_H / 2);
                 int mTile=gameModel->getGameGrid(i, j) - 1;
-                sprite.setTextureRect(sf::IntRect(mTile * TILE_W, 0, mTile * TILE_W + TILE_W, TILE_H));
+                sprite.setTextureRect(sf::IntRect(mTile * TILE_W, 0, TILE_W, TILE_H));
                 //sprite.setTextureRect(sf::IntRect(0,0,80,0));
                 entity->sprite=sprite;
                 EM->Add(entity);
@@ -1467,7 +1468,7 @@ void GfxEngine::createRemoveEffect(GameModel* gameModel)
                 sprite.setOrigin(TILE_W/2, TILE_H/2);
                 sprite.setPosition(-100, -100);
                 int mTile=gameModel->getGameGrid(i, j)-1;
-                sprite.setTextureRect(sf::IntRect(mTile * TILE_W, 0, mTile * TILE_W + TILE_W, TILE_H));
+                sprite.setTextureRect(sf::IntRect(mTile * TILE_W, 0, TILE_W, TILE_H));
                 //sprite.setTextureRect(sf::IntRect(0,0,80,0));
                 sprite.setColor(sf::Color(255, 255, 255, 128));
                 entity->sprite=sprite;

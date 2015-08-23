@@ -102,65 +102,60 @@ const int CHOICES_MAX=11;
 const int MENU_SIZE_MAX=8;
 
 const int MENU_TOP_X0=0;
-const int MENU_TOP_XF=500;
 const int MENU_TOP_Y0=0;
-const int MENU_TOP_YF=65;
+const int MENU_TOP_W=500;
+const int MENU_TOP_H=65;
 
 const int MENU_SPACE_H=30;
 
 const int MENU_BUTTON_X0=0;
-const int MENU_BUTTON_XF=500;
 const int MENU_BUTTON_Y0=79;
-const int MENU_BUTTON_YF=143 + 10;
+const int MENU_BUTTON_W=500;
+const int MENU_BUTTON_H=64 + 10;
 
 const int MENU_BUTTON_OVER_X0=0;
-const int MENU_BUTTON_OVER_XF=500;
 const int MENU_BUTTON_OVER_Y0=156;
-const int MENU_BUTTON_OVER_YF=220 + 10;
+const int MENU_BUTTON_OVER_W=500;
+const int MENU_BUTTON_OVER_H=64 + 10;
 
 const int MENU_BUTTONL_X0=0;
-const int MENU_BUTTONL_XF=250;
 const int MENU_BUTTONL_Y0=318;
-const int MENU_BUTTONL_YF=383;
+const int MENU_BUTTONL_W=250;
+const int MENU_BUTTONL_H=65;
 
 const int MENU_BUTTONR_X0=250;
-const int MENU_BUTTONR_XF=500;
 const int MENU_BUTTONR_Y0=318;
-const int MENU_BUTTONR_YF=383;
+const int MENU_BUTTONR_W=250;
+const int MENU_BUTTONR_H=65;
 
 const int MENU_BUTTONL_OVER_X0=0;
-const int MENU_BUTTONL_OVER_XF=250;
 const int MENU_BUTTONL_OVER_Y0=395;
-const int MENU_BUTTONL_OVER_YF=460;
+const int MENU_BUTTONL_OVER_W=250;
+const int MENU_BUTTONL_OVER_H=65;
 
 const int MENU_BUTTONR_OVER_X0=250;
-const int MENU_BUTTONR_OVER_XF=500;
 const int MENU_BUTTONR_OVER_Y0=395;
-const int MENU_BUTTONR_OVER_YF=460;
+const int MENU_BUTTONR_OVER_W=250;
+const int MENU_BUTTONR_OVER_H=65;
 
 const int MENU_SCORE1_X0=0;
-const int MENU_SCORE1_XF=500;
 const int MENU_SCORE1_Y0=235;
-const int MENU_SCORE1_YF=270;
+const int MENU_SCORE1_W=500;
+const int MENU_SCORE1_H=35;
 
 const int MENU_SCORE2_X0=0;
-const int MENU_SCORE2_XF=500;
 const int MENU_SCORE2_Y0=275;
-const int MENU_SCORE2_YF=310;
+const int MENU_SCORE2_W=500;
+const int MENU_SCORE2_H=35;
 
 const int MENU_BOTTOM_X0=0;
-const int MENU_BOTTOM_XF=500;
 const int MENU_BOTTOM_Y0=460;
-const int MENU_BOTTOM_YF=500;
+const int MENU_BOTTOM_W=500;
+const int MENU_BOTTOM_H=40;
 
-const int MENU_W=MENU_TOP_XF - MENU_TOP_X0;
-const int MENU_TOP_H=MENU_TOP_YF - MENU_TOP_Y0;
-const int MENU_BUTTON_H=MENU_BUTTON_YF - MENU_BUTTON_Y0;
-const int MENU_BUTTONL_H=MENU_BUTTONL_YF - MENU_BUTTONL_Y0;
-const int MENU_BOTTOM_H=MENU_BOTTOM_YF - MENU_BOTTOM_Y0;
-const int MENU_SCORE_H=MENU_SCORE1_YF - MENU_SCORE1_Y0;
-
-const int MENU_POSX= (SCREEN_W - MENU_TOP_XF) / 2;
+const int MENU_W=MENU_TOP_W;
+const int MENU_SCORE_H=MENU_SCORE1_H;
+const int MENU_POSX=(SCREEN_W - (MENU_TOP_X0 + MENU_TOP_W)) / 2;
 
 const int STRING_SIZE_MENU_TITLE=34;
 const int STRING_SIZE_MENU_ITEM=28;
