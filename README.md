@@ -2,14 +2,12 @@
 
 by Seby and Suiland
 
-Development:
-Seby <sebygames@gmail.com>
+Development: Seby <sebygames@gmail.com>
 
-Graphics:
-Suiland
+Graphics: Suiland
 
-Music (CC BY-NC-SA):
-Solcarlus - http://solcarlusweb.free.fr
+Music (CC BY-NC-SA):  
+Solcarlus - http://solcarlusweb.free.fr  
 Nienvox - http://www.bumpfoot.net/foot090.html
 
 ## Description
@@ -60,10 +58,10 @@ assets in other projects.
 The following assets have their own nonfree license. Suggestions for libre
 replacements are very welcome.
 
-*CC-BY-NC-SA 2.5*
-data/media/music/solcarlus - another synthetic tribute to a muted-trumpet player.ogg
-data/media/music/solcarlus - background noise.ogg
+*CC-BY-NC-SA 2.5*  
+data/media/music/solcarlus - another synthetic tribute to a muted-trumpet player.ogg  
+data/media/music/solcarlus - background noise.ogg  
 data/media/music/solcarlus - emergency landing.ogg
 
-*CC BY-NC-SA 3.0*
+*CC BY-NC-SA 3.0*  
 data/media/music/nienvox - inside_part_2.ogg
