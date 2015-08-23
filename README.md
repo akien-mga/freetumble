@@ -8,8 +8,8 @@ Seby <sebygames@gmail.com>
 Graphics:
 Suiland
 
-Music (creative commons music):
-Solcarlus - http://solcarlusweb.free.fr/
+Music (CC BY-NC-SA):
+Solcarlus - http://solcarlusweb.free.fr
 Nienvox - http://www.bumpfoot.net/foot090.html
 
 ## Description
@@ -40,3 +40,22 @@ Try to clear the entire grid to get the best score.
 - Persistent configuration (language, skin, options, volume)
 - Various bonus in Normal and Motion modes
 - Available in 3 languages (English, French, German)
+
+## License
+
+FreeTumble's source code and graphics are licensed under the GNU General
+Public License, version 3 or (at your option) any later version (GPLv3+).
+
+The following assets have their own nonfree license. Suggestions for libre
+replacements are very welcome.
+
+*CC-BY-NC-SA 2.5*  
+data/media/music/solcarlus - another synthetic tribute to a muted-trumpet player.ogg  
+data/media/music/solcarlus - background noise.ogg  
+data/media/music/solcarlus - emergency landing.ogg
+
+*CC BY-NC-SA 3.0*  
+data/media/music/nienvox - inside_part_2.ogg
+
+*Freeware*  
+data/media/AlteHaasGroteskBold.ttf
