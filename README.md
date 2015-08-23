@@ -43,8 +43,16 @@ Try to clear the entire grid to get the best score.
 
 ## License
 
-FreeTumble's source code and graphics are licensed under the GNU General
-Public License, version 3 or (at your option) any later version (GPLv3+).
+FreeTumble's source code is licensed under the GNU General Public License,
+version 3 or (at your option) any later version (GPLv3+).
+
+Most assets (graphics, sound effects) have no specified license. Assuming
+that they were all designed by Suiland with the intent to make a GPLv3+ game,
+we assume that those assets are also under the GPLv3+ license. This would
+however need to be checked with the original author before reusing these
+assets in other projects.
+
+### Nonfree assets to be replaced
 
 The following assets have their own nonfree license. Suggestions for libre
 replacements are very welcome.
