@@ -40,8 +40,12 @@ public:
     ~GfxEngine();
 
     bool getStatusOK() { return statusOK; }
-    float getGameTime() { return clock.GetElapsedTime(); }
-    float getFrameTime() { return app->GetFrameTime(); }
+    float getGameTime() { return clock.getElapsedTime().asSeconds(); }
+    float getFrameTime() {
+         // FIXME: Find a way to achieve that with a clock
+         // return app->getFrameTime();
+         return 0.1f;
+         }
     bool getSoundEnabled() { return soundEnabled; }
     bool getMusicEnabled() { return musicEnabled; }
     bool getEffectsEnabled() { return effectsEnabled; }
@@ -148,68 +152,68 @@ private:
 
     sf::RenderWindow* app;
 
-    sf::Image bg; // primary surface
-    sf::Image helpBg;
-    sf::Image creditsBg;
-    sf::Image intro;
-    sf::Image gameOver;
-    sf::Image levelImage;
-    sf::Image tiles; // game tiles
-    sf::Image nextTiles;
-    sf::Image effectsImage;
-    sf::Image holeImage;
-    sf::Image modeNormal;
-    sf::Image modeMotion;
-    sf::Image modeClassic;
-    sf::Image modeNormalOver;
-    sf::Image modeMotionOver;
-    sf::Image modeClassicOver;
-    sf::Image modeNormalMini;
-    sf::Image modeMotionMini;
-    sf::Image modeClassicMini;
-    sf::Image modeNormalHiscores;
-    sf::Image modeMotionHiscores;
-    sf::Image modeClassicHiscores;
-    sf::Image modeIcones;
-    sf::Image dangerImage;
-    sf::Image boomImage;
-    sf::Image lightningHImage;
-    sf::Image lightningVImage;
+    sf::Texture bg; // primary surface
+    sf::Texture helpBg;
+    sf::Texture creditsBg;
+    sf::Texture intro;
+    sf::Texture gameOver;
+    sf::Texture levelImage;
+    sf::Texture tiles; // game tiles
+    sf::Texture nextTiles;
+    sf::Texture effectsImage;
+    sf::Texture holeImage;
+    sf::Texture modeNormal;
+    sf::Texture modeMotion;
+    sf::Texture modeClassic;
+    sf::Texture modeNormalOver;
+    sf::Texture modeMotionOver;
+    sf::Texture modeClassicOver;
+    sf::Texture modeNormalMini;
+    sf::Texture modeMotionMini;
+    sf::Texture modeClassicMini;
+    sf::Texture modeNormalHiscores;
+    sf::Texture modeMotionHiscores;
+    sf::Texture modeClassicHiscores;
+    sf::Texture modeIcones;
+    sf::Texture dangerImage;
+    sf::Texture boomImage;
+    sf::Texture lightningHImage;
+    sf::Texture lightningVImage;
 
-    sf::Image sfmlLogoImage;
+    sf::Texture sfmlLogoImage;
 
-    sf::Image blackFootImage;
-    sf::Image whiteScreenImage;
+    sf::Texture blackFootImage;
+    sf::Texture whiteScreenImage;
 
-    sf::Image blackScreen;
-    sf::Image menuImage;
-    sf::Image menuButtonImage;
-    sf::Image cancelButtonImage;
+    sf::Texture blackScreen;
+    sf::Texture menuImage;
+    sf::Texture menuButtonImage;
+    sf::Texture cancelButtonImage;
 
-    sf::Image buttonHelpImage;
-    sf::Image buttonCreditsImage;
-    sf::Image buttonOptionsImage;
-    sf::Image buttonQuitImage;
+    sf::Texture buttonHelpImage;
+    sf::Texture buttonCreditsImage;
+    sf::Texture buttonOptionsImage;
+    sf::Texture buttonQuitImage;
 
     sf::Font font;
 
-    sf::String* textScore;
-    sf::String* textHighScore;
-    sf::String* textValue;
-    sf::String* textLevel;
+    sf::Text* textScore;
+    sf::Text* textHighScore;
+    sf::Text* textValue;
+    sf::Text* textLevel;
 
-    sf::String* textNames[10];
-    sf::String* textScores[10];
-    sf::String* textPos[10];
+    sf::Text* textNames[10];
+    sf::Text* textScores[10];
+    sf::Text* textPos[10];
 
-    sf::String* textScoreName;
-    sf::String* textMode;
+    sf::Text* textScoreName;
+    sf::Text* textMode;
 
-    sf::String* normalDescription[2];
-    sf::String* motionDescription[2];
-    sf::String* classicDescription[2];
+    sf::Text* normalDescription[2];
+    sf::Text* motionDescription[2];
+    sf::Text* classicDescription[2];
 
-    sf::String* menuString;
+    sf::Text* menuString;
 
     sf::Sprite bgSprite;
     sf::Sprite helpBgSprite;

@@ -67,9 +67,8 @@ void GameEntity::Animate(float delay)
         if (age>=lifetime) dying = true;
     }
 
-    sprite.SetX(x);
-    sprite.SetY(y);
-    sprite.SetRotation(angle);
+    sprite.setPosition(x, y);
+    sprite.setRotation(angle);
 }
 
 float GameEntity::Fade()
@@ -101,7 +100,7 @@ void GameEntityBoom::Animate(float delay) {
     }
 
 
-    sprite.SetScale(5.0f*fade, 5.0f*fade);
+    sprite.setScale(5.0f*fade, 5.0f*fade);
 }
 
 
@@ -122,10 +121,11 @@ void GameEntityLightning::Animate(float delay) {
     if (fade < 0.0f) fade = 0.0f;
     if (fade > 1.0f) fade = 1.0f;
 
-    sprite.SetColor(sf::Color(255, 255, 255, 255 * fade));
+    sprite.setColor(sf::Color(255, 255, 255, 255 * fade));
 
-    sprite.FlipX(rand()%2 == 0);
-    sprite.FlipY(rand()%2 == 0);
+    // FIXME: Write an equivalent for flipping in SFML2
+    // sprite.FlipX(rand()%2 == 0);
+    // sprite.FlipY(rand()%2 == 0);
 }
 
 
@@ -137,11 +137,10 @@ GameEntityFlyingText::GameEntityFlyingText(float m_x, float m_y, int m_type) : G
 void GameEntityFlyingText::Animate(float delay) {
     GameEntity::Animate(delay);
 
-    string.SetX(x);
-    string.SetY(y);
+    text.setPosition(x, y);
 
     float fade=Fade();
-    string.SetColor(sf::Color(128 * fade, 255 * fade, 255 , 255 * fade));
+    text.setColor(sf::Color(128 * fade, 255 * fade, 255 , 255 * fade));
     //float fade=Fade();
 
     //sprite.SetColor(sf::Color(255, 255, 255, 255 * fade));
@@ -157,5 +156,5 @@ void GameEntityWhiteScreen::Animate(float delay) {
 
     float fade=Fade();
 
-    sprite.SetColor(sf::Color(255, 255, 255, 255 * fade));
+    sprite.setColor(sf::Color(255, 255, 255, 255 * fade));
 }

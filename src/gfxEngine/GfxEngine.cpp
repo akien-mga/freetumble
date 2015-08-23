@@ -95,7 +95,7 @@ void GfxEngine::initWindow()
     // create a new window
     string title=APP_NAME + " " + APP_VERSION;
     app = new sf::RenderWindow(sf::VideoMode(800, 600), title); // , sf::Style::Close);
-    app->SetFramerateLimit(60);
+    app->setFramerateLimit(60);
     //app = new sf::RenderWindow(sf::VideoMode(800, 600), title, sf::Style::Fullscreen);
 }
 
@@ -116,238 +116,222 @@ void GfxEngine::setLanguage(int language)
 
 void GfxEngine::loadPictures()
 {
-    // load images;
+    // load textures;
 
-    intro.LoadFromFile("data/media/menuBg.png");
-    introSprite.SetImage(intro);
-    //introSprite.SetX(200);
-    //introSprite.SetY(50);
+    intro.loadFromFile("data/media/menuBg.png");
+    introSprite.setTexture(intro);
+    //introSprite.setPosition(200, 50);
 
     loadSkin();
     loadTileSet();
-    bgSprite.SetImage(bg);
+    bgSprite.setTexture(bg);
 
-    gameOver.LoadFromFile("data/media/gameover.png");
-    gameOverSprite.SetImage(gameOver);
-    gameOverSprite.SetX(300);
-    gameOverSprite.SetY(225);
+    gameOver.loadFromFile("data/media/gameover.png");
+    gameOverSprite.setTexture(gameOver);
+    gameOverSprite.setPosition(300, 225);
 
 
-    levelSprite.SetImage(levelImage);
-    levelSprite.SetX(679);
-    levelSprite.SetY(379);
+    levelSprite.setTexture(levelImage);
+    levelSprite.setPosition(679, 379);
 
-    modeIcones.LoadFromFile("data/media/modeIcones.png");
-    modeSprite.SetImage(modeIcones);
-    modeSprite.SetX(675);
-    modeSprite.SetY(450);
+    modeIcones.loadFromFile("data/media/modeIcones.png");
+    modeSprite.setTexture(modeIcones);
+    modeSprite.setPosition(675, 450);
 
-    modeNormal.LoadFromFile("data/media/modeNormal.png");
-    modeNormalOver.LoadFromFile("data/media/modeNormalOver.png");
-    normalSprite.SetImage(modeNormal);
-    normalSprite.SetX(MENU_NORMAL_X);
-    normalSprite.SetY(MENU_NORMAL_Y);
-    modeNormalMini.LoadFromFile("data/media/modeNormalMini.png");
-    normalMiniSprite.SetImage(modeNormalMini);
-    modeNormalHiscores.LoadFromFile("data/media/modeNormalHiscores.png");
+    modeNormal.loadFromFile("data/media/modeNormal.png");
+    modeNormalOver.loadFromFile("data/media/modeNormalOver.png");
+    normalSprite.setTexture(modeNormal);
+    normalSprite.setPosition(MENU_NORMAL_X, MENU_NORMAL_Y);
+    modeNormalMini.loadFromFile("data/media/modeNormalMini.png");
+    normalMiniSprite.setTexture(modeNormalMini);
+    modeNormalHiscores.loadFromFile("data/media/modeNormalHiscores.png");
 
-    modeMotion.LoadFromFile("data/media/modeMotion.png");
-    modeMotionOver.LoadFromFile("data/media/modeMotionOver.png");
-    motionSprite.SetImage(modeMotion);
-    motionSprite.SetX(MENU_MOTION_X);
-    motionSprite.SetY(MENU_MOTION_Y);
-    modeMotionMini.LoadFromFile("data/media/modeMotionMini.png");
-    motionMiniSprite.SetImage(modeMotionMini);
-    modeMotionHiscores.LoadFromFile("data/media/modeMotionHiscores.png");
+    modeMotion.loadFromFile("data/media/modeMotion.png");
+    modeMotionOver.loadFromFile("data/media/modeMotionOver.png");
+    motionSprite.setTexture(modeMotion);
+    motionSprite.setPosition(MENU_MOTION_X, MENU_MOTION_Y);
+    modeMotionMini.loadFromFile("data/media/modeMotionMini.png");
+    motionMiniSprite.setTexture(modeMotionMini);
+    modeMotionHiscores.loadFromFile("data/media/modeMotionHiscores.png");
 
-    modeClassic.LoadFromFile("data/media/modeClassic.png");
-    modeClassicOver.LoadFromFile("data/media/modeClassicOver.png");
-    classicSprite.SetImage(modeClassic);
-    classicSprite.SetX(MENU_CLASSIC_X);
-    classicSprite.SetY(MENU_CLASSIC_Y);
-    modeClassicMini.LoadFromFile("data/media/modeClassicMini.png");
-    classicMiniSprite.SetImage(modeClassicMini);
-    modeClassicHiscores.LoadFromFile("data/media/modeClassicHiscores.png");
+    modeClassic.loadFromFile("data/media/modeClassic.png");
+    modeClassicOver.loadFromFile("data/media/modeClassicOver.png");
+    classicSprite.setTexture(modeClassic);
+    classicSprite.setPosition(MENU_CLASSIC_X, MENU_CLASSIC_Y);
+    modeClassicMini.loadFromFile("data/media/modeClassicMini.png");
+    classicMiniSprite.setTexture(modeClassicMini);
+    modeClassicHiscores.loadFromFile("data/media/modeClassicHiscores.png");
 
-    buttonHelpImage.LoadFromFile("data/media/buttonHelp.png");
-    buttonHelpSprite.SetImage(buttonHelpImage);
-    buttonHelpSprite.SetX(MENU_HELP_X);
-    buttonHelpSprite.SetY(MENU_HELP_Y);
+    buttonHelpImage.loadFromFile("data/media/buttonHelp.png");
+    buttonHelpSprite.setTexture(buttonHelpImage);
+    buttonHelpSprite.setPosition(MENU_HELP_X, MENU_HELP_Y);
 
-    buttonCreditsImage.LoadFromFile("data/media/buttonCredits.png");
-    buttonCreditsSprite.SetImage(buttonCreditsImage);
-    buttonCreditsSprite.SetX(MENU_CREDITS_X);
-    buttonCreditsSprite.SetY(MENU_CREDITS_Y);
+    buttonCreditsImage.loadFromFile("data/media/buttonCredits.png");
+    buttonCreditsSprite.setTexture(buttonCreditsImage);
+    buttonCreditsSprite.setPosition(MENU_CREDITS_X, MENU_CREDITS_Y);
 
-    buttonOptionsImage.LoadFromFile("data/media/buttonOptions.png");
-    buttonOptionsSprite.SetImage(buttonOptionsImage);
-    buttonOptionsSprite.SetX(MENU_OPTIONS_X);
-    buttonOptionsSprite.SetY(MENU_OPTIONS_Y);
+    buttonOptionsImage.loadFromFile("data/media/buttonOptions.png");
+    buttonOptionsSprite.setTexture(buttonOptionsImage);
+    buttonOptionsSprite.setPosition(MENU_OPTIONS_X, MENU_OPTIONS_Y);
 
-    buttonQuitImage.LoadFromFile("data/media/buttonQuit.png");
-    buttonQuitSprite.SetImage(buttonQuitImage);
-    buttonQuitSprite.SetX(MENU_QUIT_X);
-    buttonQuitSprite.SetY(MENU_QUIT_Y);
+    buttonQuitImage.loadFromFile("data/media/buttonQuit.png");
+    buttonQuitSprite.setTexture(buttonQuitImage);
+    buttonQuitSprite.setPosition(MENU_QUIT_X, MENU_QUIT_Y);
 
-    miniButtonSprite.SetImage(buttonHelpImage);
-    miniButtonSprite.SetSubRect(sf::IntRect(0, 0, buttonHelpImage.GetWidth() / 2, buttonHelpImage.GetHeight()));
-    miniButtonSprite.Scale(0.4f, 0.4f);
+    miniButtonSprite.setTexture(buttonHelpImage);
+    miniButtonSprite.setTextureRect(sf::IntRect(0, 0, buttonHelpImage.getSize().x / 2, buttonHelpImage.getSize().y));
+    miniButtonSprite.scale(0.4f, 0.4f);
 
-    cancelButtonImage.LoadFromFile("data/media/cancel64.png");
-    cancelButtonSprite.SetImage(cancelButtonImage);
-    cancelButtonSprite.SetPosition(CANCEL_BUTTON_X0, CANCEL_BUTTON_Y0);
+    cancelButtonImage.loadFromFile("data/media/cancel64.png");
+    cancelButtonSprite.setTexture(cancelButtonImage);
+    cancelButtonSprite.setPosition(CANCEL_BUTTON_X0, CANCEL_BUTTON_Y0);
 
-    menuButtonSprite.SetImage(menuButtonImage);
-    menuButtonSprite.SetX(GAMEMENU_BUTTON_X0);
-    menuButtonSprite.SetY(GAMEMENU_BUTTON_Y0);
+    menuButtonSprite.setTexture(menuButtonImage);
+    menuButtonSprite.setPosition(GAMEMENU_BUTTON_X0, GAMEMENU_BUTTON_Y0);
 
-    blackFootImage.Create(800, 40);
-    blackFootSprite.SetImage(blackFootImage);
-    blackFootSprite.SetY(547);
+    blackFootImage.create(800, 40);
+    blackFootSprite.setTexture(blackFootImage);
+    blackFootSprite.setPosition(blackFootSprite.getPosition().x, 547);
 
-    whiteScreenImage.Create(600, 480, sf::Color(255, 255, 255, 255));
+    whiteScreenImage.create(600, 480);
 
-    helpBg.LoadFromFile("data/media/helpBg.png");
-    helpBgSprite.SetImage(helpBg);
+    helpBg.loadFromFile("data/media/helpBg.png");
+    helpBgSprite.setTexture(helpBg);
 
-    creditsBg.LoadFromFile("data/media/creditsBg.png");
-    creditsBgSprite.SetImage(creditsBg);
+    creditsBg.loadFromFile("data/media/creditsBg.png");
+    creditsBgSprite.setTexture(creditsBg);
 
-    sfmlLogoImage.LoadFromFile("data/media/logoSfml.jpg");
-    sfmlLogoSprite.SetImage(sfmlLogoImage);
-    sfmlLogoSprite.SetPosition(550, 180);
+    sfmlLogoImage.loadFromFile("data/media/logoSfml.jpg");
+    sfmlLogoSprite.setTexture(sfmlLogoImage);
+    sfmlLogoSprite.setPosition(550, 180);
 
-    blackScreen.Create(800, 600, sf::Color(0, 0, 0, 192));
-    blackScreenSprite.SetImage(blackScreen);
+    blackScreen.create(800, 600);
+    blackScreenSprite.setTexture(blackScreen);
+    blackScreenSprite.setColor(sf::Color(0, 0, 0, 192));
 
-    menuImage.LoadFromFile("data/media/menu.png");
-    menuSpriteTop.SetImage(menuImage);
-    menuSpriteTop.SetSubRect(sf::IntRect(MENU_TOP_X0, MENU_TOP_Y0, MENU_TOP_XF, MENU_TOP_YF));
-    menuSpriteButton.SetImage(menuImage);
-    menuSpriteButton.SetSubRect(sf::IntRect(MENU_BUTTON_X0, MENU_BUTTON_Y0, MENU_BUTTON_XF, MENU_BUTTON_YF));
-    menuSpriteButtonOver.SetImage(menuImage);
-    menuSpriteButtonOver.SetSubRect(sf::IntRect(MENU_BUTTON_OVER_X0, MENU_BUTTON_OVER_Y0, MENU_BUTTON_OVER_XF, MENU_BUTTON_OVER_YF));
-    menuSpriteButtonL.SetImage(menuImage);
-    menuSpriteButtonL.SetSubRect(sf::IntRect(MENU_BUTTONL_X0, MENU_BUTTONL_Y0, MENU_BUTTONL_XF, MENU_BUTTONL_YF));
-    menuSpriteButtonR.SetImage(menuImage);
-    menuSpriteButtonR.SetSubRect(sf::IntRect(MENU_BUTTONR_X0, MENU_BUTTONR_Y0, MENU_BUTTONR_XF, MENU_BUTTONR_YF));
+    menuImage.loadFromFile("data/media/menu.png");
+    menuSpriteTop.setTexture(menuImage);
+    menuSpriteTop.setTextureRect(sf::IntRect(MENU_TOP_X0, MENU_TOP_Y0, MENU_TOP_XF, MENU_TOP_YF));
+    menuSpriteButton.setTexture(menuImage);
+    menuSpriteButton.setTextureRect(sf::IntRect(MENU_BUTTON_X0, MENU_BUTTON_Y0, MENU_BUTTON_XF, MENU_BUTTON_YF));
+    menuSpriteButtonOver.setTexture(menuImage);
+    menuSpriteButtonOver.setTextureRect(sf::IntRect(MENU_BUTTON_OVER_X0, MENU_BUTTON_OVER_Y0, MENU_BUTTON_OVER_XF, MENU_BUTTON_OVER_YF));
+    menuSpriteButtonL.setTexture(menuImage);
+    menuSpriteButtonL.setTextureRect(sf::IntRect(MENU_BUTTONL_X0, MENU_BUTTONL_Y0, MENU_BUTTONL_XF, MENU_BUTTONL_YF));
+    menuSpriteButtonR.setTexture(menuImage);
+    menuSpriteButtonR.setTextureRect(sf::IntRect(MENU_BUTTONR_X0, MENU_BUTTONR_Y0, MENU_BUTTONR_XF, MENU_BUTTONR_YF));
 
-    menuSpriteButtonLOver.SetImage(menuImage);
-    menuSpriteButtonLOver.SetSubRect(sf::IntRect(MENU_BUTTONL_OVER_X0, MENU_BUTTONL_OVER_Y0, MENU_BUTTONL_OVER_XF, MENU_BUTTONL_OVER_YF));
-    menuSpriteButtonROver.SetImage(menuImage);
-    menuSpriteButtonROver.SetSubRect(sf::IntRect(MENU_BUTTONR_OVER_X0, MENU_BUTTONR_OVER_Y0, MENU_BUTTONR_OVER_XF, MENU_BUTTONR_OVER_YF));
+    menuSpriteButtonLOver.setTexture(menuImage);
+    menuSpriteButtonLOver.setTextureRect(sf::IntRect(MENU_BUTTONL_OVER_X0, MENU_BUTTONL_OVER_Y0, MENU_BUTTONL_OVER_XF, MENU_BUTTONL_OVER_YF));
+    menuSpriteButtonROver.setTexture(menuImage);
+    menuSpriteButtonROver.setTextureRect(sf::IntRect(MENU_BUTTONR_OVER_X0, MENU_BUTTONR_OVER_Y0, MENU_BUTTONR_OVER_XF, MENU_BUTTONR_OVER_YF));
 
-    menuSpriteBottom.SetImage(menuImage);
-    menuSpriteBottom.SetSubRect(sf::IntRect(MENU_BOTTOM_X0, MENU_BOTTOM_Y0, MENU_BOTTOM_XF, MENU_BOTTOM_YF));
-    menuSpriteHiScore1.SetImage(menuImage);
-    menuSpriteHiScore1.SetSubRect(sf::IntRect(MENU_SCORE1_X0, MENU_SCORE1_Y0, MENU_SCORE1_XF, MENU_SCORE1_YF));
-    menuSpriteHiScore2.SetImage(menuImage);
-    menuSpriteHiScore2.SetSubRect(sf::IntRect(MENU_SCORE2_X0, MENU_SCORE2_Y0, MENU_SCORE2_XF, MENU_SCORE2_YF));
+    menuSpriteBottom.setTexture(menuImage);
+    menuSpriteBottom.setTextureRect(sf::IntRect(MENU_BOTTOM_X0, MENU_BOTTOM_Y0, MENU_BOTTOM_XF, MENU_BOTTOM_YF));
+    menuSpriteHiScore1.setTexture(menuImage);
+    menuSpriteHiScore1.setTextureRect(sf::IntRect(MENU_SCORE1_X0, MENU_SCORE1_Y0, MENU_SCORE1_XF, MENU_SCORE1_YF));
+    menuSpriteHiScore2.setTexture(menuImage);
+    menuSpriteHiScore2.setTextureRect(sf::IntRect(MENU_SCORE2_X0, MENU_SCORE2_Y0, MENU_SCORE2_XF, MENU_SCORE2_YF));
 
-    menuSpriteSpace.SetImage(menuImage);
-    menuSpriteSpace.SetSubRect(sf::IntRect(0, 40, MENU_W, 40 + MENU_SPACE_H));
+    menuSpriteSpace.setTexture(menuImage);
+    menuSpriteSpace.setTextureRect(sf::IntRect(0, 40, MENU_W, 40 + MENU_SPACE_H));
 
     //sf::Sprite menuSpriteTop;
     //sf::Sprite menuSpriteBottom;
     //sf::Sprite menuSpriteButton;
     //sf::Sprite menuSpriteButtonOver;
 
-    dangerImage.LoadFromFile("data/media/danger.png");
+    dangerImage.loadFromFile("data/media/danger.png");
     int i=0;
     for (i=0; i<GRID_W; i++)
     {
-        dangerSprite[i].SetImage(dangerImage);
-        dangerSprite[i].SetX(i * TILE_W + OFFSET_X + (TILE_W - DANGER_W) / 2);
-        dangerSprite[i].SetY(OFFSET_Y-TILE_H);
+        dangerSprite[i].setTexture(dangerImage);
+        dangerSprite[i].setPosition(i * TILE_W + OFFSET_X + (TILE_W - DANGER_W) / 2, OFFSET_Y-TILE_H);
     }
-    singleTile.SetImage(tiles);
-    singleTile.SetScale(0.8f, 0.8f);
+    singleTile.setTexture(tiles);
+    singleTile.setScale(0.8f, 0.8f);
 
     for (i=0; i < GRID_W; i++)
     {
         for (int j=0; j < GRID_H; j++)
         {
-            tile[i][j].SetImage(tiles);
-            tile[i][j].SetX(i * TILE_W + OFFSET_X);
-            tile[i][j].SetY(j * TILE_H + OFFSET_Y);
+            tile[i][j].setTexture(tiles);
+            tile[i][j].setPosition(i * TILE_W + OFFSET_X, j * TILE_H + OFFSET_Y);
         }
-        nextRowTile[i].SetImage(nextTiles);
-        //nextRowTile[i].SetX(i * TILE_W + OFFSET_X + TILE_W / 4);
-        //nextRowTile[i].SetY(GRID_H * TILE_H + OFFSET_Y + TILE_H / 4);
-        nextRowTile[i].SetX(i * TILE_W + OFFSET_X + 7);
-        nextRowTile[i].SetY(GRID_H * TILE_H + OFFSET_Y + 26);
-        //nextRowTile[i].SetScaleX(0.5f);
-        //nextRowTile[i].SetScaleY(0.5f);
+        nextRowTile[i].setTexture(nextTiles);
+        //nextRowTile[i].setPosition(i * TILE_W + OFFSET_X + TILE_W / 4, GRID_H * TILE_H + OFFSET_Y + TILE_H / 4);
+        nextRowTile[i].setPosition(i * TILE_W + OFFSET_X + 7, GRID_H * TILE_H + OFFSET_Y + 26);
+        //nextRowTile[i].setScale(0.5f, 0.5f);
     }
 
-    holeSprite.SetImage(holeImage);
-    holeSprite.SetY(GRID_H * TILE_H + OFFSET_Y + 7);
+    holeSprite.setTexture(holeImage);
+    holeSprite.setPosition(holeSprite.getPosition().x, GRID_H * TILE_H + OFFSET_Y + 7);
 
-    effectsSprite.SetImage(effectsImage);
+    effectsSprite.setTexture(effectsImage);
 
-    boomImage.LoadFromFile("data/media/boom40.png");
+    boomImage.loadFromFile("data/media/boom40.png");
 
-    lightningHImage.LoadFromFile("data/media/LightningH.png");
-    lightningVImage.LoadFromFile("data/media/LightningV.png");
+    lightningHImage.loadFromFile("data/media/LightningH.png");
+    lightningVImage.loadFromFile("data/media/LightningV.png");
 
-    font.LoadFromFile("data/media/AlteHaasGroteskBold.ttf");
+    font.loadFromFile("data/media/AlteHaasGroteskBold.ttf");
 
 
-    textHighScore=new sf::String("0", font, STRING_SIZE_SCORE);
-    //textHighScore->SetPosition(665,186);
-    textHighScore->SetPosition(665,177);
+    textHighScore=new sf::Text("0", font, STRING_SIZE_SCORE);
+    //textHighScore->setPosition(665,186);
+    textHighScore->setPosition(665,177);
 
-    textScore=new sf::String("0", font, STRING_SIZE_SCORE);
-    //textScore->SetPosition(665,280);
-    textScore->SetPosition(665,282);
+    textScore=new sf::Text("0", font, STRING_SIZE_SCORE);
+    //textScore->setPosition(665,280);
+    textScore->setPosition(665,282);
 
-    textValue=new sf::String("0", font, STRING_SIZE_SCORE);
-    //textValue->SetPosition(665,312);
-    textValue->SetPosition(665,317);
-    textValue->SetColor(sf::Color(128, 128, 255, 255));
+    textValue=new sf::Text("0", font, STRING_SIZE_SCORE);
+    //textValue->setPosition(665,312);
+    textValue->setPosition(665,317);
+    textValue->setColor(sf::Color(128, 128, 255, 255));
 
-    textLevel=new sf::String("0", font, STRING_SIZE_SCORE);
-    //textLevel->SetPosition(740,390);
-    textLevel->SetPosition(706,424);
+    textLevel=new sf::Text("0", font, STRING_SIZE_SCORE);
+    //textLevel->setPosition(740,390);
+    textLevel->setPosition(706,424);
 
-    textScoreName=new sf::String("", font, 30);
-    textScoreName->SetPosition(125,551);
+    textScoreName=new sf::Text("", font, 30);
+    textScoreName->setPosition(125,551);
 
-    textMode=new sf::String("NORMAL", font, 22);
-    textMode->SetPosition(660,525);
-    textMode->SetColor(sf::Color::Black);
+    textMode=new sf::Text("NORMAL", font, 22);
+    textMode->setPosition(660,525);
+    textMode->setColor(sf::Color::Black);
 
-    normalDescription[0]=new sf::String(
+    normalDescription[0]=new sf::Text(
         "Click zones with 3 or more stones of the same color to make them disappear.", font, STRING_SIZE_DESCRIPTION);
-    normalDescription[0]->SetPosition(10,542);
-    normalDescription[0]->SetColor(sf::Color::Black);
+    normalDescription[0]->setPosition(10,542);
+    normalDescription[0]->setColor(sf::Color::Black);
 
-    normalDescription[1]=new sf::String(
+    normalDescription[1]=new sf::Text(
         "Don't let the stones rise to the top ! (Turn based)", font, STRING_SIZE_DESCRIPTION);
-    normalDescription[1]->SetPosition(10,567);
-    normalDescription[1]->SetColor(sf::Color::Black);
+    normalDescription[1]->setPosition(10,567);
+    normalDescription[1]->setColor(sf::Color::Black);
 
-    motionDescription[0]=new sf::String(
+    motionDescription[0]=new sf::Text(
         "Click zones with 3 or more stones of the same color to make them disappear.", font, STRING_SIZE_DESCRIPTION);
-    motionDescription[0]->SetPosition(10,542);
-    motionDescription[0]->SetColor(sf::Color::Black);
+    motionDescription[0]->setPosition(10,542);
+    motionDescription[0]->setColor(sf::Color::Black);
 
-    motionDescription[1]=new sf::String(
+    motionDescription[1]=new sf::Text(
         "Don't let the stones rise to the top ! (Real time)", font, STRING_SIZE_DESCRIPTION);
-    motionDescription[1]->SetPosition(10,567);
-    motionDescription[1]->SetColor(sf::Color::Black);
+    motionDescription[1]->setPosition(10,567);
+    motionDescription[1]->setColor(sf::Color::Black);
 
-    classicDescription[0]=new sf::String(
+    classicDescription[0]=new sf::Text(
         "Click zones with 2 or more stones of the same color to make them disappear.", font, STRING_SIZE_DESCRIPTION);
-    classicDescription[0]->SetPosition(10,542);
-    classicDescription[0]->SetColor(sf::Color::Black);
+    classicDescription[0]->setPosition(10,542);
+    classicDescription[0]->setColor(sf::Color::Black);
 
-    classicDescription[1]=new sf::String(
+    classicDescription[1]=new sf::Text(
         "Try to clear the entire grid !", font, STRING_SIZE_DESCRIPTION);
-    classicDescription[1]->SetPosition(10,567);
-    classicDescription[1]->SetColor(sf::Color::Black);
+    classicDescription[1]->setPosition(10,567);
+    classicDescription[1]->setColor(sf::Color::Black);
 
-    menuString=new sf::String("", font, STRING_SIZE_MENU_TITLE);
+    menuString=new sf::Text("", font, STRING_SIZE_MENU_TITLE);
 }
 
 void GfxEngine::loadSkin()
@@ -363,24 +347,24 @@ void GfxEngine::loadSkin()
         case skinBrown: dirBase += "brown/"; break;
     }
 
-    if (!bg.LoadFromFile(dirBase + "bg.png"))
+    if (!bg.loadFromFile(dirBase + "bg.png"))
     {
-        bg.LoadFromFile(dirBaseStd + "bg.png");
+        bg.loadFromFile(dirBaseStd + "bg.png");
     }
 
-    if (!holeImage.LoadFromFile(dirBase + "hole40.png"))
+    if (!holeImage.loadFromFile(dirBase + "hole40.png"))
     {
-        holeImage.LoadFromFile(dirBaseStd + "hole40.png");
+        holeImage.loadFromFile(dirBaseStd + "hole40.png");
     }
 
-    if (!levelImage.LoadFromFile(dirBase + "level.png"))
+    if (!levelImage.loadFromFile(dirBase + "level.png"))
     {
-        levelImage.LoadFromFile(dirBaseStd + "level.png");
+        levelImage.loadFromFile(dirBaseStd + "level.png");
     }
 
-    if (!menuButtonImage.LoadFromFile(dirBase + "menu_button.png"))
+    if (!menuButtonImage.loadFromFile(dirBase + "menu_button.png"))
     {
-        menuButtonImage.LoadFromFile(dirBaseStd + "menu_button.png");
+        menuButtonImage.loadFromFile(dirBaseStd + "menu_button.png");
     }
 }
 
@@ -398,141 +382,143 @@ void GfxEngine::loadTileSet()
     }
 
 
-    if (!tiles.LoadFromFile(dirBase + "tiles.png"))
+    if (!tiles.loadFromFile(dirBase + "tiles.png"))
     {
-        tiles.LoadFromFile(dirBaseStd + "tiles.png");
+        tiles.loadFromFile(dirBaseStd + "tiles.png");
     }
 
-    if (!nextTiles.LoadFromFile(dirBase + "nexttiles.png"))
+    if (!nextTiles.loadFromFile(dirBase + "nexttiles.png"))
     {
-        nextTiles.LoadFromFile(dirBaseStd + "nexttiles.png");
+        nextTiles.loadFromFile(dirBaseStd + "nexttiles.png");
     }
 
-    if (!effectsImage.LoadFromFile(dirBase + "effects.png"))
+    if (!effectsImage.loadFromFile(dirBase + "effects.png"))
     {
-        effectsImage.LoadFromFile(dirBaseStd + "effects.png");
+        effectsImage.loadFromFile(dirBaseStd + "effects.png");
     }
 }
 
 void GfxEngine::loadSounds()
 {
     // load audio;
-    brickBuffer.LoadFromFile("data/media/wav/brick.wav");
-    sound[soundBrick].SetBuffer(brickBuffer);
+    brickBuffer.loadFromFile("data/media/wav/brick.wav");
+    sound[soundBrick].setBuffer(brickBuffer);
 
-    explosionBuffer.LoadFromFile("data/media/wav/explosion.wav");
-    sound[soundExplode].SetBuffer(explosionBuffer);
+    explosionBuffer.loadFromFile("data/media/wav/explosion.wav");
+    sound[soundExplode].setBuffer(explosionBuffer);
 
-    thunderBuffer.LoadFromFile("data/media/wav/thunder.wav");
-    sound[soundThunder].SetBuffer(thunderBuffer);
+    thunderBuffer.loadFromFile("data/media/wav/thunder.wav");
+    sound[soundThunder].setBuffer(thunderBuffer);
 
-    colorBuffer.LoadFromFile("data/media/wav/color.wav");
-    sound[soundColor].SetBuffer(colorBuffer);
+    colorBuffer.loadFromFile("data/media/wav/color.wav");
+    sound[soundColor].setBuffer(colorBuffer);
 
-    dangerBuffer.LoadFromFile("data/media/wav/danger.wav");
-    sound[soundDanger].SetBuffer(dangerBuffer);
+    dangerBuffer.loadFromFile("data/media/wav/danger.wav");
+    sound[soundDanger].setBuffer(dangerBuffer);
 
-    menuOverBuffer.LoadFromFile("data/media/wav/menu_over.wav");
-    sound[soundMenuOver].SetBuffer(menuOverBuffer);
+    menuOverBuffer.loadFromFile("data/media/wav/menu_over.wav");
+    sound[soundMenuOver].setBuffer(menuOverBuffer);
 
-    menuClickBuffer.LoadFromFile("data/media/wav/menu_click.wav");
-    sound[soundMenuClick].SetBuffer(menuClickBuffer);
+    menuClickBuffer.loadFromFile("data/media/wav/menu_click.wav");
+    sound[soundMenuClick].setBuffer(menuClickBuffer);
 
     for (int i=0; i < NB_SOUNDS; i++)
-        sound[i].SetVolume((float)soundVolume);
+        sound[i].setVolume((float)soundVolume);
 
-    music.SetVolume((float)musicVolume);
+    music.setVolume((float)musicVolume);
 }
 
 void GfxEngine::renderIntro(int choice, Menu* myMenu)
 {
-    //App->Draw(bgSprite);
+    //App->draw(bgSprite);
 
-    app->Draw(introSprite);
+    app->draw(introSprite);
 
     if (introMouseOver == mouseOverNormal)
     {
-        normalSprite.SetImage(modeNormalOver);
+        normalSprite.setTexture(modeNormalOver);
     }
     else
     {
-        normalSprite.SetImage(modeNormal);
+        normalSprite.setTexture(modeNormal);
     }
 
     if (introMouseOver == mouseOverMotion)
     {
-        motionSprite.SetImage(modeMotionOver);
+        motionSprite.setTexture(modeMotionOver);
     }
     else
     {
-        motionSprite.SetImage(modeMotion);
+        motionSprite.setTexture(modeMotion);
     }
 
     if (introMouseOver == mouseOverClassic)
     {
-        classicSprite.SetImage(modeClassicOver);
+        classicSprite.setTexture(modeClassicOver);
     }
     else
     {
-        classicSprite.SetImage(modeClassic);
+        classicSprite.setTexture(modeClassic);
     }
 
     if (introMouseOver == mouseOverHelp)
     {
-        buttonHelpSprite.SetSubRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W * 2, MENU_ICON_H));
+        buttonHelpSprite.setTextureRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W * 2, MENU_ICON_H));
     }
     else
     {
-        buttonHelpSprite.SetSubRect(sf::IntRect(0, 0, MENU_ICON_W, MENU_ICON_H));
+        buttonHelpSprite.setTextureRect(sf::IntRect(0, 0, MENU_ICON_W, MENU_ICON_H));
     }
 
     if (introMouseOver == mouseOverOptions)
     {
-        buttonOptionsSprite.SetSubRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W * 2, MENU_ICON_H));
+        buttonOptionsSprite.setTextureRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W * 2, MENU_ICON_H));
     }
     else
     {
-        buttonOptionsSprite.SetSubRect(sf::IntRect(0, 0, MENU_ICON_W, MENU_ICON_H));
+        buttonOptionsSprite.setTextureRect(sf::IntRect(0, 0, MENU_ICON_W, MENU_ICON_H));
     }
 
     if (introMouseOver == mouseOverCredits)
     {
-        buttonCreditsSprite.SetSubRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W * 2, MENU_ICON_H));
+        buttonCreditsSprite.setTextureRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W * 2, MENU_ICON_H));
     }
     else
     {
-        buttonCreditsSprite.SetSubRect(sf::IntRect(0, 0, MENU_ICON_W, MENU_ICON_H));
+        buttonCreditsSprite.setTextureRect(sf::IntRect(0, 0, MENU_ICON_W, MENU_ICON_H));
     }
 
     if (introMouseOver == mouseOverQuit)
     {
-        buttonQuitSprite.SetSubRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W * 2, MENU_ICON_H));
+        buttonQuitSprite.setTextureRect(sf::IntRect(MENU_ICON_W, 0, MENU_ICON_W * 2, MENU_ICON_H));
     }
     else
     {
-        buttonQuitSprite.SetSubRect(sf::IntRect(0, 0, MENU_ICON_W, MENU_ICON_H));
+        buttonQuitSprite.setTextureRect(sf::IntRect(0, 0, MENU_ICON_W, MENU_ICON_H));
     }
 
-    app->Draw(normalSprite);
-    app->Draw(motionSprite);
-    app->Draw(classicSprite);
+    app->draw(normalSprite);
+    app->draw(motionSprite);
+    app->draw(classicSprite);
 
-    app->Draw(buttonHelpSprite);
-    app->Draw(buttonOptionsSprite);
-    app->Draw(buttonCreditsSprite);
-    app->Draw(buttonQuitSprite);
+    app->draw(buttonHelpSprite);
+    app->draw(buttonOptionsSprite);
+    app->draw(buttonCreditsSprite);
+    app->draw(buttonQuitSprite);
 
     renderConsole();
     renderBestScores();
     renderMenu(myMenu);
 
 
-    app->Display();
+    app->display();
 }
 
 void GfxEngine::renderConsole()
 {
-    consoleDelay += app->GetFrameTime();
+    // FIXME: Find equivalent API
+    // consoleDelay += app->getFrameTime();
+    consoleDelay += 0.1f;
     if (consoleDelay > CONSOLE_NEXT_LINE_DELAY)
     {
         consoleDelay=0.0f;
@@ -540,8 +526,8 @@ void GfxEngine::renderConsole()
         if (consoleIndex >= CONSOLE_MAX_LINES) consoleIndex=0;
     }
 
-    menuString->SetColor(sf::Color::White);
-    menuString->SetSize(CONSOLE_STRING_SIZE);
+    menuString->setColor(sf::Color::White);
+    menuString->setCharacterSize(CONSOLE_STRING_SIZE);
 
     int first=consoleIndex-2;
     if (first < 0) first=0;
@@ -553,11 +539,11 @@ void GfxEngine::renderConsole()
         {
             int strSize=CONSOLE[i][language].length();
             int n=strSize * consoleDelay/CONSOLE_LINE_DELAY;
-            menuString->SetText(CONSOLE[i][language].substr(0, n));
+            menuString->setString(CONSOLE[i][language].substr(0, n));
         }
         else
         {
-            menuString->SetText(CONSOLE[i][language]);
+            menuString->setString(CONSOLE[i][language]);
         }
 
         int xTrans=0;
@@ -566,36 +552,36 @@ void GfxEngine::renderConsole()
             xTrans=35;
             switch (i)
             {
-                case (CONSOLE_HELP): miniButtonSprite.SetImage(buttonHelpImage); break;
-                case (CONSOLE_OPTIONS): miniButtonSprite.SetImage(buttonOptionsImage); break;
-                case (CONSOLE_CREDITS): miniButtonSprite.SetImage(buttonCreditsImage); break;
-                case (CONSOLE_QUIT): miniButtonSprite.SetImage(buttonQuitImage); break;
+                case (CONSOLE_HELP): miniButtonSprite.setTexture(buttonHelpImage); break;
+                case (CONSOLE_OPTIONS): miniButtonSprite.setTexture(buttonOptionsImage); break;
+                case (CONSOLE_CREDITS): miniButtonSprite.setTexture(buttonCreditsImage); break;
+                case (CONSOLE_QUIT): miniButtonSprite.setTexture(buttonQuitImage); break;
             }
-            miniButtonSprite.SetPosition(CONSOLE_X, CONSOLE_Y0 + (i - first) * CONSOLE_LINE_H);
-            app->Draw(miniButtonSprite);
+            miniButtonSprite.setPosition(CONSOLE_X, CONSOLE_Y0 + (i - first) * CONSOLE_LINE_H);
+            app->draw(miniButtonSprite);
         }
 
-        menuString->SetPosition(CONSOLE_X + xTrans, CONSOLE_Y0 + (i - first) * CONSOLE_LINE_H);
-        app->Draw(*menuString);
+        menuString->setPosition(CONSOLE_X + xTrans, CONSOLE_Y0 + (i - first) * CONSOLE_LINE_H);
+        app->draw(*menuString);
     }
-   //menuString->SetPosition(CONSOLE_X, CONSOLE_Y1);
-    //menuString->SetText(CONSOLE[1][language]);
-    //app->Draw(*menuString);
+    //menuString->setPosition(CONSOLE_X, CONSOLE_Y1);
+    //menuString->setString(CONSOLE[1][language]);
+    //app->draw(*menuString);
 
-    //menuString->SetPosition(CONSOLE_X, CONSOLE_Y2);
-    //menuString->SetText(CONSOLE[2][language]);
-    //app->Draw(*menuString);
+    //menuString->setPosition(CONSOLE_X, CONSOLE_Y2);
+    //menuString->setString(CONSOLE[2][language]);
+    //app->draw(*menuString);
 }
 
 void GfxEngine::renderGameOver(GameModel* gameModel, GameScores* gameScores)
 {
-    app->Draw(bgSprite);
+    app->draw(bgSprite);
     if (gameModel->getGameType() == GameModel::gameTypeClassic || !effectsEnabled)
     {
         renderGrid(gameModel);
     }
 
-    //app->Draw(gameOverSprite);
+    //app->draw(gameOverSprite);
 
 
 
@@ -604,15 +590,15 @@ void GfxEngine::renderGameOver(GameModel* gameModel, GameScores* gameScores)
     renderGameOverBestScores(gameScores, gameModel->getGameType());
     renderScores(gameModel);
 
-    menuButtonSprite.SetSubRect(sf::IntRect(0, 0, GAMEMENU_BUTTON_W, GAMEMENU_BUTTON_H));
-    app->Draw(menuButtonSprite);
+    menuButtonSprite.setTextureRect(sf::IntRect(0, 0, GAMEMENU_BUTTON_W, GAMEMENU_BUTTON_H));
+    app->draw(menuButtonSprite);
 
-    app->Display();
+    app->display();
 }
 
 void GfxEngine::renderGameOverAnim(GameModel* gameModel)
 {
-    app->Draw(bgSprite);
+    app->draw(bgSprite);
 
     if (gameModel->getGameType() == GameModel::gameTypeClassic || !effectsEnabled)
     {
@@ -634,17 +620,17 @@ void GfxEngine::renderGameOverAnim(GameModel* gameModel)
     renderEffects();
     renderScores(gameModel);
 
-    menuButtonSprite.SetSubRect(sf::IntRect(0, 0, GAMEMENU_BUTTON_W, GAMEMENU_BUTTON_H));
-    app->Draw(menuButtonSprite);
+    menuButtonSprite.setTextureRect(sf::IntRect(0, 0, GAMEMENU_BUTTON_W, GAMEMENU_BUTTON_H));
+    app->draw(menuButtonSprite);
 
-    app->Draw(gameOverSprite);
+    app->draw(gameOverSprite);
 
-    app->Display();
+    app->display();
 }
 
 void GfxEngine::renderGame(GameModel* gameModel, Menu* myMenu)
 {
-    app->Draw(bgSprite);
+    app->draw(bgSprite);
 
     renderGrid(gameModel);
 
@@ -659,37 +645,37 @@ void GfxEngine::renderGame(GameModel* gameModel, Menu* myMenu)
     renderEffects();
     renderScores(gameModel);
 
-    menuButtonSprite.SetSubRect(sf::IntRect(0, mouseOnMenuButton ? GAMEMENU_BUTTON_H : 0,
+    menuButtonSprite.setTextureRect(sf::IntRect(0, mouseOnMenuButton ? GAMEMENU_BUTTON_H : 0,
                                     GAMEMENU_BUTTON_W, mouseOnMenuButton ? GAMEMENU_BUTTON_H * 2 : GAMEMENU_BUTTON_H));
-    app->Draw(menuButtonSprite);
+    app->draw(menuButtonSprite);
 
     if (gameModel->getGameType() == GameModel::gameTypeClassic)
     {
         if (gameModel->getCanCancel())
         {
             if (mouseOnCancelButton)
-                cancelButtonSprite.SetSubRect(sf::IntRect(CANCEL_BUTTON_W, 0, 2 * CANCEL_BUTTON_W, CANCEL_BUTTON_H));
+                cancelButtonSprite.setTextureRect(sf::IntRect(CANCEL_BUTTON_W, 0, 2 * CANCEL_BUTTON_W, CANCEL_BUTTON_H));
             else
-                cancelButtonSprite.SetSubRect(sf::IntRect(0, 0, CANCEL_BUTTON_W, CANCEL_BUTTON_H));
-            cancelButtonSprite.SetColor(sf::Color(255, 255, 255, 255));
-            app->Draw(cancelButtonSprite);
+                cancelButtonSprite.setTextureRect(sf::IntRect(0, 0, CANCEL_BUTTON_W, CANCEL_BUTTON_H));
+            cancelButtonSprite.setColor(sf::Color(255, 255, 255, 255));
+            app->draw(cancelButtonSprite);
         }
         else
         {
-            cancelButtonSprite.SetSubRect(sf::IntRect(0, 0, CANCEL_BUTTON_W, CANCEL_BUTTON_H));
-            cancelButtonSprite.SetColor(sf::Color(255, 255, 255, 80));
-            app->Draw(cancelButtonSprite);
+            cancelButtonSprite.setTextureRect(sf::IntRect(0, 0, CANCEL_BUTTON_W, CANCEL_BUTTON_H));
+            cancelButtonSprite.setColor(sf::Color(255, 255, 255, 80));
+            app->draw(cancelButtonSprite);
         }
     }
 
     renderMenu(myMenu);
 
-    app->Display();
+    app->display();
 }
 
 void GfxEngine::renderGameClicking(GameModel* gameModel)
 {
-    app->Draw(bgSprite);
+    app->draw(bgSprite);
 
     for (int i=0; i < GRID_W; i++)
     {
@@ -718,7 +704,7 @@ void GfxEngine::renderGameClicking(GameModel* gameModel)
     renderEffects();
     renderScores(gameModel);
 
-    app->Display();
+    app->display();
 }
 
 void GfxEngine::renderGrid(GameModel* gameModel)
@@ -749,31 +735,31 @@ void GfxEngine::renderModeIcone(int mode)
     {
         case GameModel::gameTypeNormal:
         {
-            normalMiniSprite.SetPosition((714 - normalMiniSprite.GetSubRect().GetWidth() / 2), 482);
-            app->Draw(normalMiniSprite);
+            normalMiniSprite.setPosition((714 - normalMiniSprite.getTextureRect().width / 2), 482);
+            app->draw(normalMiniSprite);
             break;
         }
         case GameModel::gameTypeMotion:
         {
-            motionMiniSprite.SetPosition((714 - motionMiniSprite.GetSubRect().GetWidth() / 2), 482);
-            app->Draw(motionMiniSprite);
+            motionMiniSprite.setPosition((714 - motionMiniSprite.getTextureRect().width / 2), 482);
+            app->draw(motionMiniSprite);
             break;
         }
         case GameModel::gameTypeClassic:
         {
-            classicMiniSprite.SetPosition((714 - classicMiniSprite.GetSubRect().GetWidth() / 2), 482);
-            app->Draw(classicMiniSprite);
+            classicMiniSprite.setPosition((714 - classicMiniSprite.getTextureRect().width / 2), 482);
+            app->draw(classicMiniSprite);
             break;
         }
     }
 
 
     /*
-    modeSprite.SetSubRect(sf::IntRect(mode * 77, 0, mode * 77 + 77, 73));
+    modeSprite.setTextureRect(sf::IntRect(mode * 77, 0, mode * 77 + 77, 73));
 
 
-    app->Draw(modeSprite);
-    app->Draw(*textMode);
+    app->draw(modeSprite);
+    app->draw(*textMode);
     */
 }
 
@@ -789,15 +775,15 @@ void GfxEngine::renderNextRow(GameModel* gameModel)
 
     for (int i=0; i < GRID_W; i++)
     {
-        holeSprite.SetX(i * TILE_W + OFFSET_X);
+        holeSprite.setPosition(i * TILE_W + OFFSET_X, holeSprite.getPosition().y);
 
-        app->Draw(holeSprite);
+        app->draw(holeSprite);
 
         if (i < x)
         {
             int mTile=gameModel->getNextRow(i) - 1.;
-            nextRowTile[i].SetSubRect(sf::IntRect(mTile * 28, 0, mTile * 28 + 28, 27));
-            app->Draw(nextRowTile[i]);
+            nextRowTile[i].setTextureRect(sf::IntRect(mTile * 28, 0, mTile * 28 + 28, 27));
+            app->draw(nextRowTile[i]);
         }
     }
 }
@@ -821,41 +807,37 @@ void GfxEngine::renderTile(int x, int y, int mTile, float xTrans, float yTrans)
             scaleY=(TILE_H * GRID_H + OFFSET_Y) - yPos;
         }
     }
-    tile[x][y].SetX(xPos);
-    tile[x][y].SetY(yPos);
+    tile[x][y].setPosition(xPos, yPos);
 
-    tile[x][y].SetSubRect(sf::IntRect(mTile * TILE_W, 0, mTile * TILE_W + TILE_W, scaleY));
-    app->Draw(tile[x][y]);
+    tile[x][y].setTextureRect(sf::IntRect(mTile * TILE_W, 0, mTile * TILE_W + TILE_W, scaleY));
+    app->draw(tile[x][y]);
 
     if (!effectsEnabled) return;
 
     mTile++;
     if (mTile >= GameModel::tileOneRemove && mTile <= GameModel::tileFourRemove)
     {
-        effectsSprite.SetX(xPos);
-        effectsSprite.SetY(yPos);
-        effectsSprite.SetSubRect(sf::IntRect(0, 0, TILE_W, scaleY));
-        int alpha=128 + 127 * cosf(clock.GetElapsedTime() * 8);
-        effectsSprite.SetColor(sf::Color(255, 255, 255, alpha));
-        app->Draw(effectsSprite);
+        effectsSprite.setPosition(xPos, yPos);
+        effectsSprite.setTextureRect(sf::IntRect(0, 0, TILE_W, scaleY));
+        int alpha=128 + 127 * cosf(clock.getElapsedTime().asSeconds() * 8);
+        effectsSprite.setColor(sf::Color(255, 255, 255, alpha));
+        app->draw(effectsSprite);
     }
     else if (mTile == GameModel::tileBomb)
     {
-        effectsSprite.SetX(xPos);
-        effectsSprite.SetY(yPos);
-        effectsSprite.SetSubRect(sf::IntRect(TILE_W, 0, TILE_W * 2, scaleY));
-        int alpha=128 + 127 * cosf(clock.GetElapsedTime() * 9);
-        effectsSprite.SetColor(sf::Color(255, 255, 255, alpha));
-        app->Draw(effectsSprite);
+        effectsSprite.setPosition(xPos, yPos);
+        effectsSprite.setTextureRect(sf::IntRect(TILE_W, 0, TILE_W * 2, scaleY));
+        int alpha=128 + 127 * cosf(clock.getElapsedTime().asSeconds() * 9);
+        effectsSprite.setColor(sf::Color(255, 255, 255, alpha));
+        app->draw(effectsSprite);
     }
     else if (mTile == GameModel::tileArrows)
     {
-        effectsSprite.SetX(xPos);
-        effectsSprite.SetY(yPos);
-        effectsSprite.SetSubRect(sf::IntRect(TILE_W * 2, 0, TILE_W * 3, scaleY));
-        int alpha=128 + 127 * cosf(clock.GetElapsedTime() * 7);
-        effectsSprite.SetColor(sf::Color(255, 255, 255, alpha));
-        app->Draw(effectsSprite);
+        effectsSprite.setPosition(xPos, yPos);
+        effectsSprite.setTextureRect(sf::IntRect(TILE_W * 2, 0, TILE_W * 3, scaleY));
+        int alpha=128 + 127 * cosf(clock.getElapsedTime().asSeconds() * 7);
+        effectsSprite.setColor(sf::Color(255, 255, 255, alpha));
+        app->draw(effectsSprite);
     }
 }
 
@@ -866,55 +848,55 @@ void GfxEngine::renderScores(GameModel* gameModel)
     if (gameModel->getClickValue() > 0)
     {
         valStream << "+" << gameModel->getClickValue();
-        textValue->SetText(valStream.str());
-        textValue->SetX(scoreXf - textValue->GetRect().GetWidth());
-        app->Draw(*textValue);
+        textValue->setString(valStream.str());
+        textValue->setPosition(scoreXf - textValue->getLocalBounds().width, textValue->getPosition().y);
+        app->draw(*textValue);
     }
 
     std::ostringstream scoreStream;
     scoreStream << gameModel->getScore();
-    textScore->SetText(scoreStream.str());
+    textScore->setString(scoreStream.str());
 
     std::ostringstream highScoreStream;
     highScoreStream << gameModel->getHighScore();
-    textHighScore->SetText(highScoreStream.str());
+    textHighScore->setString(highScoreStream.str());
 
-    textScore->SetX(scoreXf - textScore->GetRect().GetWidth());
-    textHighScore->SetX(scoreXf - textHighScore->GetRect().GetWidth());
-    app->Draw(*textScore);
-    app->Draw(*textHighScore);
+    textScore->setPosition(scoreXf - textScore->getLocalBounds().width, textScore->getPosition().y);
+    textHighScore->setPosition(scoreXf - textHighScore->getLocalBounds().width, textHighScore->getPosition().y);
+    app->draw(*textScore);
+    app->draw(*textHighScore);
 
     if (gameModel->getGameType() != GameModel::gameTypeClassic)
     {
-        app->Draw(levelSprite); // NEW DESIGN
+        app->draw(levelSprite); // NEW DESIGN
         std::ostringstream levelStream;
         levelStream << gameModel->getLevel();
-        textLevel->SetText(levelStream.str());
-        textLevel->SetX(714 - textLevel->GetRect().GetWidth() / 2);
-        app->Draw(*textLevel);
+        textLevel->setString(levelStream.str());
+        textLevel->setPosition(714 - textLevel->getLocalBounds().width / 2, textLevel->getPosition().y);
+        app->draw(*textLevel);
     }
 }
 
 void GfxEngine::renderDanger(GameModel* gameModel)
 {
     bool isInDanger=false;
-    if ((int)(clock.GetElapsedTime() * 3) % 2 == 0) return;
+    if ((int)(clock.getElapsedTime().asSeconds() * 3) % 2 == 0) return;
     for (int i=0; i < GRID_W; i++)
     {
         if (gameModel->getDanger(i))
         {
-            app->Draw(dangerSprite[i]);
+            app->draw(dangerSprite[i]);
             isInDanger=true;
         }
     }
     if (!soundEnabled) return;
-    if (isInDanger && sound[soundDanger].GetStatus() != sf::Sound::Playing)
+    if (isInDanger && sound[soundDanger].getStatus() != sf::Sound::Playing)
     {
-        sound[soundDanger].Play();
+        sound[soundDanger].play();
     }
-    else if (!isInDanger && sound[soundDanger].GetStatus() == sf::Sound::Playing)
+    else if (!isInDanger && sound[soundDanger].getStatus() == sf::Sound::Playing)
     {
-        sound[soundDanger].Stop();
+        sound[soundDanger].stop();
     }
 }
 
@@ -928,11 +910,11 @@ void GfxEngine::renderEffects()
         {
             if (ge->type == GameEntity::typeSprite)
             {
-                app->Draw(ge->sprite);
+                app->draw(ge->sprite);
             }
             else if (ge->type == GameEntity::typeText)
             {
-                app->Draw(ge->string);
+                app->draw(ge->text);
             }
             ge=EM->NextItem();
         }
@@ -941,16 +923,16 @@ void GfxEngine::renderEffects()
 
 void GfxEngine::renderBestScores()
 {
-    app->Draw(modeScoreSprite);
-    //app->Draw(*typeScore);
+    app->draw(modeScoreSprite);
+    //app->draw(*typeScore);
 
     // TODO
 
     for (int i=0; i < 10; i++)
     {
-        app->Draw(*textNames[i]);
-        app->Draw(*textScores[i]);
-        app->Draw(*textPos[i]);
+        app->draw(*textNames[i]);
+        app->draw(*textScores[i]);
+        app->draw(*textPos[i]);
     }
 }
 
@@ -967,91 +949,91 @@ void GfxEngine::renderGameOverBestScores(GameScores* gameScores, int gameType)
 
     yTop += yTrans;
 
-    //app->Draw(blackScreenSprite);
+    //app->draw(blackScreenSprite);
 
-    menuString->SetColor(sf::Color::White);
-    menuSpriteTop.SetPosition(MENU_POSX, yTop);
-    app->Draw(menuSpriteTop);
+    menuString->setColor(sf::Color::White);
+    menuSpriteTop.setPosition(MENU_POSX, yTop);
+    app->draw(menuSpriteTop);
 
-    menuString->SetText(STRING_HI_SCORES[language]);
-    menuString->SetSize(STRING_SIZE_MENU_TITLE);
-    menuString->SetPosition(middle - menuString->GetRect().GetWidth() / 2, yTop + 11);
-    app->Draw(*menuString);
+    menuString->setString(STRING_HI_SCORES[language]);
+    menuString->setCharacterSize(STRING_SIZE_MENU_TITLE);
+    menuString->setPosition(middle - menuString->getLocalBounds().width / 2, yTop + 11);
+    app->draw(*menuString);
 
-    menuString->SetSize(STRING_SIZE_SCORE);
+    menuString->setCharacterSize(STRING_SIZE_SCORE);
 
     for (int i=0; i < 10; i++)
     {
         int y=yTop + MENU_TOP_H + i * MENU_SCORE_H;
         if (i % 2 == 0)
         {
-            menuSpriteHiScore1.SetPosition(MENU_POSX, y);
-            app->Draw(menuSpriteHiScore1);
+            menuSpriteHiScore1.setPosition(MENU_POSX, y);
+            app->draw(menuSpriteHiScore1);
         }
         else
         {
-            menuSpriteHiScore2.SetPosition(MENU_POSX, y);
-            app->Draw(menuSpriteHiScore2);
+            menuSpriteHiScore2.setPosition(MENU_POSX, y);
+            app->draw(menuSpriteHiScore2);
         }
 
         if (gameScores->getCurrentScore() % 10 == i)
         {
-            menuString->SetColor(sf::Color(100 + sinf(clock.GetElapsedTime() * 3) * 100,
-                                        100 + sinf(clock.GetElapsedTime() * 4) * 100,
-                                        100 + cosf(clock.GetElapsedTime() * 5) * 100));
+            menuString->setColor(sf::Color(100 + sinf(clock.getElapsedTime().asSeconds() * 3) * 100,
+                                        100 + sinf(clock.getElapsedTime().asSeconds() * 4) * 100,
+                                        100 + cosf(clock.getElapsedTime().asSeconds() * 5) * 100));
         }
         else
         {
-            menuString->SetColor(sf::Color::Black);
+            menuString->setColor(sf::Color::Black);
         }
 
-        menuString->SetText(PODIUM_STRING[i]);
-        menuString->SetPosition(MENU_POSX + 25, y + 3);
-        app->Draw(*menuString);
+        menuString->setString(PODIUM_STRING[i]);
+        menuString->setPosition(MENU_POSX + 25, y + 3);
+        app->draw(*menuString);
 
         switch (gameType)
         {
             case GameModel::gameTypeNormal:
             {
-                menuString->SetText(gameScores->getNormalScore(i).name);
-                menuString->SetPosition(MENU_POSX + 65, y + 3);
-                app->Draw(*menuString);
+                menuString->setString(gameScores->getNormalScore(i).name);
+                menuString->setPosition(MENU_POSX + 65, y + 3);
+                app->draw(*menuString);
 
                 std::ostringstream scoreStream;
                 scoreStream << gameScores->getNormalScore(i).score;
-                menuString->SetText(scoreStream.str());
-                menuString->SetPosition(MENU_POSX + 475 - menuString->GetRect().GetWidth(), y + 3);
-                app->Draw(*menuString);
+                menuString->setString(scoreStream.str());
+                menuString->setPosition(MENU_POSX + 475 - menuString->getLocalBounds().width, y + 3);
+                app->draw(*menuString);
 
                 break;
             }
 
             case GameModel::gameTypeMotion:
             {
-                menuString->SetText(gameScores->getMotionScore(i).name);
-                menuString->SetPosition(MENU_POSX + 65, y + 3);
-                app->Draw(*menuString);
+                menuString->setString(gameScores->getMotionScore(i).name);
+                menuString->setPosition(MENU_POSX + 65, y + 3);
+                app->draw(*menuString);
 
                 std::ostringstream scoreStream;
                 scoreStream << gameScores->getMotionScore(i).score;
-                menuString->SetText(scoreStream.str());
-                menuString->SetPosition(MENU_POSX + 475 - menuString->GetRect().GetWidth(), y + 3);
-                app->Draw(*menuString);
+                menuString->setString(scoreStream.str());
+                menuString->setPosition(MENU_POSX + 475 - menuString->getLocalBounds().width, y + 3);
+                app->draw(*menuString);
 
                 break;
             }
 
             case GameModel::gameTypeClassic:
             {
-                menuString->SetText(gameScores->getClassicScore(i).name);
-                menuString->SetPosition(MENU_POSX + 65, y + 3);
-                app->Draw(*menuString);
+                menuString->setString(gameScores->getClassicScore(i).name);
+                menuString->setPosition(MENU_POSX + 65, y + 3);
+                app->draw(*menuString);
 
                 std::ostringstream scoreStream;
                 scoreStream << gameScores->getClassicScore(i).score;
-                menuString->SetText(scoreStream.str());
-                menuString->SetPosition(MENU_POSX + 475 - menuString->GetRect().GetWidth(), y + 3);
-                app->Draw(*menuString);
+                menuString->setString(scoreStream.str());
+                menuString->setPosition(MENU_POSX + 475 - menuString->getLocalBounds().width, y + 3);
+                app->draw(*menuString);
 
                 break;
             }
@@ -1059,87 +1041,87 @@ void GfxEngine::renderGameOverBestScores(GameScores* gameScores, int gameType)
     }
 
     // separator
-    menuSpriteSpace.SetPosition(MENU_POSX, yTop + MENU_TOP_H + 10 * MENU_SCORE_H);
-    app->Draw(menuSpriteSpace);
+    menuSpriteSpace.setPosition(MENU_POSX, yTop + MENU_TOP_H + 10 * MENU_SCORE_H);
+    app->draw(menuSpriteSpace);
 
-    menuString->SetColor(sf::Color::White);
+    menuString->setColor(sf::Color::White);
 
     int yButton=SCORESMENU_BUTTONL_Y; //yTop + MENU_TOP_H + 10 * MENU_SCORE_H + MENU_SPACE_H;
 
     if (mouseOnLeftButton)
     {
-        menuSpriteButtonLOver.SetPosition(MENU_POSX, yButton + yTrans);
-        app->Draw(menuSpriteButtonLOver);
+        menuSpriteButtonLOver.setPosition(MENU_POSX, yButton + yTrans);
+        app->draw(menuSpriteButtonLOver);
     }
     else
     {
-        menuSpriteButtonL.SetPosition(MENU_POSX, yButton + yTrans);
-        app->Draw(menuSpriteButtonL);
+        menuSpriteButtonL.setPosition(MENU_POSX, yButton + yTrans);
+        app->draw(menuSpriteButtonL);
     }
 
-    menuString->SetText(STRING_BACK_TO_MENU[language]);
-    menuString->SetPosition(MENU_POSX + MENU_W / 4 - menuString->GetRect().GetWidth() / 2, yButton + 13 + yTrans);
-    app->Draw(*menuString);
+    menuString->setString(STRING_BACK_TO_MENU[language]);
+    menuString->setPosition(MENU_POSX + MENU_W / 4 - menuString->getLocalBounds().width / 2, yButton + 13 + yTrans);
+    app->draw(*menuString);
 
     if (mouseOnRightButton)
     {
-        menuSpriteButtonROver.SetPosition(MENU_POSX + MENU_W / 2, yButton + yTrans);
-        app->Draw(menuSpriteButtonROver);
+        menuSpriteButtonROver.setPosition(MENU_POSX + MENU_W / 2, yButton + yTrans);
+        app->draw(menuSpriteButtonROver);
     }
     else
     {
-        menuSpriteButtonR.SetPosition(MENU_POSX + MENU_W / 2, yButton + yTrans);
-        app->Draw(menuSpriteButtonR);
+        menuSpriteButtonR.setPosition(MENU_POSX + MENU_W / 2, yButton + yTrans);
+        app->draw(menuSpriteButtonR);
     }
 
-    menuString->SetText(STRING_PLAY_AGAIN[language]);
-    menuString->SetPosition(MENU_POSX + 3 * MENU_W / 4 - menuString->GetRect().GetWidth() / 2, yButton + 13 + yTrans);
-    app->Draw(*menuString);
+    menuString->setString(STRING_PLAY_AGAIN[language]);
+    menuString->setPosition(MENU_POSX + 3 * MENU_W / 4 - menuString->getLocalBounds().width / 2, yButton + 13 + yTrans);
+    app->draw(*menuString);
 
-    menuSpriteBottom.SetPosition(MENU_POSX, yTop + MENU_TOP_H + 10 * MENU_SCORE_H + MENU_BUTTONL_H + MENU_SPACE_H);
-    app->Draw(menuSpriteBottom);
+    menuSpriteBottom.setPosition(MENU_POSX, yTop + MENU_TOP_H + 10 * MENU_SCORE_H + MENU_BUTTONL_H + MENU_SPACE_H);
+    app->draw(menuSpriteBottom);
 }
 
 void GfxEngine::renderEnterName(GameModel* gameModel, string name)
 {
-    app->Draw(bgSprite);
+    app->draw(bgSprite);
     if (gameModel->getGameType() == GameModel::gameTypeClassic || !effectsEnabled)
     {
         renderGrid(gameModel);
     }
     renderEffects();
     renderScores(gameModel);
-    menuButtonSprite.SetSubRect(sf::IntRect(0, 0, GAMEMENU_BUTTON_W, GAMEMENU_BUTTON_H));
-    app->Draw(menuButtonSprite);
+    menuButtonSprite.setTextureRect(sf::IntRect(0, 0, GAMEMENU_BUTTON_W, GAMEMENU_BUTTON_H));
+    app->draw(menuButtonSprite);
 
-    //app->Draw(gameOverSprite);
+    //app->draw(gameOverSprite);
 
     int middle=MENU_POSX + MENU_W / 2;
     int yTop= (SCREEN_H - (MENU_TOP_H + MENU_BOTTOM_H + MENU_BUTTON_H)) / 2;
 
-    menuString->SetColor(sf::Color::White);
+    menuString->setColor(sf::Color::White);
 
-    menuSpriteTop.SetPosition(MENU_POSX, yTop);
-    app->Draw(menuSpriteTop);
-    menuString->SetText(ENTER_NAME[language]);
-    menuString->SetSize(STRING_SIZE_MENU_TITLE);
-    menuString->SetPosition(middle - menuString->GetRect().GetWidth() / 2, yTop + 11);
-    app->Draw(*menuString);
+    menuSpriteTop.setPosition(MENU_POSX, yTop);
+    app->draw(menuSpriteTop);
+    menuString->setString(ENTER_NAME[language]);
+    menuString->setCharacterSize(STRING_SIZE_MENU_TITLE);
+    menuString->setPosition(middle - menuString->getLocalBounds().width / 2, yTop + 11);
+    app->draw(*menuString);
 
-    menuSpriteButtonOver.SetPosition(MENU_POSX, yTop + MENU_TOP_H);
-    app->Draw(menuSpriteButtonOver);
+    menuSpriteButtonOver.setPosition(MENU_POSX, yTop + MENU_TOP_H);
+    app->draw(menuSpriteButtonOver);
 
-    textScoreName->SetText(string2wstring(name) + L"_");
-    textScoreName->SetPosition(middle - textScoreName->GetRect().GetWidth() / 2, yTop + MENU_TOP_H + 11);
-    if ((int)(clock.GetElapsedTime() * 3) % 2 > 0) textScoreName->SetText(string2wstring(name));
-    app->Draw(*textScoreName);
+    textScoreName->setString(string2wstring(name) + L"_");
+    textScoreName->setPosition(middle - textScoreName->getLocalBounds().width / 2, yTop + MENU_TOP_H + 11);
+    if ((int)(clock.getElapsedTime().asSeconds() * 3) % 2 > 0) textScoreName->setString(string2wstring(name));
+    app->draw(*textScoreName);
 
-    //app->Draw(blackFootSprite);
-    menuSpriteBottom.SetPosition(MENU_POSX, yTop + MENU_TOP_H + MENU_BUTTON_H);
-    app->Draw(menuSpriteBottom);
+    //app->draw(blackFootSprite);
+    menuSpriteBottom.setPosition(MENU_POSX, yTop + MENU_TOP_H + MENU_BUTTON_H);
+    app->draw(menuSpriteBottom);
 
 
-    app->Display();
+    app->display();
 }
 
 void GfxEngine::renderMenu(Menu* myMenu)
@@ -1151,15 +1133,15 @@ void GfxEngine::renderMenu(Menu* myMenu)
 
     int yTop=(SCREEN_H - (MENU_TOP_H + MENU_BOTTOM_H + n * MENU_BUTTON_H)) / 2;
 
-    app->Draw(blackScreenSprite);
+    app->draw(blackScreenSprite);
 
-    menuString->SetColor(sf::Color::White);
-    menuSpriteTop.SetPosition(MENU_POSX, yTop);
-    app->Draw(menuSpriteTop);
-    menuString->SetText(myMenu->getTitle());
-    menuString->SetSize(STRING_SIZE_MENU_TITLE);
-    menuString->SetPosition(middle - menuString->GetRect().GetWidth() / 2, yTop + 11);
-    app->Draw(*menuString);
+    menuString->setColor(sf::Color::White);
+    menuSpriteTop.setPosition(MENU_POSX, yTop);
+    app->draw(menuSpriteTop);
+    menuString->setString(myMenu->getTitle());
+    menuString->setCharacterSize(STRING_SIZE_MENU_TITLE);
+    menuString->setPosition(middle - menuString->getLocalBounds().width / 2, yTop + 11);
+    app->draw(*menuString);
 
     for (int i=0; i < n; i++)
     {
@@ -1167,183 +1149,183 @@ void GfxEngine::renderMenu(Menu* myMenu)
 
         if (myMenu->getSelectedEntry() == i)
         {
-            menuSpriteButtonOver.SetPosition(MENU_POSX, y);
-            app->Draw(menuSpriteButtonOver);
+            menuSpriteButtonOver.setPosition(MENU_POSX, y);
+            app->draw(menuSpriteButtonOver);
         }
         else
         {
-            menuSpriteButton.SetPosition(MENU_POSX, y);
-            app->Draw(menuSpriteButton);
+            menuSpriteButton.setPosition(MENU_POSX, y);
+            app->draw(menuSpriteButton);
         }
 
-        menuString->SetText(myMenu->getFullEntry(i));
-        menuString->SetSize(STRING_SIZE_MENU_ITEM);
-        menuString->SetPosition(middle - menuString->GetRect().GetWidth() / 2, y + 11);
-        app->Draw(*menuString);
+        menuString->setString(myMenu->getFullEntry(i));
+        menuString->setCharacterSize(STRING_SIZE_MENU_ITEM);
+        menuString->setPosition(middle - menuString->getLocalBounds().width / 2, y + 11);
+        app->draw(*menuString);
     }
 
-    menuSpriteBottom.SetPosition(MENU_POSX, yTop + MENU_TOP_H + n * MENU_BUTTON_H);
-    app->Draw(menuSpriteBottom);
+    menuSpriteBottom.setPosition(MENU_POSX, yTop + MENU_TOP_H + n * MENU_BUTTON_H);
+    app->draw(menuSpriteBottom);
 }
 
 void GfxEngine::renderCredits()
 {
-    app->Draw(creditsBgSprite);
+    app->draw(creditsBgSprite);
 
-    menuString->SetColor(sf::Color::White);
-    //menuString->SetSize(HELP_TITLE_SIZE);
-    //menuString->SetText(CREDITS_TITLE[language]);
-    //menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 40);
-    //app->Draw(*menuString);
+    menuString->setColor(sf::Color::White);
+    //menuString->setCharacterSize(HELP_TITLE_SIZE);
+    //menuString->setString(CREDITS_TITLE[language]);
+    //menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 40);
+    //app->draw(*menuString);
 
-    //menuString->SetText(APP_NAME + " " + APP_VERSION);
-    //menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 15);
-    //app->Draw(*menuString);
+    //menuString->setString(APP_NAME + " " + APP_VERSION);
+    //menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 15);
+    //app->draw(*menuString);
 
-    menuString->SetSize(HELP_SUBTITLE_SIZE);
-    menuString->SetText(CREDITS_PROGRAMMER[language]);
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 120);
-    app->Draw(*menuString);
-    menuString->SetSize(HELP_TEXT_SIZE);
-    menuString->SetText(L"Seby <sebygames@googlemail.com>");
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 150);
-    app->Draw(*menuString);
+    menuString->setCharacterSize(HELP_SUBTITLE_SIZE);
+    menuString->setString(CREDITS_PROGRAMMER[language]);
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 120);
+    app->draw(*menuString);
+    menuString->setCharacterSize(HELP_TEXT_SIZE);
+    menuString->setString(L"Seby <sebygames@googlemail.com>");
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 150);
+    app->draw(*menuString);
 
-    menuString->SetSize(HELP_SUBTITLE_SIZE);
-    menuString->SetText(CREDITS_GRAPHICS[language]);
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 190);
-    app->Draw(*menuString);
-    menuString->SetSize(HELP_TEXT_SIZE);
-    menuString->SetText(L"Suiland");
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 220);
-    app->Draw(*menuString);
+    menuString->setCharacterSize(HELP_SUBTITLE_SIZE);
+    menuString->setString(CREDITS_GRAPHICS[language]);
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 190);
+    app->draw(*menuString);
+    menuString->setCharacterSize(HELP_TEXT_SIZE);
+    menuString->setString(L"Suiland");
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 220);
+    app->draw(*menuString);
 
-    menuString->SetSize(HELP_SUBTITLE_SIZE);
-    menuString->SetText(CREDITS_SOUND[language]);
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 260);
-    app->Draw(*menuString);
-    menuString->SetSize(HELP_TEXT_SIZE);
-    menuString->SetText(L"Royalty free sounds");
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 290);
-    app->Draw(*menuString);
+    menuString->setCharacterSize(HELP_SUBTITLE_SIZE);
+    menuString->setString(CREDITS_SOUND[language]);
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 260);
+    app->draw(*menuString);
+    menuString->setCharacterSize(HELP_TEXT_SIZE);
+    menuString->setString(L"Royalty free sounds");
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 290);
+    app->draw(*menuString);
 
-    menuString->SetSize(HELP_SUBTITLE_SIZE);
-    menuString->SetText(CREDITS_MUSIC[language]);
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 340);
-    app->Draw(*menuString);
-    menuString->SetSize(HELP_TEXT_SIZE);
-    menuString->SetText(L"Another synthetic tribute to a muted-trumpet player (from Solcarlus)");
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 370);
-    app->Draw(*menuString);
-    menuString->SetText(L"Background noise (from Solcarlus)");
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 400);
-    app->Draw(*menuString);
-    menuString->SetText(L"Emergency landing (from Solcarlus)");
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 430);
-    app->Draw(*menuString);
-    menuString->SetText(L"Inside part 2 (from Nienvox)");
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 460);
-    app->Draw(*menuString);
+    menuString->setCharacterSize(HELP_SUBTITLE_SIZE);
+    menuString->setString(CREDITS_MUSIC[language]);
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 340);
+    app->draw(*menuString);
+    menuString->setCharacterSize(HELP_TEXT_SIZE);
+    menuString->setString(L"Another synthetic tribute to a muted-trumpet player (from Solcarlus)");
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 370);
+    app->draw(*menuString);
+    menuString->setString(L"Background noise (from Solcarlus)");
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 400);
+    app->draw(*menuString);
+    menuString->setString(L"Emergency landing (from Solcarlus)");
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 430);
+    app->draw(*menuString);
+    menuString->setString(L"Inside part 2 (from Nienvox)");
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 460);
+    app->draw(*menuString);
 
-    menuString->SetSize(HELP_SUBTITLE_SIZE);
-    menuString->SetColor(sf::Color(255, 255, 255, 128 + 127 * cos(5 * clock.GetElapsedTime())));
-    menuString->SetText(CLICK_TO_CONTINUE[language]);
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 510);
-    app->Draw(*menuString);
+    menuString->setCharacterSize(HELP_SUBTITLE_SIZE);
+    menuString->setColor(sf::Color(255, 255, 255, 128 + 127 * cos(5 * clock.getElapsedTime().asSeconds())));
+    menuString->setString(CLICK_TO_CONTINUE[language]);
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 510);
+    app->draw(*menuString);
 
-    app->Draw(sfmlLogoSprite);
+    app->draw(sfmlLogoSprite);
 
-    app->Display();
+    app->display();
 }
 
 void GfxEngine::renderHelp()
 {
-    app->Draw(helpBgSprite);
+    app->draw(helpBgSprite);
 
-    menuString->SetColor(sf::Color::White);
-    menuString->SetSize(HELP_TITLE_SIZE);
-    menuString->SetText(HELP_TITLE[language]);
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, HELP_TITLE_POSITION);
-    app->Draw(*menuString);
+    menuString->setColor(sf::Color::White);
+    menuString->setCharacterSize(HELP_TITLE_SIZE);
+    menuString->setString(HELP_TITLE[language]);
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, HELP_TITLE_POSITION);
+    app->draw(*menuString);
 
     int yTrans=11;
 
-    normalMiniSprite.SetPosition(HELP_LEFT_TITLE, 55 + yTrans);
-    app->Draw(normalMiniSprite);
+    normalMiniSprite.setPosition(HELP_LEFT_TITLE, 55 + yTrans);
+    app->draw(normalMiniSprite);
 
-    menuString->SetSize(HELP_SMALLTEXT_SIZE);
-    menuString->SetText(HELP_NORMAL1[language]);
-    menuString->SetPosition(HELP_LEFT_TEXT, 85 + yTrans);
-    app->Draw(*menuString);
+    menuString->setCharacterSize(HELP_SMALLTEXT_SIZE);
+    menuString->setString(HELP_NORMAL1[language]);
+    menuString->setPosition(HELP_LEFT_TEXT, 85 + yTrans);
+    app->draw(*menuString);
 
-    menuString->SetText(HELP_NORMAL2[language]);
-    menuString->SetPosition(HELP_LEFT_TEXT, 115 + yTrans);
-    app->Draw(*menuString);
+    menuString->setString(HELP_NORMAL2[language]);
+    menuString->setPosition(HELP_LEFT_TEXT, 115 + yTrans);
+    app->draw(*menuString);
 
-    motionMiniSprite.SetPosition(HELP_LEFT_TITLE, 150 + yTrans);
-    app->Draw(motionMiniSprite);
+    motionMiniSprite.setPosition(HELP_LEFT_TITLE, 150 + yTrans);
+    app->draw(motionMiniSprite);
 
-    menuString->SetText(HELP_MOTION1[language]);
-    menuString->SetPosition(HELP_LEFT_TEXT, 180 + yTrans);
-    app->Draw(*menuString);
+    menuString->setString(HELP_MOTION1[language]);
+    menuString->setPosition(HELP_LEFT_TEXT, 180 + yTrans);
+    app->draw(*menuString);
 
-    menuString->SetText(HELP_MOTION2[language]);
-    menuString->SetPosition(HELP_LEFT_TEXT, 210 + yTrans);
-    app->Draw(*menuString);
+    menuString->setString(HELP_MOTION2[language]);
+    menuString->setPosition(HELP_LEFT_TEXT, 210 + yTrans);
+    app->draw(*menuString);
 
-    classicMiniSprite.SetPosition(HELP_LEFT_TITLE, 245 + yTrans);
-    app->Draw(classicMiniSprite);
+    classicMiniSprite.setPosition(HELP_LEFT_TITLE, 245 + yTrans);
+    app->draw(classicMiniSprite);
 
-    menuString->SetText(HELP_CLASSIC1[language]);
-    menuString->SetPosition(HELP_LEFT_TEXT, 275 + yTrans);
-    app->Draw(*menuString);
+    menuString->setString(HELP_CLASSIC1[language]);
+    menuString->setPosition(HELP_LEFT_TEXT, 275 + yTrans);
+    app->draw(*menuString);
 
-    menuString->SetText(HELP_CLASSIC2[language]);
-    menuString->SetPosition(HELP_LEFT_TEXT, 305 + yTrans);
-    app->Draw(*menuString);
+    menuString->setString(HELP_CLASSIC2[language]);
+    menuString->setPosition(HELP_LEFT_TEXT, 305 + yTrans);
+    app->draw(*menuString);
 
-    singleTile.SetSubRect(sf::IntRect(5 * TILE_W, 0, 6 * TILE_W, TILE_H));
-    singleTile.SetPosition(48,350 + yTrans);
-    app->Draw(singleTile);
-    singleTile.SetSubRect(sf::IntRect(6 * TILE_W, 0, 7 * TILE_W, TILE_H));
-    singleTile.SetPosition(HELP_LEFT_ICON,360 + yTrans);
-    app->Draw(singleTile);
+    singleTile.setTextureRect(sf::IntRect(5 * TILE_W, 0, 6 * TILE_W, TILE_H));
+    singleTile.setPosition(48,350 + yTrans);
+    app->draw(singleTile);
+    singleTile.setTextureRect(sf::IntRect(6 * TILE_W, 0, 7 * TILE_W, TILE_H));
+    singleTile.setPosition(HELP_LEFT_ICON,360 + yTrans);
+    app->draw(singleTile);
 
-    singleTile.SetSubRect(sf::IntRect(8 * TILE_W, 0, 9 * TILE_W, TILE_H));
-    singleTile.SetPosition(HELP_LEFT_ICON,400 + yTrans);
-    app->Draw(singleTile);
+    singleTile.setTextureRect(sf::IntRect(8 * TILE_W, 0, 9 * TILE_W, TILE_H));
+    singleTile.setPosition(HELP_LEFT_ICON,400 + yTrans);
+    app->draw(singleTile);
 
-    singleTile.SetSubRect(sf::IntRect(9 * TILE_W, 0, 10 * TILE_W, TILE_H));
-    singleTile.SetPosition(HELP_LEFT_ICON,440 + yTrans);
-    app->Draw(singleTile);
+    singleTile.setTextureRect(sf::IntRect(9 * TILE_W, 0, 10 * TILE_W, TILE_H));
+    singleTile.setPosition(HELP_LEFT_ICON,440 + yTrans);
+    app->draw(singleTile);
 
-    singleTile.SetSubRect(sf::IntRect(10 * TILE_W, 0, 11 * TILE_W, TILE_H));
-    singleTile.SetPosition(HELP_LEFT_ICON,480 + yTrans);
-    app->Draw(singleTile);
+    singleTile.setTextureRect(sf::IntRect(10 * TILE_W, 0, 11 * TILE_W, TILE_H));
+    singleTile.setPosition(HELP_LEFT_ICON,480 + yTrans);
+    app->draw(singleTile);
 
-    menuString->SetText(HELP_BONUS_COLOR[language]);
-    menuString->SetPosition(HELP_LEFT_ICON_TEXT, 365 + yTrans);
-    app->Draw(*menuString);
+    menuString->setString(HELP_BONUS_COLOR[language]);
+    menuString->setPosition(HELP_LEFT_ICON_TEXT, 365 + yTrans);
+    app->draw(*menuString);
 
-    menuString->SetText(HELP_BONUS_BOMB[language]);
-    menuString->SetPosition(HELP_LEFT_ICON_TEXT, 405 + yTrans);
-    app->Draw(*menuString);
+    menuString->setString(HELP_BONUS_BOMB[language]);
+    menuString->setPosition(HELP_LEFT_ICON_TEXT, 405 + yTrans);
+    app->draw(*menuString);
 
-    menuString->SetText(HELP_BONUS_ARROW[language]);
-    menuString->SetPosition(HELP_LEFT_ICON_TEXT, 445 + yTrans);
-    app->Draw(*menuString);
+    menuString->setString(HELP_BONUS_ARROW[language]);
+    menuString->setPosition(HELP_LEFT_ICON_TEXT, 445 + yTrans);
+    app->draw(*menuString);
 
-    menuString->SetText(HELP_BONUS_SKULL[language]);
-    menuString->SetPosition(HELP_LEFT_ICON_TEXT, 485 + yTrans);
-    app->Draw(*menuString);
+    menuString->setString(HELP_BONUS_SKULL[language]);
+    menuString->setPosition(HELP_LEFT_ICON_TEXT, 485 + yTrans);
+    app->draw(*menuString);
 
-    menuString->SetSize(HELP_SUBTITLE_SIZE);
-    menuString->SetColor(sf::Color(255, 255, 255, 128 + 127 * cos(5 * clock.GetElapsedTime())));
-    menuString->SetText(CLICK_TO_CONTINUE[language]);
-    menuString->SetPosition((SCREEN_W - menuString->GetRect().GetWidth()) / 2, 525);
-    app->Draw(*menuString);
+    menuString->setCharacterSize(HELP_SUBTITLE_SIZE);
+    menuString->setColor(sf::Color(255, 255, 255, 128 + 127 * cos(5 * clock.getElapsedTime().asSeconds())));
+    menuString->setString(CLICK_TO_CONTINUE[language]);
+    menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 525);
+    app->draw(*menuString);
 
-    app->Display();
+    app->display();
 }
 
 void GfxEngine::getKeys(GameInput* gameInput)
@@ -1354,63 +1336,63 @@ void GfxEngine::getKeys(GameInput* gameInput)
 
     // Process events
     sf::Event Event;
-    while (app->GetEvent(Event))
+    while (app->pollEvent(Event))
     {
         // Close window : exit
-        if (Event.Type == sf::Event::Closed)
+        if (Event.type == sf::Event::Closed)
         {
                 gameInput->setQuitKey(true);
         }
 
         // Touche 'echap' appuyée
-        if (Event.Type == sf::Event::KeyPressed) {
-            if (Event.Key.Code == sf::Key::Escape)
+        if (Event.type == sf::Event::KeyPressed) {
+            if (Event.key.code == sf::Keyboard::Escape)
             {
                 gameInput->setEscKey(true);
             }
-            else if (Event.Key.Code == sf::Key::Return)
+            else if (Event.key.code == sf::Keyboard::Return)
             {
                 gameInput->setEnterKey(true);
             }
-            else if (Event.Key.Code == sf::Key::Back)
+            else if (Event.key.code == sf::Keyboard::BackSpace)
             {
                 gameInput->setRemoveKey(true);
             }
-            else if (Event.Key.Code >= sf::Key::A && Event.Key.Code <= sf::Key::Z)
+            else if (Event.key.code >= sf::Keyboard::A && Event.key.code <= sf::Keyboard::Z)
             {
                 gameInput->setMiscKey(true);
-                gameInput->setCharKey('A' + (Event.Key.Code - sf::Key::A));
+                gameInput->setCharKey('A' + (Event.key.code - sf::Keyboard::A));
             }
-            else if (Event.Key.Code >= sf::Key::Num0 && Event.Key.Code <= sf::Key::Num9)
+            else if (Event.key.code >= sf::Keyboard::Num0 && Event.key.code <= sf::Keyboard::Num9)
             {
                 gameInput->setMiscKey(true);
-                gameInput->setCharKey('0' + (Event.Key.Code - sf::Key::Num0));
+                gameInput->setCharKey('0' + (Event.key.code - sf::Keyboard::Num0));
             }
-            else if (Event.Key.Code == sf::Key::Space)
+            else if (Event.key.code == sf::Keyboard::Space)
             {
                 gameInput->setMiscKey(true);
                 gameInput->setCharKey('_');
             }
          }
 
-         if ((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::F10)) {
-            sf::Image Screen = app->Capture();
-            Screen.SaveToFile("screenshot.jpg");
+         if ((Event.type == sf::Event::KeyPressed) && (Event.key.code == sf::Keyboard::F10)) {
+            sf::Image Screen = app->capture();
+            Screen.saveToFile("screenshot.jpg");
         }
 
 
-         if (Event.Type == sf::Event::MouseButtonPressed) {
-            if (Event.MouseButton.Button == sf::Mouse::Left)
+         if (Event.type == sf::Event::MouseButtonPressed) {
+            if (Event.mouseButton.button == sf::Mouse::Left)
                 gameInput->setMouseLeftClick(true);
-            else if (Event.MouseButton.Button == sf::Mouse::Right)
+            else if (Event.mouseButton.button == sf::Mouse::Right)
                 gameInput->setMouseRightClick(true);
             gameInput->setXMouse(oldXMouse);
             gameInput->setYMouse(oldYMouse);
          }
 
-        if (Event.Type == sf::Event::MouseMoved) {
+        if (Event.type == sf::Event::MouseMoved) {
             gameInput->setMouseMotion(true);
-            sf::Vector2f vec=app->ConvertCoords(Event.MouseMove.X, Event.MouseMove.Y);
+            sf::Vector2f vec=app->mapPixelToCoords(sf::Vector2i(Event.mouseMove.x, Event.mouseMove.y));
             oldXMouse=(int)(vec.x);
             oldYMouse=(int)(vec.y);
             gameInput->setXMouse(oldXMouse);
@@ -1423,18 +1405,24 @@ void GfxEngine::updateTime()
 {
     if (delay > 0.0f)
     {
-        delay -= app->GetFrameTime();
+        // FIXME: Find equivalent API
+        // delay -= app->getFrameTime();
+        delay -= 0.1f;
     }
     if (bestScoresDelay > 0.0f)
     {
-        bestScoresDelay -= app->GetFrameTime();
+        // FIXME: Find equivalent API
+        // bestScoresDelay -= app->getFrameTime();
+        bestScoresDelay -= 0.1f;
     }
     updateEffects();
 }
 
 void GfxEngine::updateEffects()
 {
-    EM->Animate(app->GetFrameTime());
+    // FIXME: Find equivalent API
+    // EM->Animate(app->getFrameTime());
+    EM->Animate(0.1f);
 }
 
 void GfxEngine::animateUp()
@@ -1463,11 +1451,11 @@ void GfxEngine::createGameOverEffect(GameModel* gameModel)
                 entity->lifetime=4.0f;
                 entity->spin=800.0 * (rand() / ((double)RAND_MAX)) - 400;
                 sf::Sprite sprite;
-                sprite.SetImage(tiles);
-                sprite.SetCenter(TILE_W / 2, TILE_H / 2);
+                sprite.setTexture(tiles);
+                sprite.setOrigin(TILE_W / 2, TILE_H / 2);
                 int mTile=gameModel->getGameGrid(i, j) - 1;
-                sprite.SetSubRect(sf::IntRect(mTile * TILE_W, 0, mTile * TILE_W + TILE_W, TILE_H));
-                //sprite.SetSubRect(sf::IntRect(0,0,80,0));
+                sprite.setTextureRect(sf::IntRect(mTile * TILE_W, 0, mTile * TILE_W + TILE_W, TILE_H));
+                //sprite.setTextureRect(sf::IntRect(0,0,80,0));
                 entity->sprite=sprite;
                 EM->Add(entity);
             }
@@ -1500,13 +1488,13 @@ void GfxEngine::createRemoveEffect(GameModel* gameModel)
                 entity->lifetime=4.0f;
                 entity->spin=600.0 * (rand()/((double)RAND_MAX)) - 300;
                 sf::Sprite sprite;
-                sprite.SetImage(tiles);
-                sprite.SetCenter(TILE_W/2, TILE_H/2);
-                sprite.SetPosition(-100, -100);
+                sprite.setTexture(tiles);
+                sprite.setOrigin(TILE_W/2, TILE_H/2);
+                sprite.setPosition(-100, -100);
                 int mTile=gameModel->getGameGrid(i, j)-1;
-                sprite.SetSubRect(sf::IntRect(mTile * TILE_W, 0, mTile * TILE_W + TILE_W, TILE_H));
-                //sprite.SetSubRect(sf::IntRect(0,0,80,0));
-                sprite.SetColor(sf::Color(255, 255, 255, 128));
+                sprite.setTextureRect(sf::IntRect(mTile * TILE_W, 0, mTile * TILE_W + TILE_W, TILE_H));
+                //sprite.setTextureRect(sf::IntRect(0,0,80,0));
+                sprite.setColor(sf::Color(255, 255, 255, 128));
                 entity->sprite=sprite;
                 EM->Add(entity);
 
@@ -1533,11 +1521,11 @@ void GfxEngine::createBombEffect(int x, int y)
     GameEntity* entity=new GameEntityBoom(  xPos, yPos, GameEntity::typeSprite);
     entity->lifetime=0.6;
     sf::Sprite sprite;
-    sprite.SetImage(boomImage);
-    sprite.SetCenter(TILE_W / 2, TILE_H / 2);
-    sprite.SetPosition(xPos, yPos);
-    sprite.SetScale(5.0f, 5.0f);
-    sprite.SetColor(sf::Color(255, 255, 255, 164));
+    sprite.setTexture(boomImage);
+    sprite.setOrigin(TILE_W / 2, TILE_H / 2);
+    sprite.setPosition(xPos, yPos);
+    sprite.setScale(5.0f, 5.0f);
+    sprite.setColor(sf::Color(255, 255, 255, 164));
     entity->sprite=sprite;
     EM->Add(entity);
 }
@@ -1563,8 +1551,8 @@ void GfxEngine::createLightningEffect(GameModel* gameModel)
                 GameEntity* entity=new GameEntityLightning(OFFSET_X + i * TILE_W, OFFSET_Y, GameEntity::typeSprite);
                 entity->lifetime=0.6f;
                 sf::Sprite sprite;
-                sprite.SetImage(lightningVImage);
-                sprite.SetColor(sf::Color(255, 255, 255, 128));
+                sprite.setTexture(lightningVImage);
+                sprite.setColor(sf::Color(255, 255, 255, 128));
                 entity->sprite=sprite;
                 EM->Add(entity);
         }
@@ -1581,8 +1569,8 @@ void GfxEngine::createLightningEffect(GameModel* gameModel)
                 GameEntity* entity=new GameEntityLightning(OFFSET_X, OFFSET_Y + j * TILE_H, GameEntity::typeSprite);
                 entity->lifetime=0.6f;
                 sf::Sprite sprite;
-                sprite.SetImage(lightningHImage);
-                sprite.SetColor(sf::Color(255, 255, 255, 128));
+                sprite.setTexture(lightningHImage);
+                sprite.setColor(sf::Color(255, 255, 255, 128));
                 entity->sprite=sprite;
                 EM->Add(entity);
         }
@@ -1591,7 +1579,8 @@ void GfxEngine::createLightningEffect(GameModel* gameModel)
     GameEntity* entity=new GameEntityWhiteScreen(OFFSET_X, OFFSET_Y, GameEntity::typeSprite);
     entity->lifetime=0.3f;
     sf::Sprite sprite;
-    sprite.SetImage(whiteScreenImage);
+    sprite.setTexture(whiteScreenImage);
+    sprite.setColor(sf::Color(255, 255, 255, 255));
     entity->sprite=sprite;
     EM->Add(entity);
 }
@@ -1607,12 +1596,12 @@ void GfxEngine::createScoreTextEffect(int score)
     std::ostringstream scoreStream;
     scoreStream << "+" << score;
 
-    sf::String myString;
-    myString.SetText(scoreStream.str());
-    myString.SetFont(font);
-    myString.SetSize(25);
-    myString.SetPosition(entity->x, entity->y);;
-    entity->string=myString;
+    sf::Text myString;
+    myString.setString(scoreStream.str());
+    myString.setFont(font);
+    myString.setCharacterSize(25);
+    myString.setPosition(entity->x, entity->y);;
+    entity->text=myString;
     EM->Add(entity);
 }
 
@@ -1631,19 +1620,19 @@ void GfxEngine::createClassicBonusEffect(int bonus)
         scoreStream << bonus << " stone left : +" << bonusScore[bonus] << " points !";
     else
         scoreStream << bonus << " stones left : +" << bonusScore[bonus] << " points !";
-    sf::String myString;
-    myString.SetText(scoreStream.str());
-    myString.SetFont(font);
-    myString.SetSize(40);
-    myString.SetPosition(800,600);
-    entity->string=myString;
+    sf::Text myString;
+    myString.setString(scoreStream.str());
+    myString.setFont(font);
+    myString.setCharacterSize(40);
+    myString.setPosition(800,600);
+    entity->text=myString;
     EM->Add(entity);
 }
 
 void GfxEngine::playSound(int n)
 {
     if (!soundEnabled) return;
-    sound[n].Play();
+    sound[n].play();
 }
 
 void GfxEngine::playMusic(int n)
@@ -1651,13 +1640,13 @@ void GfxEngine::playMusic(int n)
     if (!musicEnabled) return;
 
     stopMusic();
-    music.SetLoop(true);
+    music.setLoop(true);
 
     switch(n)
     {
         case musicIntro:
         {
-            if (!music.OpenFromFile(musicIntroFile))
+            if (!music.openFromFile(musicIntroFile))
             {
                 std::cout << "Error loading " << musicIntroFile << std::endl;
             }
@@ -1665,7 +1654,7 @@ void GfxEngine::playMusic(int n)
         }
         case musicGame:
         {
-            if (!music.OpenFromFile(musicGameFile))
+            if (!music.openFromFile(musicGameFile))
             {
                 std::cout << "Error loading " << musicGameFile << std::endl;
             }
@@ -1673,7 +1662,7 @@ void GfxEngine::playMusic(int n)
         }
         case musicClassic:
         {
-            if (!music.OpenFromFile(musicClassicFile))
+            if (!music.openFromFile(musicClassicFile))
             {
                 std::cout << "Error loading " << musicClassicFile << std::endl;
             }
@@ -1681,7 +1670,7 @@ void GfxEngine::playMusic(int n)
         }
         case musicGameOver:
         {
-            if (!music.OpenFromFile(musicGameOverFile))
+            if (!music.openFromFile(musicGameOverFile))
             {
                 std::cout << "Error loading " << musicGameOverFile << std::endl;
             }
@@ -1689,12 +1678,12 @@ void GfxEngine::playMusic(int n)
         }
     }
 
-    music.Play();
+    music.play();
 }
 
 void GfxEngine::stopMusic()
 {
-    music.Stop();
+    music.stop();
 }
 
 void GfxEngine::initScores()
@@ -1706,19 +1695,19 @@ void GfxEngine::initScores()
     for (int i=0; i < 10; i++)
     {
         //delete (textPos[i]);
-        textPos[i]=new sf::String(PODIUM_STRING[i], font, STRING_SIZE_HISCORES);
-        textPos[i]->SetPosition(425, 142 + i * 35);
-        textPos[i]->SetColor(i % 2 == 0 ? color1 : color2);
+        textPos[i]=new sf::Text(PODIUM_STRING[i], font, STRING_SIZE_HISCORES);
+        textPos[i]->setPosition(425, 142 + i * 35);
+        textPos[i]->setColor(i % 2 == 0 ? color1 : color2);
 
         //delete (textNames[i]);
-        textNames[i]=new sf::String("bob", font, STRING_SIZE_HISCORES);
-        textNames[i]->SetPosition(470, 142 + i * 35);
-        textNames[i]->SetColor(i % 2 == 0 ? color1 : color2);
+        textNames[i]=new sf::Text("bob", font, STRING_SIZE_HISCORES);
+        textNames[i]->setPosition(470, 142 + i * 35);
+        textNames[i]->setColor(i % 2 == 0 ? color1 : color2);
 
         // delete (textScores[i]);
-        textScores[i]=new sf::String("bob", font, STRING_SIZE_HISCORES);
-        textScores[i]->SetPosition(680, 142 + i * 35);
-        textScores[i]->SetColor(i % 2 == 0 ? color1 : color2);
+        textScores[i]=new sf::Text("bob", font, STRING_SIZE_HISCORES);
+        textScores[i]->setPosition(680, 142 + i * 35);
+        textScores[i]->setColor(i % 2 == 0 ? color1 : color2);
     }
 }
 
@@ -1727,11 +1716,11 @@ void GfxEngine::updateScores(GameScores* gameScores, int gameType)
 {
     switch (gameType)
     {
-        case GameModel::gameTypeNormal: modeScoreSprite.SetImage(modeNormalHiscores); break;
-        case GameModel::gameTypeMotion: modeScoreSprite.SetImage(modeMotionHiscores); break;
-        case GameModel::gameTypeClassic: modeScoreSprite.SetImage(modeClassicHiscores); break;
+        case GameModel::gameTypeNormal: modeScoreSprite.setTexture(modeNormalHiscores); break;
+        case GameModel::gameTypeMotion: modeScoreSprite.setTexture(modeMotionHiscores); break;
+        case GameModel::gameTypeClassic: modeScoreSprite.setTexture(modeClassicHiscores); break;
     }
-    modeScoreSprite.SetPosition(597 - modeScoreSprite.GetSubRect().GetWidth() / 2, 58);
+    modeScoreSprite.setPosition(597 - modeScoreSprite.getTextureRect().width / 2, 58);
 
     for (int i=0; i < 10; i++)
     {
@@ -1739,36 +1728,36 @@ void GfxEngine::updateScores(GameScores* gameScores, int gameType)
         {
             case GameModel::gameTypeNormal:
             {
-            textNames[i]->SetText(gameScores->getNormalScore(i).name);
+            textNames[i]->setString(gameScores->getNormalScore(i).name);
 
             std::ostringstream scoreStream;
 
             scoreStream << gameScores->getNormalScore(i).score;
-            textScores[i]->SetText(scoreStream.str());
+            textScores[i]->setString(scoreStream.str());
 
             break;
             }
 
             case GameModel::gameTypeMotion:
             {
-            textNames[i]->SetText(gameScores->getMotionScore(i).name);
+            textNames[i]->setString(gameScores->getMotionScore(i).name);
 
             std::ostringstream scoreStream;
 
             scoreStream << gameScores->getMotionScore(i).score;
-            textScores[i]->SetText(scoreStream.str());
+            textScores[i]->setString(scoreStream.str());
 
             break;
             }
 
             case GameModel::gameTypeClassic:
             {
-            textNames[i]->SetText(gameScores->getClassicScore(i).name);
+            textNames[i]->setString(gameScores->getClassicScore(i).name);
 
             std::ostringstream scoreStream;
 
             scoreStream << gameScores->getClassicScore(i).score;
-            textScores[i]->SetText(scoreStream.str());
+            textScores[i]->setString(scoreStream.str());
 
             break;
             }
@@ -1778,7 +1767,7 @@ void GfxEngine::updateScores(GameScores* gameScores, int gameType)
 
 void GfxEngine::closeApp()
 {
-    app->Close();
+    app->close();
 }
 
 
@@ -1813,11 +1802,11 @@ void GfxEngine::setSoundVolume(int soundVolume)
 {
     this->soundVolume=soundVolume;
     for (int i=0; i < NB_SOUNDS; i++)
-        sound[i].SetVolume((float)soundVolume);
+        sound[i].setVolume((float)soundVolume);
 }
 
 void GfxEngine::setMusicVolume(int musicVolume)
 {
     this->musicVolume=musicVolume;
-    music.SetVolume((float)musicVolume);
+    music.setVolume((float)musicVolume);
 }
