@@ -1,3 +1,5 @@
 FreeTumble
+Thumbs.db
 *.o
+.directory
 .sconsign.dblite
