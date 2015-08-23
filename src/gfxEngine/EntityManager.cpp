@@ -19,77 +19,77 @@
 
 EntityManager::EntityManager()
 {
-	InitIterator();
-	mItems = 0;
+    InitIterator();
+    mItems = 0;
 }
 
 void EntityManager::Add(GameEntity* g)
 {
-	g->EM = this;
-	EL.push_front(g);
-	mItems++;
+    g->EM = this;
+    EL.push_front(g);
+    mItems++;
 }
 
 
 void EntityManager::InitIterator()
 {
-	mIterator = EL.begin ();
+    mIterator = EL.begin ();
 }
 
 GameEntity* EntityManager::NextItem()
 {
-	if (mIterator == EL.end ()) return NULL;
+    if (mIterator == EL.end ()) return NULL;
 
-	GameEntity *e = *mIterator;
-	mIterator++;
-	return e;
+    GameEntity *e = *mIterator;
+    mIterator++;
+    return e;
 }
 
 void EntityManager::Animate (float delay)
 {
-	if (!IsEmpty())
-	{
-		EntityList::iterator it;
-		EntityList::iterator oldit = EL.begin ();
-		//bool isBegin = false;
-		for (it = EL.begin (); it != EL.end () && !IsEmpty();)
-		{
-			GameEntity *e = *it;
-			oldit = it;
-			it++;
-			//e->Animate(delay, map);
-			if (e->dying)
-			{
-				//printf("trying...");
-				EL.erase(oldit);
-				//printf("OK\n");
-				delete e;
-				mItems--;
-			} // endif
-			else
-				e->Animate(delay);
-		} // end for
-	}
+    if (!IsEmpty())
+    {
+        EntityList::iterator it;
+        EntityList::iterator oldit = EL.begin ();
+        //bool isBegin = false;
+        for (it = EL.begin (); it != EL.end () && !IsEmpty();)
+        {
+            GameEntity *e = *it;
+            oldit = it;
+            it++;
+            //e->Animate(delay, map);
+            if (e->dying)
+            {
+                //printf("trying...");
+                EL.erase(oldit);
+                //printf("OK\n");
+                delete e;
+                mItems--;
+            } // endif
+            else
+                e->Animate(delay);
+        } // end for
+    }
 }
 
 void EntityManager::Clean ()
 {
-	if (!IsEmpty())
-	{
-		EntityList::iterator it;
-		EntityList::iterator oldit = EL.begin ();
-		//bool isBegin = false;
-		//EL.clear();
-		for (it = EL.begin (); it != EL.end ();)
-		{
-			GameEntity *e = *it;
-			oldit = it;
-			it++;
+    if (!IsEmpty())
+    {
+        EntityList::iterator it;
+        EntityList::iterator oldit = EL.begin ();
+        //bool isBegin = false;
+        //EL.clear();
+        for (it = EL.begin (); it != EL.end ();)
+        {
+            GameEntity *e = *it;
+            oldit = it;
+            it++;
 
-			EL.erase(oldit);
+            EL.erase(oldit);
 
-			delete e;
-		} // end for*/
-		mItems = 0;
-	}
+            delete e;
+        } // end for*/
+        mItems = 0;
+    }
 }

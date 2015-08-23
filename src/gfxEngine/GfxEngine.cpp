@@ -922,20 +922,20 @@ void GfxEngine::renderEffects()
 {
     if (!EM->IsEmpty())
     {
-		EM->InitIterator();
-		GameEntity* ge = EM->NextItem();
-		while (ge != NULL)
-		{
-		    if (ge->type == GameEntity::typeSprite)
-		    {
+        EM->InitIterator();
+        GameEntity* ge = EM->NextItem();
+        while (ge != NULL)
+        {
+            if (ge->type == GameEntity::typeSprite)
+            {
                 app->Draw(ge->sprite);
-		    }
-		    else if (ge->type == GameEntity::typeText)
-		    {
+            }
+            else if (ge->type == GameEntity::typeText)
+            {
                 app->Draw(ge->string);
-		    }
-		    ge=EM->NextItem();
-		}
+            }
+            ge=EM->NextItem();
+        }
     }
 }
 

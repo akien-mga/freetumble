@@ -25,15 +25,15 @@
 class Vector2D
 {
 public:
-	float x, y;
-	Vector2D()
-	{
-		float v = (float)rand() / RAND_MAX;
-		v *= 6.283f;
-		x=cosf(v); y=sinf(v);
+    float x, y;
+    Vector2D()
+    {
+        float v = (float)rand() / RAND_MAX;
+        v *= 6.283f;
+        x=cosf(v); y=sinf(v);
     }
 
-	Vector2D(float m_x, float m_y) { x=m_x; y=m_y; }
+    Vector2D(float m_x, float m_y) { x=m_x; y=m_y; }
 };
 
 #endif

@@ -25,26 +25,26 @@ class EntityManager
 {
 
 public:
-	EntityManager();
-	~EntityManager() { Clean(); };
-	void InitIterator();
-	void Add(GameEntity* g);
-	GameEntity* NextItem();
-	void Animate (float delay);
+    EntityManager();
+    ~EntityManager() { Clean(); };
+    void InitIterator();
+    void Add(GameEntity* g);
+    GameEntity* NextItem();
+    void Animate (float delay);
 
-	bool IsEmpty() { return mItems == 0; };
-	int Count() { return mItems; }
-	void Clean();
+    bool IsEmpty() { return mItems == 0; };
+    int Count() { return mItems; }
+    void Clean();
 
-	void SaveIterator() { mSavedIterator = mIterator; }
-	void RestoreIterator() { mIterator = mSavedIterator; }
+    void SaveIterator() { mSavedIterator = mIterator; }
+    void RestoreIterator() { mIterator = mSavedIterator; }
 
 
 private:
-	typedef std::list<GameEntity*> EntityList;
-	EntityList EL;
-	EntityList::iterator mIterator, mSavedIterator;
-	int mItems;
+    typedef std::list<GameEntity*> EntityList;
+    EntityList EL;
+    EntityList::iterator mIterator, mSavedIterator;
+    int mItems;
 
 };
 

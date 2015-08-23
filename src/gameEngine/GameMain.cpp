@@ -995,11 +995,11 @@ void GameMain::loadConfig()
     ifstream f("data/game.ini");
     if (!f.is_open()) return;
 
-	char c[32];
-	int percent;
+    char c[32];
+    int percent;
 
-	// sound
-	f>>c;
+    // sound
+    f>>c;
     f>>c;
     if (strcmp(c, "yes") == 0) gfxEngine->setSoundEnabled(true);
     else gfxEngine->setSoundEnabled(false);
@@ -1009,7 +1009,7 @@ void GameMain::loadConfig()
     gfxEngine->setSoundVolume(percent);
 
     // music
-	f>>c;
+    f>>c;
     f>>c;
     if (strcmp(c, "yes") == 0) gfxEngine->setMusicEnabled(true);
     else gfxEngine->setMusicEnabled(false);
@@ -1019,20 +1019,20 @@ void GameMain::loadConfig()
     gfxEngine->setMusicVolume(percent);
 
     // effects
-	f>>c;
+    f>>c;
     f>>c;
     if (strcmp(c, "yes") == 0) gfxEngine->setEffectsEnabled(true);
     else gfxEngine->setEffectsEnabled(false);
 
     // language
-	f>>c;
+    f>>c;
     f>>c;
     if (strcmp(c, "FR") == 0) gfxEngine->setLanguage(LANG_FR);
     else if (strcmp(c, "DE") == 0) gfxEngine->setLanguage(LANG_DE);
     else gfxEngine->setLanguage(LANG_EN);
 
     // language
-	f>>c;
+    f>>c;
     f>>c;
     if (strcmp(c, "Blue") == 0) gfxEngine->setSkin(skinBlue);
     else if (strcmp(c, "Green") == 0) gfxEngine->setSkin(skinGreen);
@@ -1047,8 +1047,8 @@ void GameMain::saveConfig()
     ofstream f("data/game.ini");
     if (!f.is_open()) return;
 
-	// sound
-	f << "sound" << endl;
+    // sound
+    f << "sound" << endl;
     if (gfxEngine->getSoundEnabled()) f << "yes" << endl;
     else f << "no" << endl;
 
@@ -1056,7 +1056,7 @@ void GameMain::saveConfig()
     f << gfxEngine->getSoundVolume() << endl;
 
     // music
-	f << "music" << endl;
+    f << "music" << endl;
     if (gfxEngine->getMusicEnabled()) f << "yes" << endl;
     else f << "no" << endl;
 
@@ -1064,18 +1064,18 @@ void GameMain::saveConfig()
     f << gfxEngine->getMusicVolume() << endl;
 
     // effects
-	f << "effects" << endl;
+    f << "effects" << endl;
     if (gfxEngine->getEffectsEnabled()) f << "yes" << endl;
     else f << "no" << endl;
 
     // language
-	f << "lang" << endl;
+    f << "lang" << endl;
     if (gfxEngine->getLanguage() == LANG_FR) f << "FR" << endl;
     else if (gfxEngine->getLanguage() == LANG_DE) f << "DE" << endl;
     else f << "EN" << endl;
 
     // skin
-	f << "skin" << endl;
+    f << "skin" << endl;
     if (gfxEngine->getSkin() == skinBlue) f << "Blue" << endl;
     else if (gfxEngine->getSkin() == skinGreen) f << "Green" << endl;
     else if (gfxEngine->getSkin() == skinBrown) f << "Brown" << endl;

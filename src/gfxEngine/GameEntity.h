@@ -30,47 +30,47 @@ class EntityManager;
 class GameEntity
 {
 public:
-	enum entityTypes
-	{
-		typeSprite = 0,
-		typeText
-	};
+    enum entityTypes
+    {
+        typeSprite = 0,
+        typeText
+    };
 
-	struct bboxStruct
-	{
-		float x, y, width, height;
-	} bbox;
+    struct bboxStruct
+    {
+        float x, y, width, height;
+    } bbox;
 
-	struct effectStruct
-	{
-		float x, y;
-		int type;
-		bool actif;
-	} effect;
+    struct effectStruct
+    {
+        float x, y;
+        int type;
+        bool actif;
+    } effect;
 
-	GameEntity();
-	GameEntity(float m_x, float m_y, int m_type);
-	//GameEntity(float m_x = 0.0f, float m_y = 0.0f, m_type = TypePart02 );
-	virtual void Animate(float delay);
-	float Fade();
+    GameEntity();
+    GameEntity(float m_x, float m_y, int m_type);
+    //GameEntity(float m_x = 0.0f, float m_y = 0.0f, m_type = TypePart02 );
+    virtual void Animate(float delay);
+    float Fade();
 
-	// position (geometry)
-	float x, y;
-	float angle;
-	float spin;
-	// visibility
-	bool visible;
-	// life_time
-	float age, lifetime;
-	bool dying;
-	// physics
-	Vector2D velocity;
-	Vector2D acceleration;
-	Vector2D gravity;
-	float viscosity;
-	// management
-	int type;
-	EntityManager* EM;
+    // position (geometry)
+    float x, y;
+    float angle;
+    float spin;
+    // visibility
+    bool visible;
+    // life_time
+    float age, lifetime;
+    bool dying;
+    // physics
+    Vector2D velocity;
+    Vector2D acceleration;
+    Vector2D gravity;
+    float viscosity;
+    // management
+    int type;
+    EntityManager* EM;
 
     sf::Sprite sprite;
     sf::String string;

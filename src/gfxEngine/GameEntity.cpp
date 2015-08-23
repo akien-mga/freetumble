@@ -19,69 +19,69 @@
 
 GameEntity::GameEntity()
 {
-	GameEntity(0.0f, 0.0f, 2);
+    GameEntity(0.0f, 0.0f, 2);
 }
 
 GameEntity::GameEntity(float m_x, float m_y, int m_type)
 {
-	x = m_x;
-	y = m_y;
-	bbox.x = 0.0f; bbox.y = 0.0f;
-	bbox.width = 0.0f; bbox.height = 0.0f;
-	age = 0;
-	lifetime = -1;
-	visible = true;
-	dying = false;
-	viscosity = 0.99f;
+    x = m_x;
+    y = m_y;
+    bbox.x = 0.0f; bbox.y = 0.0f;
+    bbox.width = 0.0f; bbox.height = 0.0f;
+    age = 0;
+    lifetime = -1;
+    visible = true;
+    dying = false;
+    viscosity = 0.99f;
 
-	gravity.y = 0.0f;
-	velocity.x = 0.0f;
-	velocity.y = 0.0f;
+    gravity.y = 0.0f;
+    velocity.x = 0.0f;
+    velocity.y = 0.0f;
 
-	angle = 0.0f;
-	spin = 0.0f;
+    angle = 0.0f;
+    spin = 0.0f;
 
-	type = m_type;
+    type = m_type;
 
-	effect.actif = false;
+    effect.actif = false;
 }
 
 void GameEntity::Animate(float delay)
 {
-	age += delay;
+    age += delay;
 
-	//velocity.x *= viscosity;
-	//velocity.y *= viscosity;
+    //velocity.x *= viscosity;
+    //velocity.y *= viscosity;
 
     //printf("%f += %f * %f \n", velocity.y, gravity.y, delay);
 
-	velocity.y += gravity.y * delay;
+    velocity.y += gravity.y * delay;
 
-	x += velocity.x * delay;
-	y += velocity.y * delay;
+    x += velocity.x * delay;
+    y += velocity.y * delay;
 
-	angle += spin * delay;
+    angle += spin * delay;
 
-	if (lifetime > 0)
-	{
-		if (age>=lifetime) dying = true;
-	}
+    if (lifetime > 0)
+    {
+        if (age>=lifetime) dying = true;
+    }
 
-	sprite.SetX(x);
-	sprite.SetY(y);
-	sprite.SetRotation(angle);
+    sprite.SetX(x);
+    sprite.SetY(y);
+    sprite.SetRotation(angle);
 }
 
 float GameEntity::Fade()
 {
-	if (lifetime > 0)
-	{
-		float f= 1.0f - (float)age/lifetime;
-		if (f < 0.0f) f=0.0f;
-		if (f > 1.0f) f=1.0f;
-		return f;
-	}
-	else return 1.0f;
+    if (lifetime > 0)
+    {
+        float f= 1.0f - (float)age/lifetime;
+        if (f < 0.0f) f=0.0f;
+        if (f > 1.0f) f=1.0f;
+        return f;
+    }
+    else return 1.0f;
 }
 
 
@@ -138,10 +138,10 @@ void GameEntityFlyingText::Animate(float delay) {
     GameEntity::Animate(delay);
 
     string.SetX(x);
-	string.SetY(y);
+    string.SetY(y);
 
-	float fade=Fade();
-	string.SetColor(sf::Color(128 * fade, 255 * fade, 255 , 255 * fade));
+    float fade=Fade();
+    string.SetColor(sf::Color(128 * fade, 255 * fade, 255 , 255 * fade));
     //float fade=Fade();
 
     //sprite.SetColor(sf::Color(255, 255, 255, 255 * fade));

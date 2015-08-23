@@ -44,10 +44,10 @@ void GameScores::loadScores(const char* fileName)
 
     int n;
     int i;
-	char c[SCORE_NAME_MAX + 1];
+    char c[SCORE_NAME_MAX + 1];
 
-	// normal
-	f>>c;
+    // normal
+    f>>c;
     for (i=0; i < 10; i++)
     {
         f>>c;
@@ -57,7 +57,7 @@ void GameScores::loadScores(const char* fileName)
     }
 
     // motion
-	f>>c;
+    f>>c;
     for (i=0; i < 10; i++)
     {
         f>>c;
@@ -67,7 +67,7 @@ void GameScores::loadScores(const char* fileName)
     }
 
     // classic
-	f>>c;
+    f>>c;
     for (i=0; i < 10; i++)
     {
         f>>c;
@@ -86,8 +86,8 @@ void GameScores::saveScores()
     if (!f.is_open()) return;
 
     int i;
-	// normal
-	f << "normal" << endl;
+    // normal
+    f << "normal" << endl;
     for (i=0; i < 10; i++)
     {
         f << normalScores[i].name << " " << normalScores[i].score << endl;
