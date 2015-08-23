@@ -131,10 +131,6 @@ void GfxEngine::loadPictures()
     levelSprite.setTexture(levelImage);
     levelSprite.setPosition(679, 379);
 
-    modeIcones.loadFromFile("data/media/modeIcones.png");
-    modeSprite.setTexture(modeIcones);
-    modeSprite.setPosition(675, 450);
-
     modeNormal.loadFromFile("data/media/modeNormal.png");
     modeNormalOver.loadFromFile("data/media/modeNormalOver.png");
     normalSprite.setTexture(modeNormal);
@@ -746,15 +742,6 @@ void GfxEngine::renderModeIcone(int mode)
             break;
         }
     }
-
-
-    /*
-    modeSprite.setTextureRect(sf::IntRect(mode * 77, 0, 77, 73));
-
-
-    app->draw(modeSprite);
-    app->draw(*textMode);
-    */
 }
 
 void GfxEngine::renderNextRow(GameModel* gameModel)
