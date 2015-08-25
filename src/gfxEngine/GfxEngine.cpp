@@ -92,8 +92,7 @@ void GfxEngine::initWindow()
     // create a new window
     string title=APP_NAME + " " + APP_VERSION;
     app = new sf::RenderWindow(sf::VideoMode(800, 600), title); // , sf::Style::Close);
-    app->setFramerateLimit(60);
-    //app = new sf::RenderWindow(sf::VideoMode(800, 600), title, sf::Style::Fullscreen);
+    app->setVerticalSyncEnabled(true);
 }
 
 void GfxEngine::setSkin(int skin)
