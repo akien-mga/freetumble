@@ -1511,12 +1511,9 @@ void GfxEngine::createLightningEffect(GameModel* gameModel)
             }
         }
         if (isLightning) {
-                GameEntity* entity=new GameEntityLightning(OFFSET_X + i * TILE_W, OFFSET_Y, GameEntity::typeSprite);
+                GameEntityLightning* entity=new GameEntityLightning(OFFSET_X + i * TILE_W, OFFSET_Y, GameEntity::typeSprite);
                 entity->lifetime=0.6f;
-                sf::Sprite sprite;
-                sprite.setTexture(lightningVImage);
-                sprite.setColor(sf::Color(255, 255, 255, 128));
-                entity->sprite=sprite;
+                entity->SetTexture(lightningVImage);
                 EM->Add(entity);
         }
     }
@@ -1529,12 +1526,9 @@ void GfxEngine::createLightningEffect(GameModel* gameModel)
             }
         }
         if (isLightning) {
-                GameEntity* entity=new GameEntityLightning(OFFSET_X, OFFSET_Y + j * TILE_H, GameEntity::typeSprite);
+                GameEntityLightning* entity=new GameEntityLightning(OFFSET_X, OFFSET_Y + j * TILE_H, GameEntity::typeSprite);
                 entity->lifetime=0.6f;
-                sf::Sprite sprite;
-                sprite.setTexture(lightningHImage);
-                sprite.setColor(sf::Color(255, 255, 255, 128));
-                entity->sprite=sprite;
+                entity->SetTexture(lightningHImage);
                 EM->Add(entity);
         }
     }
