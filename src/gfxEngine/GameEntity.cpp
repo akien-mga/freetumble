@@ -105,7 +105,16 @@ void GameEntityBoom::Animate(float delay) {
 
 
 GameEntityLightning::GameEntityLightning(float m_x, float m_y, int m_type) : GameEntity(m_x, m_y, m_type){
+  width = 0;
+  height = 0;
+}
 
+void GameEntityLightning::SetTexture(sf::Texture &texture){
+  sprite.setTexture(texture);
+  sprite.setColor(sf::Color(255, 255, 255, 128));
+
+  width = sprite.getTexture()->getSize().x;
+  height = sprite.getTexture()->getSize().y;
 }
 
 void GameEntityLightning::Animate(float delay) {
@@ -123,9 +132,11 @@ void GameEntityLightning::Animate(float delay) {
 
     sprite.setColor(sf::Color(255, 255, 255, 255 * fade));
 
-    // FIXME: Write an equivalent for flipping in SFML2
-    // sprite.FlipX(rand()%2 == 0);
-    // sprite.FlipY(rand()%2 == 0);
+    bool flipX = rand()%2 == 0;
+    bool flipY = rand()%2 == 0;
+
+    sprite.setTextureRect(sf::IntRect(flipX ? width : 0, flipY ? height : 0,
+                                      flipX ? -width : width, flipY ? -height : height));
 }
 
 

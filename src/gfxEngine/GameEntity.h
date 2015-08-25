@@ -88,6 +88,10 @@ class GameEntityLightning : public GameEntity {
 public:
     GameEntityLightning(float m_x, float m_y, int m_type);
     virtual void Animate(float delay);
+    void SetTexture(sf::Texture &texture);
+private:
+  int width;
+  int height;
 };
 
 class GameEntityFlyingText : public GameEntity {
