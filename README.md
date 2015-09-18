@@ -6,10 +6,6 @@ Development: Seby <sebygames@gmail.com>
 
 Graphics: Suiland
 
-Music (CC BY-NC-SA):  
-Solcarlus - http://solcarlusweb.free.fr  
-Nienvox - http://www.bumpfoot.net/foot090.html
-
 ## Description
 
 FreeTumble is a free colourful puzzle game for Windows and Linux.
@@ -41,10 +37,8 @@ Try to clear the entire grid to get the best score.
 
 ## License
 
-FreeTumble's source code is licensed under the GNU General Public License,
-version 3 or (at your option) any later version (GPLv3+).
-
-FreeTumble's art is licensed under GPLv3+.
+FreeTumble's source code and graphics are licensed under the GNU General Public
+License, version 3 or (at your option) any later version (GPLv3+).
 
 The FreeSansBold.ttf font from the GNU FreeFont project is distributed
 under the GPLv3+.
