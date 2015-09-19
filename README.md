@@ -6,10 +6,6 @@ Development: Seby <sebygames@gmail.com>
 
 Graphics: Suiland
 
-Music (CC BY-NC-SA):  
-Solcarlus - http://solcarlusweb.free.fr  
-Nienvox - http://www.bumpfoot.net/foot090.html
-
 ## Description
 
 FreeTumble is a free colourful puzzle game for Windows and Linux.
@@ -41,28 +37,19 @@ Try to clear the entire grid to get the best score.
 
 ## License
 
-FreeTumble's source code is licensed under the GNU General Public License,
-version 3 or (at your option) any later version (GPLv3+).
+FreeTumble's source code and graphics are licensed under the GNU General Public
+License, version 3 or (at your option) any later version (GPLv3+).
 
-FreeTumble's art is licensed under GPLv3+.
+The music files have the following licenses and attributions:  
+Alex Smith (cynicmusic), Crystal Cave (song18), CC BY-SA 3.0 - http://opengameart.org/content/crystal-cave-song18  
+Bart Kelsey (bart), Contemplation, CC BY-SA 3.0 - http://opengameart.org/content/contemplation  
+Bart Kelsey (bart), Contemplation II, CC BY-SA 3.0 - http://opengameart.org/content/contemplation-ii  
+Przemysław Sikorski (rezoner), Puzzle tune 1, CC BY 3.0 - http://opengameart.org/content/puzzle-tune-1
 
 The FreeSansBold.ttf font from the GNU FreeFont project is distributed
 under the GPLv3+.
 
-Sound effects have no specified license.
-
 ### Nonfree assets to be replaced
-
-The following assets have their own nonfree license. Suggestions for libre
-replacements are very welcome.
-
-*CC-BY-NC-SA 2.5*  
-data/media/music/solcarlus - another synthetic tribute to a muted-trumpet player.ogg  
-data/media/music/solcarlus - background noise.ogg  
-data/media/music/solcarlus - emergency landing.ogg
-
-*CC BY-NC-SA 3.0*  
-data/media/music/nienvox - inside_part_2.ogg
 
 *Unspecified license*
 data/media/wav/*

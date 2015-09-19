@@ -171,10 +171,10 @@ const int HELP_LEFT_TEXT=50;
 const int HELP_LEFT_ICON=55;
 const int HELP_LEFT_ICON_TEXT=95;
 
-const std::string musicIntroFile="data/media/music/solcarlus - another synthetic tribute to a muted-trumpet player.ogg";
-const std::string musicGameFile="data/media/music/solcarlus - background noise.ogg";
-const std::string musicClassicFile="data/media/music/nienvox - inside_part_2.ogg";
-const std::string musicGameOverFile="data/media/music/solcarlus - emergency landing.ogg";
+const std::string musicIntroFile="data/media/music/bart-contemplation.ogg";
+const std::string musicGameFile="data/media/music/bart-contemplation2.ogg";
+const std::string musicClassicFile="data/media/music/rezoner-puzzle1a.ogg";
+const std::string musicGameOverFile="data/media/music/cynicmusic-crystalcave.ogg";
 
 const int CONSOLE_STRING_SIZE=15;
 const int CONSOLE_X=40;
