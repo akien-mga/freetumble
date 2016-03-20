@@ -1,4 +1,4 @@
-sourcesFiles = ['src/main.cpp',
+sources_files = ['src/main.cpp',
 				'src/gameEngine/MenuEntry.cpp',
 				'src/gameEngine/Menu.cpp',
 				'src/gameEngine/GameInput.cpp',
@@ -9,4 +9,4 @@ sourcesFiles = ['src/main.cpp',
 				'src/gfxEngine/GameEntity.cpp',
 				'src/gfxEngine/GfxEngine.cpp']
 
-Program('FreeTumble', sourcesFiles, LIBS=['sfml-audio', 'sfml-graphics', 'sfml-window', 'sfml-system'])
+Program('freetumble', sources_files, LIBS=['sfml-audio', 'sfml-graphics', 'sfml-window', 'sfml-system'])
