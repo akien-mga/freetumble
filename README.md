@@ -46,10 +46,8 @@ Bart Kelsey (bart), Contemplation, CC BY-SA 3.0 - http://opengameart.org/content
 Bart Kelsey (bart), Contemplation II, CC BY-SA 3.0 - http://opengameart.org/content/contemplation-ii  
 Przemysław Sikorski (rezoner), Puzzle tune 1, CC BY 3.0 - http://opengameart.org/content/puzzle-tune-1
 
+The sound files have the following license and attribution:
+Obani (@ObaniGemini), CC BY-SA 4.0 - https://github.com/LibreGameArchive/freetumble/pull/9
+
 The FreeSansBold.ttf font from the GNU FreeFont project is distributed
 under the GPLv3+.
-
-### Nonfree assets to be replaced
-
-*Unspecified license*
-data/media/wav/*
