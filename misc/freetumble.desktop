@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=FreeTumble
+GenericName=Arcade-puzzle game
+Comment=Colourful arcade-puzzle game with three game modes
+Exec=freetumble
+Icon=freetumble
+Terminal=false
+Type=Application
+Categories=Game;BlocksGame;
