@@ -114,7 +114,7 @@ void GfxEngine::loadPictures()
 {
     // load textures;
 
-    intro.loadFromFile(getDataFile("menuBg.png"));
+    intro.loadFromFile(getDataFile("gfx/menuBg.png"));
     introSprite.setTexture(intro);
     //introSprite.setPosition(200, 50);
 
@@ -122,7 +122,7 @@ void GfxEngine::loadPictures()
     loadTileSet();
     bgSprite.setTexture(bg);
 
-    gameOver.loadFromFile(getDataFile("gameover.png"));
+    gameOver.loadFromFile(getDataFile("gfx/gameover.png"));
     gameOverSprite.setTexture(gameOver);
     gameOverSprite.setPosition(300, 225);
 
@@ -130,43 +130,43 @@ void GfxEngine::loadPictures()
     levelSprite.setTexture(levelImage);
     levelSprite.setPosition(679, 379);
 
-    modeNormal.loadFromFile(getDataFile("modeNormal.png"));
-    modeNormalOver.loadFromFile(getDataFile("modeNormalOver.png"));
+    modeNormal.loadFromFile(getDataFile("gfx/modeNormal.png"));
+    modeNormalOver.loadFromFile(getDataFile("gfx/modeNormalOver.png"));
     normalSprite.setTexture(modeNormal);
     normalSprite.setPosition(MENU_NORMAL_X, MENU_NORMAL_Y);
-    modeNormalMini.loadFromFile(getDataFile("modeNormalMini.png"));
+    modeNormalMini.loadFromFile(getDataFile("gfx/modeNormalMini.png"));
     normalMiniSprite.setTexture(modeNormalMini);
-    modeNormalHiscores.loadFromFile(getDataFile("modeNormalHiscores.png"));
+    modeNormalHiscores.loadFromFile(getDataFile("gfx/modeNormalHiscores.png"));
 
-    modeMotion.loadFromFile(getDataFile("modeMotion.png"));
-    modeMotionOver.loadFromFile(getDataFile("modeMotionOver.png"));
+    modeMotion.loadFromFile(getDataFile("gfx/modeMotion.png"));
+    modeMotionOver.loadFromFile(getDataFile("gfx/modeMotionOver.png"));
     motionSprite.setTexture(modeMotion);
     motionSprite.setPosition(MENU_MOTION_X, MENU_MOTION_Y);
-    modeMotionMini.loadFromFile(getDataFile("modeMotionMini.png"));
+    modeMotionMini.loadFromFile(getDataFile("gfx/modeMotionMini.png"));
     motionMiniSprite.setTexture(modeMotionMini);
-    modeMotionHiscores.loadFromFile(getDataFile("modeMotionHiscores.png"));
+    modeMotionHiscores.loadFromFile(getDataFile("gfx/modeMotionHiscores.png"));
 
-    modeClassic.loadFromFile(getDataFile("modeClassic.png"));
-    modeClassicOver.loadFromFile(getDataFile("modeClassicOver.png"));
+    modeClassic.loadFromFile(getDataFile("gfx/modeClassic.png"));
+    modeClassicOver.loadFromFile(getDataFile("gfx/modeClassicOver.png"));
     classicSprite.setTexture(modeClassic);
     classicSprite.setPosition(MENU_CLASSIC_X, MENU_CLASSIC_Y);
-    modeClassicMini.loadFromFile(getDataFile("modeClassicMini.png"));
+    modeClassicMini.loadFromFile(getDataFile("gfx/modeClassicMini.png"));
     classicMiniSprite.setTexture(modeClassicMini);
-    modeClassicHiscores.loadFromFile(getDataFile("modeClassicHiscores.png"));
+    modeClassicHiscores.loadFromFile(getDataFile("gfx/modeClassicHiscores.png"));
 
-    buttonHelpImage.loadFromFile(getDataFile("buttonHelp.png"));
+    buttonHelpImage.loadFromFile(getDataFile("gfx/buttonHelp.png"));
     buttonHelpSprite.setTexture(buttonHelpImage);
     buttonHelpSprite.setPosition(MENU_HELP_X, MENU_HELP_Y);
 
-    buttonCreditsImage.loadFromFile(getDataFile("buttonCredits.png"));
+    buttonCreditsImage.loadFromFile(getDataFile("gfx/buttonCredits.png"));
     buttonCreditsSprite.setTexture(buttonCreditsImage);
     buttonCreditsSprite.setPosition(MENU_CREDITS_X, MENU_CREDITS_Y);
 
-    buttonOptionsImage.loadFromFile(getDataFile("buttonOptions.png"));
+    buttonOptionsImage.loadFromFile(getDataFile("gfx/buttonOptions.png"));
     buttonOptionsSprite.setTexture(buttonOptionsImage);
     buttonOptionsSprite.setPosition(MENU_OPTIONS_X, MENU_OPTIONS_Y);
 
-    buttonQuitImage.loadFromFile(getDataFile("buttonQuit.png"));
+    buttonQuitImage.loadFromFile(getDataFile("gfx/buttonQuit.png"));
     buttonQuitSprite.setTexture(buttonQuitImage);
     buttonQuitSprite.setPosition(MENU_QUIT_X, MENU_QUIT_Y);
 
@@ -174,7 +174,7 @@ void GfxEngine::loadPictures()
     miniButtonSprite.setTextureRect(sf::IntRect(0, 0, buttonHelpImage.getSize().x / 2, buttonHelpImage.getSize().y));
     miniButtonSprite.scale(0.4f, 0.4f);
 
-    cancelButtonImage.loadFromFile(getDataFile("cancel64.png"));
+    cancelButtonImage.loadFromFile(getDataFile("gfx/cancel64.png"));
     cancelButtonSprite.setTexture(cancelButtonImage);
     cancelButtonSprite.setPosition(CANCEL_BUTTON_X0, CANCEL_BUTTON_Y0);
 
@@ -187,13 +187,13 @@ void GfxEngine::loadPictures()
 
     whiteScreenImage.create(600, 480);
 
-    helpBg.loadFromFile(getDataFile("helpBg.png"));
+    helpBg.loadFromFile(getDataFile("gfx/helpBg.png"));
     helpBgSprite.setTexture(helpBg);
 
-    creditsBg.loadFromFile(getDataFile("creditsBg.png"));
+    creditsBg.loadFromFile(getDataFile("gfx/creditsBg.png"));
     creditsBgSprite.setTexture(creditsBg);
 
-    sfmlLogoImage.loadFromFile(getDataFile("logoSFML.png"));
+    sfmlLogoImage.loadFromFile(getDataFile("gfx/logoSFML.png"));
     sfmlLogoSprite.setTexture(sfmlLogoImage);
     sfmlLogoSprite.setPosition(510, 210);
 
@@ -201,7 +201,7 @@ void GfxEngine::loadPictures()
     blackScreenSprite.setTexture(blackScreen);
     blackScreenSprite.setColor(sf::Color(0, 0, 0, 192));
 
-    menuImage.loadFromFile(getDataFile("menu.png"));
+    menuImage.loadFromFile(getDataFile("gfx/menu.png"));
     menuSpriteTop.setTexture(menuImage);
     menuSpriteTop.setTextureRect(sf::IntRect(MENU_TOP_X0, MENU_TOP_Y0, MENU_TOP_W, MENU_TOP_H));
     menuSpriteButton.setTexture(menuImage);
@@ -233,7 +233,7 @@ void GfxEngine::loadPictures()
     //sf::Sprite menuSpriteButton;
     //sf::Sprite menuSpriteButtonOver;
 
-    dangerImage.loadFromFile(getDataFile("danger.png"));
+    dangerImage.loadFromFile(getDataFile("gfx/danger.png"));
     int i=0;
     for (i=0; i<GRID_W; i++)
     {
@@ -261,10 +261,10 @@ void GfxEngine::loadPictures()
 
     effectsSprite.setTexture(effectsImage);
 
-    boomImage.loadFromFile(getDataFile("boom40.png"));
+    boomImage.loadFromFile(getDataFile("gfx/boom40.png"));
 
-    lightningHImage.loadFromFile(getDataFile("LightningH.png"));
-    lightningVImage.loadFromFile(getDataFile("LightningV.png"));
+    lightningHImage.loadFromFile(getDataFile("gfx/LightningH.png"));
+    lightningVImage.loadFromFile(getDataFile("gfx/LightningV.png"));
 
     font.loadFromFile(getDataFile("FreeSansBold.ttf"));
 
@@ -393,25 +393,25 @@ void GfxEngine::loadTileSet()
 void GfxEngine::loadSounds()
 {
     // load audio;
-    brickBuffer.loadFromFile(getDataFile("wav/brick.wav"));
+    brickBuffer.loadFromFile(getDataFile("sfx/brick.wav"));
     sound[soundBrick].setBuffer(brickBuffer);
 
-    explosionBuffer.loadFromFile(getDataFile("wav/explosion.wav"));
+    explosionBuffer.loadFromFile(getDataFile("sfx/explosion.wav"));
     sound[soundExplode].setBuffer(explosionBuffer);
 
-    thunderBuffer.loadFromFile(getDataFile("wav/thunder.wav"));
+    thunderBuffer.loadFromFile(getDataFile("sfx/thunder.wav"));
     sound[soundThunder].setBuffer(thunderBuffer);
 
-    colorBuffer.loadFromFile(getDataFile("wav/color.wav"));
+    colorBuffer.loadFromFile(getDataFile("sfx/color.wav"));
     sound[soundColor].setBuffer(colorBuffer);
 
-    dangerBuffer.loadFromFile(getDataFile("wav/danger.wav"));
+    dangerBuffer.loadFromFile(getDataFile("sfx/danger.wav"));
     sound[soundDanger].setBuffer(dangerBuffer);
 
-    menuOverBuffer.loadFromFile(getDataFile("wav/menu_over.wav"));
+    menuOverBuffer.loadFromFile(getDataFile("sfx/menu_over.wav"));
     sound[soundMenuOver].setBuffer(menuOverBuffer);
 
-    menuClickBuffer.loadFromFile(getDataFile("wav/menu_click.wav"));
+    menuClickBuffer.loadFromFile(getDataFile("sfx/menu_click.wav"));
     sound[soundMenuClick].setBuffer(menuClickBuffer);
 
     for (int i=0; i < NB_SOUNDS; i++)

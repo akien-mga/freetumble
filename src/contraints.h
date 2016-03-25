@@ -25,7 +25,7 @@ const std::string APP_VERSION = "V1.0";
 #ifdef DATADIR
 const std::string DATA_DIR = DATADIR;
 #else
-const std::string DATA_DIR = "data/media";
+const std::string DATA_DIR = ".";
 #endif
 
 const int SCREEN_W = 800;
