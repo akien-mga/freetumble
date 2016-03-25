@@ -9,8 +9,11 @@ env.Append(CPPFLAGS = os.getenv('CPPFLAGS', ['-g', '-O2']))
 env.Append(LINKFLAGS = os.getenv('LINKFLAGS', ''))
 env.Append(LIBS = ['sfml-audio', 'sfml-graphics', 'sfml-system', 'sfml-window'])
 
-datadir = ARGUMENTS.get('DATADIR', False)
-if datadir:
+prefix = ARGUMENTS.get('PREFIX', '/usr/local')
+bindir = prefix + '/games'
+
+datadir = ARGUMENTS.get('DATADIR', '.')
+if datadir != '.':
     env.Append(CPPFLAGS = '-DDATADIR=\\"' + datadir + '\\"')
 
 sources = [
@@ -26,4 +29,18 @@ sources = [
     'src/gfxEngine/GfxEngine.cpp',
 ]
 
-env.Program(target = 'freetumble', source = sources)
+freetumble = env.Program(target = 'freetumble', source = sources)
+
+# Install instructions
+
+data_folders = ['gfx', 'music', 'sfx', 'skins', 'tilesets']
+data_files = ['FreeSansBold.ttf', 'reset_scores.dat']
+
+if datadir != '.':
+    env.Alias('install', Install(bindir, freetumble))
+
+    for data_folder in data_folders:
+        env.Alias('install', Install(datadir, data_folder))
+
+    for data_file in data_files:
+        env.Alias('install', Install(datadir, data_file))
