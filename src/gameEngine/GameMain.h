@@ -109,6 +109,10 @@ private:
     std::string scoreName;
     int scoreNameSize;
 
+    std::string userDir;
+    bool dirExists(const char* path);
+    void makeDir(const char* path);
+
     void proceedInputGame();
     void proceedInputMenu();
     bool done;

@@ -19,28 +19,29 @@
 
 #include <fstream>
 
-GameScores::GameScores()
+GameScores::GameScores(std::string _userDir)
 {
     currentScore=-1;
+    userDir=_userDir;
     loadScores();
 }
 
 void GameScores::loadScores()
 {
-    loadScores("data/scores.dat");
+    if (!loadScores(userDir + "scores.dat"))
+        reset();
 }
 
 void GameScores::reset()
 {
-    loadScores("data/reset_scores.dat");
+    loadScores(getDataFile("reset_scores.dat"));
     saveScores();
 }
 
-void GameScores::loadScores(const char* fileName)
+bool GameScores::loadScores(std::string filePath)
 {
-    //const char* fileName="data/scores.dat";
-    ifstream f(fileName);
-    if (!f.is_open()) return;
+    ifstream f(filePath.c_str());
+    if (!f.is_open()) return false;
 
     int n;
     int i;
@@ -77,13 +78,13 @@ void GameScores::loadScores(const char* fileName)
     }
 
     f.close();
+    return true;
 }
 
 void GameScores::saveScores()
 {
-    const char* fileName="data/scores.dat";
-    ofstream f(fileName);
-    if (!f.is_open()) return;
+    std::string filePath = userDir + "scores.dat";
+    ofstream f(filePath.c_str());
 
     int i;
     // normal

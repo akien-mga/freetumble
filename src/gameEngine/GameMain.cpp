@@ -19,6 +19,8 @@
 #include <iostream>
 #include <fstream>
 #include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 GameMain::GameMain()
 {
@@ -28,14 +30,14 @@ GameMain::GameMain()
     gameModel=new GameModel();
     gameInput=new GameInput();
 
-    gameScores=new GameScores();
-    scoreGameType=GameModel::gameTypeNormal;
-    scoreName="";
-    gfxEngine->updateScores(gameScores, scoreGameType);
-
     activeMenu=menuNothing;
     loadConfig();
     buildMenus();
+
+    gameScores=new GameScores(userDir);
+    scoreGameType=GameModel::gameTypeNormal;
+    scoreName="";
+    gfxEngine->updateScores(gameScores, scoreGameType);
 
     xSave=0;
     ySave=0;
@@ -991,10 +993,50 @@ void GameMain::resetScores()
     }
 }
 
+bool GameMain::dirExists(const char* path)
+{
+    struct stat info;
+
+    if (stat(path, &info) != 0)
+        printf("%s does not exist, will be created.\n", path);
+    else if (info.st_mode & S_IFDIR)
+        return true;
+    else
+        printf("%s is not a directory\n", path);
+
+    return false;
+}
+
+void GameMain::makeDir(const char* path)
+{
+#ifdef WIN32
+#include <direct.h>
+    _wmkdir(path);
+#else
+    mkdir(path, 0755);
+#endif
+}
+
 void GameMain::loadConfig()
 {
-    ifstream f("data/game.ini");
-    if (!f.is_open()) return;
+    if (std::getenv("XDG_DATA_HOME"))
+        userDir = (std::string)std::getenv("XDG_DATA_HOME") + "/" + APP_NAME + "/";
+    else
+#ifdef __linux__
+    if (std::getenv("HOME"))
+        userDir = (std::string)std::getenv("HOME") + "/.local/share/" + APP_NAME + "/";
+    else
+#endif
+        userDir = "./";
+
+    if (!dirExists(userDir.c_str()))
+        makeDir(userDir.c_str());
+
+    ifstream f(std::string(userDir + "game.ini").c_str());
+    if (!f.is_open()) {
+        saveConfig();
+        return;
+    }
 
     char c[32];
     int percent;
@@ -1045,8 +1087,7 @@ void GameMain::loadConfig()
 
 void GameMain::saveConfig()
 {
-    ofstream f("data/game.ini");
-    if (!f.is_open()) return;
+    ofstream f(std::string(userDir + "game.ini").c_str());
 
     // sound
     f << "sound" << endl;

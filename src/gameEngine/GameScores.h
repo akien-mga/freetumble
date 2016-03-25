@@ -25,7 +25,9 @@ using namespace std ;
 class GameScores {
 
 public:
-    GameScores();
+    GameScores(std::string _userDir);
+
+    std::string userDir;
 
     struct scoresStruct {
         string name;
@@ -33,7 +35,8 @@ public:
         int level;
         int nbStones;
     };
-    void loadScores(const char* fileName);
+
+    bool loadScores(std::string filePath);
     void loadScores();
     void saveScores();
 

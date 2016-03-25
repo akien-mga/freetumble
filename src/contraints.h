@@ -19,8 +19,14 @@
 
 #include <string>
 
-const std::string APP_NAME="FreeTumble";
-const std::string APP_VERSION="V1.0";
+const std::string APP_NAME = "FreeTumble";
+const std::string APP_VERSION = "V1.0";
+
+#ifdef DATADIR
+const std::string DATA_DIR = DATADIR;
+#else
+const std::string DATA_DIR = "data/media";
+#endif
 
 const int SCREEN_W = 800;
 const int SCREEN_H = 600;
@@ -171,10 +177,10 @@ const int HELP_LEFT_TEXT=50;
 const int HELP_LEFT_ICON=55;
 const int HELP_LEFT_ICON_TEXT=95;
 
-const std::string musicIntroFile="data/media/music/bart-contemplation.ogg";
-const std::string musicGameFile="data/media/music/bart-contemplation2.ogg";
-const std::string musicClassicFile="data/media/music/rezoner-puzzle1a.ogg";
-const std::string musicGameOverFile="data/media/music/cynicmusic-crystalcave.ogg";
+const std::string musicIntroFile="music/bart-contemplation.ogg";
+const std::string musicGameFile="music/bart-contemplation2.ogg";
+const std::string musicClassicFile="music/rezoner-puzzle1a.ogg";
+const std::string musicGameOverFile="music/cynicmusic-crystalcave.ogg";
 
 const int CONSOLE_STRING_SIZE=15;
 const int CONSOLE_X=40;
@@ -197,6 +203,10 @@ enum tileSetsEnum
     tsPastel,
     tsGems,
     tsMarble,
+};
+
+inline std::string getDataFile(const std::string fileName) {
+    return DATA_DIR + "/" + fileName;
 };
 
 #endif // CONTRAINTS_H_INCLUDED

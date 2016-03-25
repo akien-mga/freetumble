@@ -9,6 +9,10 @@ env.Append(CPPFLAGS = os.getenv('CPPFLAGS', ['-g', '-O2']))
 env.Append(LINKFLAGS = os.getenv('LINKFLAGS', ''))
 env.Append(LIBS = ['sfml-audio', 'sfml-graphics', 'sfml-system', 'sfml-window'])
 
+datadir = ARGUMENTS.get('DATADIR', False)
+if datadir:
+    env.Append(CPPFLAGS = '-DDATADIR=\\"' + datadir + '\\"')
+
 sources = [
     'src/main.cpp',
     'src/gameEngine/MenuEntry.cpp',
