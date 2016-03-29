@@ -40,6 +40,28 @@ Try to clear the entire grid to get the best score.
 - Various powerups in Normal and Motion modes
 - Available in three languages (English, French, German)
 
+## Build instructions
+
+Build dependencies:
+
+- CMake, http://cmake.org
+- SFML 2.x, http://sfml-dev.org
+
+To build and run in the source tree:
+
+```sh
+mkdir build && cd build
+cmake .. && make
+```
+
+To build and install system-wide:
+
+```sh
+mkdir build && cd build
+cmake -DFOR_INSTALL=ON .. && make
+sudo make install
+```
+
 ## License
 
 FreeTumble's source code is licensed under the GNU General Public
