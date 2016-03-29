@@ -1,10 +1,15 @@
 # FreeTumble
 
-by Seby and Suiland
+(c) 2009 Seby and Suiland
 
-Development: Seby <sebygames@gmail.com>
+Original development team:
 
-Graphics: Suiland
+- Seby <sebygames@gmail.com>, original game logic and engine
+- Suiland, graphics
+
+Current maintainers:
+
+- Rémi Verschelde (Akien), bug fixes, packaging
 
 ## Description
 
@@ -25,29 +30,43 @@ Try to clear the entire grid to get the best score.
 
 ## Features
 
-- Free open-source game
-- 3 game modes
+- Free and open-source game
+- Three game modes
 - In-game high scores
-- Nice art, sound effects and jazzy music
-- 4 different skins
+- Nice art, sound effects and music
+- Four different skins
 - Visual effects
 - Persistent configuration (language, skin, options, volume)
-- Various bonus in Normal and Motion modes
-- Available in 3 languages (English, French, German)
+- Various powerups in Normal and Motion modes
+- Available in three languages (English, French, German)
 
 ## License
 
-FreeTumble's source code and graphics are licensed under the GNU General Public
+FreeTumble's source code is licensed under the GNU General Public
 License, version 3 or (at your option) any later version (GPLv3+).
 
-The music files have the following licenses and attributions:  
-Alex Smith (cynicmusic), Crystal Cave (song18), CC BY-SA 3.0 - http://opengameart.org/content/crystal-cave-song18  
-Bart Kelsey (bart), Contemplation, CC BY-SA 3.0 - http://opengameart.org/content/contemplation  
-Bart Kelsey (bart), Contemplation II, CC BY-SA 3.0 - http://opengameart.org/content/contemplation-ii  
-Przemysław Sikorski (rezoner), Puzzle tune 1, CC BY 3.0 - http://opengameart.org/content/puzzle-tune-1
+### Graphics
+
+The graphic files have the following license and attribution:
+
+- Suiland, GPLv3+, same copyright as the source code
+
+### Music
+
+The music files have the following licenses and attributions:
+
+- Alex Smith (cynicmusic), Crystal Cave (song18), CC BY-SA 3.0 - http://opengameart.org/content/crystal-cave-song18
+- Bart Kelsey (bart), Contemplation, CC BY-SA 3.0 - http://opengameart.org/content/contemplation
+- Bart Kelsey (bart), Contemplation II, CC BY-SA 3.0 - http://opengameart.org/content/contemplation-ii
+- Przemysław Sikorski (rezoner), Puzzle tune 1, CC BY 3.0 - http://opengameart.org/content/puzzle-tune-1
+
+### Sound effects
 
 The sound files have the following license and attribution:
-Obani (@ObaniGemini), CC BY-SA 4.0 - https://github.com/LibreGameArchive/freetumble/pull/9
+
+- Obani (@ObaniGemini), CC BY-SA 4.0 - https://github.com/LibreGameArchive/freetumble/pull/9
+
+### Font
 
 The FreeSansBold.ttf font from the GNU FreeFont project is distributed
 under the GPLv3+.
