@@ -5,7 +5,10 @@ import os
 # Define build environment
 env = Environment()
 
-env.Append(CPPFLAGS = os.getenv('CPPFLAGS', ['-g', '-O2']))
+cppflags = os.getenv('CPPFLAGS', ['-g', '-O2'])
+if type(cppflags) == type(''):
+    cppflags = cppflags.split()
+env.Append(CPPFLAGS = cppflags)
 env.Append(LINKFLAGS = os.getenv('LINKFLAGS', ''))
 env.Append(LIBS = ['sfml-audio', 'sfml-graphics', 'sfml-system', 'sfml-window'])
 
@@ -30,9 +33,11 @@ freetumble = env.Program(target = 'freetumble', source = sources)
 
 # Install instructions
 
-prefix = ARGUMENTS.get('PREFIX', '/usr/local')
+destdir = ARGUMENTS.get('DESTDIR', '')
+prefix = os.path.join(destdir, ARGUMENTS.get('PREFIX', '/usr/local'))
 bindir = os.path.join(prefix, 'games')
 sharedir = os.path.join(prefix, 'share')
+datadir = os.path.join(destdir, datadir)
 
 data_folders = ['gfx', 'music', 'sfx', 'skins', 'tilesets']
 data_files = ['misc/FreeSansBold.ttf', 'misc/reset_scores.dat']
