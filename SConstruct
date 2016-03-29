@@ -40,7 +40,7 @@ sharedir = os.path.join(prefix, 'share')
 datadir = os.path.join(destdir, datadir)
 
 data_folders = ['gfx', 'music', 'sfx', 'skins', 'tilesets']
-data_files = ['misc/FreeSansBold.ttf', 'misc/reset_scores.dat']
+data_files = ['FreeSansBold.ttf', 'reset_scores.dat']
 
 if datadir != '.':
     env.Alias('install', Install(bindir, freetumble))
@@ -52,6 +52,6 @@ if datadir != '.':
         env.Alias('install', Install(datadir, data_file))
 
     env.Alias('install', Install(os.path.join(sharedir, 'applications'),
-                                 'misc/freetumble.desktop'))
+                                 'dist/freetumble.desktop'))
     env.Alias('install', Install(os.path.join(sharedir, 'icons/hicolor/64x64/apps'),
-                                 'misc/freetumble.png'))
+                                 'dist/freetumble.png'))
