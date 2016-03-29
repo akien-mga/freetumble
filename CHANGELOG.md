@@ -1,4 +1,4 @@
-## Version 1.1
+## Version 1.1 - 29 March 2016
 
 - Port the engine to SFML 2.x
 - Enable VSync

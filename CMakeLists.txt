@@ -7,7 +7,7 @@ cmake_minimum_required(VERSION 2.8)
 project(freetumble)
 
 set(FT_MAJOR_VERSION 1)
-set(FT_MINOR_VERSION 0)
+set(FT_MINOR_VERSION 1)
 set(FT_PATCH_VERSION 0)
 set(FT_VERSION "${FT_MAJOR_VERSION}.${FT_MINOR_VERSION}")
 if(FT_PATCH_VERSION GREATER 0)
