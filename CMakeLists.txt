@@ -98,7 +98,8 @@ if(FOR_INSTALL)
     set(FT_DATAFILES ${CMAKE_SOURCE_DIR}/FreeSansBold.ttf
                      ${CMAKE_SOURCE_DIR}/reset_scores.dat)
 
-    set(FT_DOC       ${CMAKE_SOURCE_DIR}/LICENSE.txt
+    set(FT_DOC       ${CMAKE_SOURCE_DIR}/CHANGELOG.md
+                     ${CMAKE_SOURCE_DIR}/LICENSE.txt
                      ${CMAKE_SOURCE_DIR}/README.md)
 
     install(TARGETS ${PROJECT_NAME}
