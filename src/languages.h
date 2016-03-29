@@ -19,11 +19,11 @@
 
 
 const int N_LANGUAGES=3;
-const int CONSOLE_MAX_LINES=10;
-const int CONSOLE_HELP=6;
-const int CONSOLE_OPTIONS=7;
-const int CONSOLE_CREDITS=8;
-const int CONSOLE_QUIT=9;
+const int CONSOLE_MAX_LINES=11;
+const int CONSOLE_HELP=7;
+const int CONSOLE_OPTIONS=8;
+const int CONSOLE_CREDITS=9;
+const int CONSOLE_QUIT=10;
 
 const int LANG_EN=0;
 const int LANG_FR=1;
@@ -176,13 +176,17 @@ const std::wstring HELP_BONUS_SKULL[N_LANGUAGES]=
       L"Kann nur zerstört werden durch Bomben oder Blitze." };
 
 const std::wstring CONSOLE[CONSOLE_MAX_LINES][N_LANGUAGES]={
-    {   L"FreeTumble V1.0",
-        L"FreeTumble V1.0",
-        L"FreeTumble V1.0"},
+    {   L"FreeTumble",
+        L"FreeTumble",
+        L"FreeTumble"},
 
     {   L"By Seby and Suiland (2009)",
         L"Par Seby et Suiland (2009)",
         L"Von Seby und Suiland (2009)"},
+
+    {   L"Maintained by Akien (2015-2016)",
+        L"Maintenu par Akien (2015-2016)",
+        L"Weiterentwickelt von Akien (2015-2016)"},
 
     {   L"Click a game type to start playing",
         L"Cliquer sur le type de jeu que vous souhaitez",
@@ -212,7 +216,7 @@ const std::wstring CONSOLE[CONSOLE_MAX_LINES][N_LANGUAGES]={
         L"Crédits",
         L"Credits"},
 
-    {   L"Exit",
+    {   L"Quit the game",
         L"Quitter le jeu",
         L"Spiel beenden"} };
 

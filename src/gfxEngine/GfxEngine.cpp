@@ -90,7 +90,7 @@ void GfxEngine::initialize()
 void GfxEngine::initWindow()
 {
     // create a new window
-    string title=APP_NAME + " " + APP_VERSION;
+    string title=APP_NAME;
     app = new sf::RenderWindow(sf::VideoMode(800, 600), title); // , sf::Style::Close);
     app->setVerticalSyncEnabled(true);
 }
@@ -524,15 +524,19 @@ void GfxEngine::renderConsole()
     for (int i=first; i <= consoleIndex; i++)
     {
 
+        std::wstring curString = CONSOLE[i][language];
+        if (i == 0) // Add version number to game name
+            curString = string2wstring(APP_NAMEVER);
+
         if (i == consoleIndex && getConsoleTime() < CONSOLE_LINE_DELAY)
         {
-            int strSize=CONSOLE[i][language].length();
+            int strSize=curString.length();
             int n=strSize * getConsoleTime()/CONSOLE_LINE_DELAY;
-            menuString->setString(CONSOLE[i][language].substr(0, n));
+            menuString->setString(curString.substr(0, n));
         }
         else
         {
-            menuString->setString(CONSOLE[i][language]);
+            menuString->setString(curString);
         }
 
         int xTrans=0;
@@ -1158,7 +1162,7 @@ void GfxEngine::renderCredits()
     //menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 40);
     //app->draw(*menuString);
 
-    //menuString->setString(APP_NAME + " " + APP_VERSION);
+    //menuString->setString(APP_NAMEVER);
     //menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 15);
     //app->draw(*menuString);
 

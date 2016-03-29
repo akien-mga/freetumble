@@ -20,7 +20,12 @@
 #include <string>
 
 const std::string APP_NAME = "FreeTumble";
-const std::string APP_VERSION = "V1.0";
+#ifdef VERSION
+const std::string APP_VERSION = VERSION;
+#else
+const std::string APP_VERSION = "1.x";
+#endif
+const std::string APP_NAMEVER = APP_NAME + " V" + APP_VERSION;
 
 #ifdef DATADIR
 const std::string DATA_DIR = DATADIR;

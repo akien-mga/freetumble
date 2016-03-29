@@ -6,6 +6,16 @@ cmake_minimum_required(VERSION 2.8)
 
 project(freetumble)
 
+set(FT_MAJOR_VERSION 1)
+set(FT_MINOR_VERSION 0)
+set(FT_PATCH_VERSION 0)
+set(FT_VERSION "${FT_MAJOR_VERSION}.${FT_MINOR_VERSION}")
+if(FT_PATCH_VERSION GREATER 0)
+    set(FT_VERSION "${FT_VERSION}.${FT_PATCH_VERSION}")
+endif()
+
+add_definitions(-DVERSION="${FT_VERSION}")
+
 option(FOR_INSTALL "Build the binary to look for its data in system directories." OFF)
 
 if(FOR_INSTALL)
