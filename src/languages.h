@@ -111,16 +111,16 @@ const std::wstring CREDITS_TITLE[N_LANGUAGES]=
     { L"Credits", L"Crédits", L"Credits" };
 
 const std::wstring CREDITS_PROGRAMMER[N_LANGUAGES]=
-    { L"Programmation", L"Développement", L"Entwicklung" };
+    { L"Development", L"Développement", L"Entwicklung" };
 
 const std::wstring CREDITS_GRAPHICS[N_LANGUAGES]=
     { L"Graphics", L"Graphismes", L"Graphikdesign" };
 
 const std::wstring CREDITS_SOUND[N_LANGUAGES]=
-    { L"Sound", L"Son", L"Klang" };
+    { L"Sound effects", L"Effets sonores", L"Toneffekte" };
 
 const std::wstring CREDITS_MUSIC[N_LANGUAGES]=
-    { L"Music (Creative Common)", L"Musique (Creative Common)", L"Musik (Creative Common)" };
+    { L"Music", L"Musique", L"Musik" };
 
 const std::wstring HELP_TITLE[N_LANGUAGES]=
     { L"Instructions", L"Instructions", L"Spielanleitung" };
@@ -192,11 +192,11 @@ const std::wstring CONSOLE[CONSOLE_MAX_LINES][N_LANGUAGES]={
         L"Cliquer sur le type de jeu que vous souhaitez",
         L"Klicken Sie den gewünschten Spieltyp an"},
 
-    {   L"Normal: Turn based game",
+    {   L"Normal: Turn-based game",
         L"Normal: Jeu au tour par tour",
         L"Normal: Rundenbasiertes Spiel"},
 
-    {   L"Motion: Real time game",
+    {   L"Motion: Real-time game",
         L"Motion: Jeu en temps réel",
         L"Motion: Echtzeitspiel"},
 
